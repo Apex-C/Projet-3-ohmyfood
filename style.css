@@ -1,0 +1,372 @@
+/*      ./dart-sass/sass sass/main.scss style.css --watch        */
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  font-family: Roboto, sans-serif;
+}
+
+.main_wrapper {
+  min-width: 280px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 15px 0px;
+}
+header .logo-image {
+  width: 40%;
+}
+header .header-nav {
+  display: none;
+}
+
+.banner {
+  height: fit-content;
+}
+.banner .banner-image {
+  display: none;
+}
+
+.recherche {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2.5em;
+  background: #f2f2f2;
+}
+.recherche form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #dad8d8;
+  border-top: 2px #f3ecec inset;
+}
+.recherche form input {
+  border: none;
+  width: 50%;
+  text-align: start;
+  background: #dad8d8;
+  font-size: larger;
+  color: rgba(0, 0, 0, 0.8);
+}
+.recherche form .fa-map-marker-alt {
+  margin-right: 15px;
+}
+.recherche .contenaite-text {
+  width: 70%;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.recherche .contenaite-text h1 {
+  font-size: x-large;
+  font-weight: 600;
+  line-height: normal;
+  margin: 15px 0px;
+}
+.recherche .contenaite-text p {
+  font-size: medium;
+  font-weight: 400;
+  line-height: normal;
+  margin: 15px 0px;
+}
+.recherche .btn {
+  padding: 10px;
+  margin: 20px 0px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px transparent solid;
+}
+.recherche .btn--border {
+  border-radius: 25px;
+}
+.recherche .btn_color {
+  background: linear-gradient(75deg, #9356DC 20%, #FF79DA 100%);
+  color: #fff;
+}
+
+.fonctionement {
+  margin: 20px 10px;
+}
+.fonctionement h2 {
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.fonction-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fonction-btn_style {
+  width: 95%;
+  text-align: center;
+  position: relative;
+  line-height: 35px;
+  height: 60px;
+  background: #f2f2f2;
+  margin-bottom: 25px;
+  align-items: center;
+  display: flex;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.fonction-btn_style .fa-stack {
+  position: absolute;
+  left: -18px;
+  bottom: 18px;
+  font-size: 15px;
+  color: #9356DC;
+}
+.fonction-btn_style .fa-stack strong {
+  color: white;
+}
+.fonction-btn_style .icon {
+  padding-right: 20px;
+  color: rgba(59, 57, 57, 0.7);
+}
+.fonction-btn_style a {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.restaurants {
+  padding-top: 10px;
+  width: 100%;
+  background: #f2f2f2;
+}
+.restaurants-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.restaurants-items {
+  width: 90%;
+  margin-bottom: 25px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 20px;
+}
+.restaurants-items_description {
+  background: #fff;
+  position: relative;
+  display: block;
+  padding: 15px;
+  border-radius: 0px 0px 20px 20px;
+}
+.restaurants-items_description .far.fa-heart {
+  position: absolute;
+  right: 30px;
+  bottom: 35px;
+  font-size: 30px;
+  font-weight: 200;
+}
+.restaurants-items_titre {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  width: fit-content;
+}
+.restaurants-items_text {
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 400;
+  width: fit-content;
+  letter-spacing: 1px;
+}
+.restaurants-items img {
+  height: 220px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  filter: brightness(1.25) contrast(1.2) saturate(1.2);
+  border-radius: 20px 20px 0px 0px;
+}
+.restaurants .titre {
+  margin: 20px 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.footer_contenaire {
+  background: #6e6e6e;
+}
+.footer_contenaire .footer-list {
+  padding: 10px;
+  font-size: large;
+}
+.footer_contenaire .footer-list_items {
+  margin: 15px 0px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.footer_contenaire .footer-list_items a {
+  color: #fff;
+}
+.footer_contenaire .footer-list_items a .fas.fa-utensils, .footer_contenaire .footer-list_items a .fas.fa-hands-helping {
+  margin-right: 10px;
+}
+.footer_contenaire .footer-list_items strong {
+  font-family: Shrikhand;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 765px) {
+  .main_wrapper {
+    min-width: 765px;
+    max-width: 850px;
+    margin: auto;
+  }
+
+  header {
+    margin: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .logo-image {
+    width: 180px;
+  }
+  header .header-nav {
+    display: block;
+  }
+  header .header-nav_list {
+    display: flex;
+    background: #9356DC;
+  }
+  header .header-nav_items {
+    background: #9356DC;
+    padding: 15px;
+    border: 1px transparent solid;
+  }
+  header .header-nav_items:hover {
+    border: 1px black solid;
+  }
+
+  .banner .banner-image {
+    display: block;
+  }
+  .banner .banner-contenaire {
+    width: 100%;
+    max-height: 500px;
+    position: relative;
+  }
+  .banner .banner-contenaire .recherche {
+    position: absolute;
+    bottom: 50px;
+    background: rgba(255, 255, 255, 0);
+  }
+  .banner .banner-contenaire .recherche form {
+    width: 80%;
+    border-radius: 25px;
+    background: #fff;
+    margin-bottom: 20px;
+  }
+  .banner .banner-contenaire .recherche form input {
+    background: #fff;
+  }
+  .banner .banner-contenaire .recherche .contenaite-text {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .banner .banner-contenaire .recherche .contenaite-text h1 {
+    font-size: 40px;
+  }
+  .banner .banner-contenaire .recherche .contenaite-text p {
+    font-size: 25px;
+  }
+
+  .fonctionement {
+    padding: 20px 0px;
+  }
+  .fonctionement h2 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+
+  .fonction-btn {
+    flex-direction: row;
+  }
+  .fonction-btn_style {
+    margin: 0px 10px;
+  }
+  .fonction-btn_style a {
+    font-size: 15px;
+  }
+  .fonction-btn_style a .icon {
+    padding-right: 10px;
+  }
+
+  .restaurants-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .restaurants-items {
+    margin-bottom: 25px;
+    width: 47%;
+  }
+  .restaurants-items img {
+    height: 250px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

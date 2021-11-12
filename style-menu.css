@@ -1,0 +1,183 @@
+/*             ./dart-sass/sass sass/style-menu.scss style-menu.css --watch              */
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.main_wrapper {
+  max-width: 700px;
+  min-width: 250px;
+  margin: auto;
+}
+
+body {
+  background: #fff;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  width: 100%;
+  margin: 5px 20px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.header-nav img {
+  width: 220px;
+}
+.header-nav span {
+  font-size: 22px;
+  position: absolute;
+  left: 0px;
+}
+
+.banner {
+  width: 100%;
+}
+.banner-image {
+  height: 250px;
+}
+.banner-image-1 {
+  background-image: url(./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-size: cover;
+  height: inherit;
+  height: 250px;
+}
+.banner-image-2 {
+  background-image: url(./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+  background-size: cover;
+  height: inherit;
+  height: 250px;
+}
+.banner-image-3 {
+  background-image: url(./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-size: cover;
+  height: inherit;
+  height: 250px;
+}
+.banner-image-4 {
+  background-image: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+  background-size: cover;
+  height: inherit;
+  height: 250px;
+}
+
+.menu {
+  margin-top: -35px;
+}
+.menu-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  border-radius: 25px 25px 0px 0px;
+  height: fit-content;
+}
+.menu-table_titre {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: Shrikhand;
+  font-size: 25px;
+  padding: 15px;
+  letter-spacing: 1px;
+}
+.menu-list {
+  width: 90%;
+}
+.menu-list_items {
+  border-radius: 20px;
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.menu-list_items .plat {
+  font-size: large;
+  font-weight: 500;
+}
+.menu-list_items .description {
+  font-size: medium;
+  font-weight: 300;
+  margin-top: 5px;
+}
+.menu-list_items span {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-weight: 500;
+}
+.menu-list_titre {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.footer_contenaire {
+  background: #3d3b3b;
+  padding: 20px;
+}
+
+.footer-list_items {
+  margin: 10px 0px;
+}
+.footer-list_items a {
+  color: #fff;
+}
+.footer-list_items span {
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=style-menu.css.map */
