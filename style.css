@@ -132,7 +132,7 @@ header .header-nav {
   border-radius: 25px;
 }
 .recherche .btn_color {
-  background: linear-gradient(75deg, #9356DC 20%, #FF79DA 100%);
+  background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
   color: #fff;
 }
 
@@ -169,7 +169,7 @@ header .header-nav {
   left: -18px;
   bottom: 18px;
   font-size: 15px;
-  color: #9356DC;
+  color: #9356dc;
 }
 .fonction-btn_style .fa-stack strong {
   color: white;
@@ -249,6 +249,7 @@ header .header-nav {
 .footer_contenaire .footer-list {
   padding: 10px;
   font-size: large;
+  margin-left: 20px;
 }
 .footer_contenaire .footer-list_items {
   margin: 15px 0px;
@@ -258,12 +259,19 @@ header .header-nav {
 .footer_contenaire .footer-list_items a {
   color: #fff;
 }
-.footer_contenaire .footer-list_items a .fas.fa-utensils, .footer_contenaire .footer-list_items a .fas.fa-hands-helping {
+.footer_contenaire .footer-list_items a .fas.fa-utensils,
+.footer_contenaire .footer-list_items a .fas.fa-hands-helping {
   margin-right: 10px;
 }
 .footer_contenaire .footer-list_items strong {
   font-family: Shrikhand;
   letter-spacing: 1px;
+  font-size: large;
+  line-height: inherit;
+}
+
+.btn-action, .histoire {
+  display: none;
 }
 
 @media screen and (min-width: 765px) {
@@ -287,15 +295,21 @@ header .header-nav {
   }
   header .header-nav_list {
     display: flex;
-    background: #9356DC;
+    background: #9356dc;
   }
   header .header-nav_items {
-    background: #9356DC;
+    background: #9356dc;
     padding: 15px;
     border: 1px transparent solid;
   }
   header .header-nav_items:hover {
-    border: 1px black solid;
+    border: 1px #746f6f solid;
+    background: #a16be0;
+  }
+  header .header-nav_items a {
+    color: #fff;
+    font-size: medium;
+    font-weight: 500;
   }
 
   .banner .banner-image {
@@ -319,6 +333,8 @@ header .header-nav {
   }
   .banner .banner-contenaire .recherche form input {
     background: #fff;
+    padding-left: 20px;
+    width: 80%;
   }
   .banner .banner-contenaire .recherche .contenaite-text {
     color: #fff;
@@ -354,6 +370,25 @@ header .header-nav {
     padding-right: 10px;
   }
 
+  .restaurants {
+    border-radius: 25px 25px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-action {
+    display: block;
+    background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
+    color: #fff;
+    padding: 10px;
+    font-size: large;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+    border: 1px transparent solid;
+    margin-bottom: 20px;
+  }
+
   .restaurants-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -365,7 +400,32 @@ header .header-nav {
     width: 47%;
   }
   .restaurants-items img {
-    height: 250px;
+    height: 200px;
+  }
+
+  .histoire {
+    display: block;
+    margin: 25px;
+    font-size: medium;
+    font-weight: 400;
+    text-align: justify;
+    letter-spacing: 1px;
+    height: fit-content;
+  }
+  .histoire p {
+    margin: 20px;
+  }
+
+  .concepte {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+  }
+  .concepte-items {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px #9356dc solid;
   }
 }
 
