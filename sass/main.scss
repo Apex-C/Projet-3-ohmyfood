@@ -1,19 +1,21 @@
 /*      ./dart-sass/sass sass/main.scss style.css --watch        */
 
 @import "./libs/reset.scss";
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
-$couleur1:#9356DC ;
-$couleur2:#FF79DA ;
-$couleur3:#99E2D0;
-$couleur4:#f2f2f2;
-$ombre1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-$ombre2:rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+$couleur1: #9356dc;
+$couleur2: #ff79da;
+$couleur3: #99e2d0;
+$couleur4: #f2f2f2;
 
-*{
+$ombre1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+$ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+  rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+* {
   font-family: Roboto, sans-serif;
 }
-.main_wrapper{
+.main_wrapper {
   min-width: 280px;
   margin: auto;
 }
@@ -42,6 +44,7 @@ header {
   align-items: center;
   line-height: 2.5em;
   background: #f2f2f2;
+  height: 280px;
 
   form {
     width: 100%;
@@ -56,7 +59,7 @@ header {
       text-align: start;
       background: rgb(218, 216, 216);
       font-size: larger;
-      color: rgba($color: #000000, $alpha: 0.8);
+      color: rgba(#000, $alpha: 0.8);
     }
     .fa-map-marker-alt {
       margin-right: 15px;
@@ -71,7 +74,6 @@ header {
       font-weight: 600;
       line-height: normal;
       margin: 15px 0px;
-     
     }
     p {
       font-size: medium;
@@ -82,7 +84,8 @@ header {
   }
   .btn {
     padding: 10px;
-    margin: 20px 0px;
+    margin: 20px;
+  
     font-size: 15px;
     font-weight: 600;
     border: 1px transparent solid;
@@ -90,15 +93,23 @@ header {
       border-radius: 25px;
     }
     &_color {
-      background:linear-gradient(75deg,$couleur1 20%,$couleur2 100%) ;
+      background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
       color: #fff;
+      &:hover{
+        background: linear-gradient(75deg, $couleur1 50%, $couleur2 100%);
+        opacity: .9;
+        border: 2px solid $couleur1;
+       
+       
+      }
     }
+    
   }
 }
 .fonctionement {
   margin: 20px 10px;
   h2 {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 400;
     margin-bottom: 20px;
     text-transform: capitalize;
@@ -111,24 +122,25 @@ header {
   align-items: center;
 
   &_style {
-    width: 95%;
+    width: 90%;
     text-align: center;
     position: relative;
     line-height: 35px;
-    height: 60px;
-    background:$couleur4;
+    height: 70px;
+    background: $couleur4;
     margin-bottom: 25px;
     align-items: center;
     display: flex;
     border-radius: 15px;
-    box-shadow:$ombre1;
+    box-shadow: $ombre1;
+  
 
     .fa-stack {
       position: absolute;
       left: -18px;
       bottom: 18px;
       font-size: 15px;
-      color:$couleur1;
+      color: $couleur1;
       strong {
         color: white;
       }
@@ -140,10 +152,19 @@ header {
     }
     a {
       text-align: center;
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       font-size: 18px;
+      height: inherit;
       letter-spacing: 1px;
+      border-radius: 15px;
+      &:hover{
+        border: 4px solid $couleur3;
+  
+  
+      }
     }
   }
 }
@@ -152,6 +173,14 @@ header {
   padding-top: 10px;
   width: 100%;
   background: #f2f2f2;
+  &-titre {
+    margin:10px 15px;
+    font-size: 18px;
+    font-weight: 600;
+ 
+    line-height: 25px;
+ 
+  }
   &-list {
     display: flex;
     flex-direction: column;
@@ -162,32 +191,36 @@ header {
     margin-bottom: 25px;
     box-shadow: $ombre2;
     border-radius: 20px;
+    box-sizing: border-box;
+    
+    &:hover{
+      box-shadow: $ombre1;
+     
+    }
+   
 
     &_description {
+      display: flex;
       background: #fff;
-      position: relative;
-      display: block;
+      justify-content: space-between;
+      align-items: center;
       padding: 15px;
       border-radius: 0px 0px 20px 20px;
-
-      .far.fa-heart {
-        position: absolute;
-        right: 30px;
-        bottom: 35px;
-        font-size: 30px;
-        font-weight: 200;
-      }
     }
-    &_titre {
-      margin-bottom: 10px;
+    strong{
+      font-size: 40px;
+      
+      
+    }
+    &_titre{
       font-size: 18px;
-      font-weight: 800;
-      width: fit-content;
+      font-weight: 600;
     }
+   
     &_text {
       margin-bottom: 15px;
       font-size: 15px;
-      font-weight: 400;
+      font-weight: 300;
       width: fit-content;
       letter-spacing: 1px;
     }
@@ -199,44 +232,67 @@ header {
       filter: brightness(1.25) contrast(1.2) saturate(1.2);
       border-radius: 20px 20px 0px 0px;
     }
+  
   }
   .titre {
     margin: 20px 20px;
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 1px;
   }
+}
+.menu-contenaire{
+  display: flex;
 }
 .footer_contenaire {
   background: #6e6e6e;
-  .footer-list{
+  .footer-list {
     padding: 10px;
     font-size: large;
-  
-    &_items{
+    margin-left: 20px;
+
+    &_items {
       margin: 15px 0px;
-  
+
       font-weight: 400;
-      letter-spacing: .5px;
-      a{
+      letter-spacing: 0.5px;
+      a {
         color: #fff;
-        .fas.fa-utensils,.fas.fa-hands-helping{
+        .fas.fa-utensils,
+        .fas.fa-hands-helping {
           margin-right: 10px;
         }
-      }      
-      strong{
+      }
+      strong {
         font-family: Shrikhand;
         letter-spacing: 1px;
+        font-size: large;
+        line-height: inherit;
       }
     }
   }
 }
+.btn-action,.histoire{
+  display: none;
+}
+.wave,.infographie-boite,.presse{
+  display: none;
+}
+@media screen and (max-width:320px) {
+  .fonction-btn_style .icon {
+    padding-right: 5px;
 
+    color: rgba(59, 57, 57, 0.7);
+  }
+  
+}
 @media screen and (min-width: 765px) {
-  .main_wrapper{
+  .main_wrapper {
     min-width: 765px;
     max-width: 850px;
     margin: auto;
   }
+ 
 
   header {
     margin: 20px 20px;
@@ -252,19 +308,35 @@ header {
 
       &_list {
         display: flex;
-        background: $couleur1;
-
+   
+        
+        
       }
       &_items {
-      
         background: $couleur1;
         padding: 15px;
         border: 1px transparent solid;
-        &:hover{
-          border: 1px black solid;
+
+        &:hover {
+          border: 1px rgb(116, 111, 111) solid;
+          background: lighten($couleur1, $amount: 5);
         }
-      }
       
+       
+        
+        a {
+          color: #fff;
+          font-size: medium;
+          font-weight: 500;
+        }
+       
+      }
+      .premier{
+        border-radius: 20px 0px 0px 20px;
+      }
+      .dernier{
+        border-radius: 0px 20px 20px 0px;
+      }
     }
   }
   .banner {
@@ -273,71 +345,261 @@ header {
     }
     .banner-contenaire {
       width: 100%;
-      max-height: 500px;
     
+      border-top: 10px $couleur3 solid ;
+      border-bottom: 10px $couleur3 solid;
+
       position: relative;
       .recherche {
+        height: 250px;
         position: absolute;
-        bottom: 50px;
+        bottom: 120px;
         background: rgba(255, 255, 255, 0);
         form {
           width: 80%;
           border-radius: 25px;
           background: #fff;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
           input {
             background: #fff;
+            padding-left: 20px;
+            width: 80%;
           }
         }
         .contenaite-text {
           color: #fff;
           margin-bottom: 20px;
+          width: 100%;
+          background-color: rgba(147, 86, 220,.3);;
           h1 {
-            font-size: 40px;
-         
+            font-size: 35px;
           }
           p {
-            font-size: 25px;
-     
+            font-size: 22px;
           }
         }
       }
     }
   }
-  .fonctionement{
-    padding: 20px 0px;
+  .fonctionement {
+    padding: 10px;
+    margin: 0px 0px 30px 0px ;
     h2 {
       font-size: 25px;
-      font-weight: 800;
+      font-weight: 700;
       margin-left: 30px;
       margin-top: 20px;
     }
   }
- 
+
   .fonction-btn {
     flex-direction: row;
     &_style {
       margin: 0px 10px;
       a {
-        font-size: 15px;
+        font-size: 18px;
         .icon {
-          padding-right: 10px;
+          padding-right: 7px;
+        }
+        strong{
+          font-size: 14px;
         }
       }
     }
   }
-  .restaurants-list{
+
+  .restaurants {
+    border-radius: 25px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-titre{
+      font-size: 22px;
+      font-weight: 400;
+      margin: 10px 0px 20px 20px;
+      align-self: flex-start;
+    }
+  }
+  .btn-action{
+    display: block;
+    background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
+      color: #fff;
+      padding: 10px;
+      font-size: large;
+      letter-spacing: .5px;
+      border-radius: 15px;
+      border: 1px transparent solid;
+      margin-bottom: 20px;
+      &:hover{
+        background: $couleur2 ; 
+        opacity: .9;
+        border: 2px solid $couleur1;
+      }
+
+  }
+  .restaurants-list {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  .restaurants-items{ 
+  .restaurants-items {
     margin-bottom: 25px;
-    width: 47%;
-    img{
-      height: 250px;
+    width: 45%;
+    img {
+      height: 200px;
     }
+  }
+  .presentation{
+    margin: 25px 0px 25px 0px;
+    display: flex;
+    flex-direction: column;
+    img{
+      height:50px;
+      display: block;
+      
+    }
+  }
+  .histoire {
+    display: block;
+   
+    font-size: medium;
+    font-weight: 400;
+    text-align: justify;
+    letter-spacing: 1px;
+    height: fit-content;
+    background: $couleur1;
+    color: #fff;
+    .text{
+      padding: 10px;
+      font-size: large;
+    }
+    .star{
+      margin: 10px;
+      text-transform: capitalize;
+      font-weight: 500;
+      
+    }
+    h2{
+      margin: 10px 20px;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 30px;
+ 
+      font-family: Shrikhand ;
+    }
+  }
+  .concepte {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    &-items {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 8px $couleur3 solid;
+      background: #fff;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+        margin-top: 15px;
+      
+        
+       
+        filter: saturate(1.2);
+
+      }
+   
+    }
+    &-boite{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+    }
+  }
+  .infographie-boite{
+    display: flex;
+
+    flex-direction: column;
+    .text{
+      align-self: center;
+      font-size: 22px;
+      line-height: 35px;
+      font-weight: 400;
+      font-family: Shrikhand ;
+    }
+    .btn\.btn-action{
+      background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
+      border-radius: 20px;
+      padding:15px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 400;
+      align-self: center;
+      margin: 20px 0px;
+    }
+  }
+  .infographie{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-contenaire{
+      padding: 10px;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+     
+   
 
   }
- 
+  &-items{
+    width: 30%;
+  }
+  &-text{
+    margin: 20px;
+    text-align: justify;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: .5px;
+  }
+}
+
+  .presse{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: medium;
+    font-weight: 500;
+    width: 100%;
+    margin: 20px 0px;
+  
+    img{
+      
+      width: 90%;
+      object-fit: cover;
+      border: 4px dashed $couleur3;
+      border-radius: 22px;
+      
+      
+    }
+    p{
+      align-self: flex-start;
+      margin: 20px ;
+      font-size: 22px;
+      font-weight: 500;
+    }
+  }
+  .titre{
+    font-size: 25px;
+    font-family: Shrikhand;
+    line-height: 30px;
+    letter-spacing: 1px;
+    margin: 25px 0px 0px 20px;
+
+  }
 }

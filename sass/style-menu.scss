@@ -94,14 +94,30 @@ body{
         &_titre{
             width: 100%;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
             font-family:Shrikhand ;
             font-size: 25px;
             padding: 15px;
             letter-spacing: 1px;
+            position: relative;
+            .far.fa-heart{
+                position: absolute;
+                right: 40px;
+
+            }
            
         }
+    }
+    button{
+        padding: 10px;
+        margin: 20px 0px;
+        font-size: 15px;
+        font-weight: 600;
+        border: 1px transparent solid;
+        border-radius: 25px;
+        background:linear-gradient(75deg,$couleur1 20%,$couleur2 100%) ;
+      color: #fff;
     }
     &-list{
         width: 90%;
@@ -136,10 +152,10 @@ body{
             span {
                 position: absolute;
                 bottom: 15px;
-                right: 10px;
+                right: 20px;
                 font-weight: 400;
 
-            };
+            }
         }
         &_titre{
             text-transform: uppercase;

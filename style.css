@@ -262,6 +262,10 @@ header .header-nav {
   letter-spacing: 1px;
 }
 
+.menu-contenaire {
+  display: flex;
+}
+
 .footer_contenaire {
   background: #6e6e6e;
 }
@@ -562,7 +566,29 @@ header .header-nav {
     letter-spacing: 0.5px;
   }
 
-  
+  .presse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-weight: 500;
+    width: 100%;
+    margin: 20px 0px;
+  }
+  .presse img {
+    width: 90%;
+    object-fit: cover;
+    border: 4px dashed #99e2d0;
+    border-radius: 22px;
+  }
+  .presse p {
+    align-self: flex-start;
+    margin: 20px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
   .titre {
     font-size: 25px;
     font-family: Shrikhand;
