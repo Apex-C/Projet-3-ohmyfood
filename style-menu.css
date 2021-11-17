@@ -72,7 +72,7 @@ body {
   position: relative;
 }
 .header-nav img {
-  width: 220px;
+  scale: 45%;
 }
 .header-nav span {
   font-size: 22px;
@@ -93,19 +93,19 @@ body {
   height: 250px;
 }
 .banner-image-2 {
-  background-image: url(./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+  background-image: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
   background-size: cover;
   height: inherit;
   height: 250px;
 }
 .banner-image-3 {
-  background-image: url(./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-image: url(./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
   background-size: cover;
   height: inherit;
   height: 250px;
 }
 .banner-image-4 {
-  background-image: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+  background-image: url(./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
   background-size: cover;
   height: inherit;
   height: 250px;
@@ -130,7 +130,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Shrikhand;
-  font-size: 25px;
+  font-size: 22px;
   padding: 15px;
   letter-spacing: 1px;
   position: relative;
@@ -152,12 +152,20 @@ body {
 .menu-list {
   width: 90%;
 }
+.menu-list_text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 400ms ease-in;
+}
 .menu-list_items {
   border-radius: 20px;
   background: white;
   padding: 15px;
-  margin-bottom: 20px;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  transition: all 400ms ease-in;
 }
 .menu-list_items .plat {
   font-size: large;
@@ -165,7 +173,6 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  margin-right: 30px;
 }
 .menu-list_items .description {
   font-size: medium;
@@ -174,18 +181,72 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  margin-right: 30px;
 }
 .menu-list_items span {
-  position: absolute;
-  bottom: 15px;
-  right: 20px;
   font-weight: 400;
+  align-self: flex-end;
+  padding-left: 10px;
+  transition: all 400ms ease-in;
 }
 .menu-list_titre {
   text-transform: uppercase;
   margin-bottom: 15px;
   letter-spacing: 1px;
+}
+
+.menu-list_btn {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  height: 76px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 400ms ease-in;
+}
+
+.menu-list_btn::before {
+  content: "";
+  width: 0px;
+  height: 100%;
+  background: #99E2D0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 400ms ease-in;
+  z-index: 3;
+}
+
+.menu-list_btn::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f058";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0px;
+  height: 100%;
+  font-weight: 900;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 400ms ease-in;
+  overflow: hidden;
+  color: #fff;
+  z-index: 4;
+}
+
+.menu-list_btn:hover::before {
+  width: 70px;
+}
+
+.menu-list_btn:hover::after {
+  width: 70px;
+  transform: rotate(-360deg);
+}
+
+.menu-list_items:hover {
+  width: 280px;
 }
 
 .footer_contenaire {

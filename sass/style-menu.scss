@@ -6,6 +6,8 @@ $couleur1:#9356DC ;
 $couleur2:#FF79DA ;
 $couleur3:#99E2D0;
 $couleur4:#f2f2f2;
+$couleur5:#6e6e6e;
+
 $ombre1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 $ombre2:rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 $back-image1:url(./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
@@ -31,7 +33,7 @@ body{
         justify-content: center;
         position: relative;
         img{
-            width: 220px;
+            scale:45%;
         }
         span{
             font-size: 22px;
@@ -55,19 +57,19 @@ body{
 
     }
     &-2{
-        background-image: $back-image2;
+        background-image: $back-image4;
         background-size: cover;
         height: inherit;
         height: 250px;
     }
     &-3{
-        background-image: $back-image3;
+        background-image: $back-image2;
         background-size: cover;
         height: inherit;
         height: 250px;
     }
     &-4{
-        background-image: $back-image4;
+        background-image: $back-image3;
         background-size: cover;
         height: inherit;
         height: 250px;
@@ -97,7 +99,7 @@ body{
             justify-content: center;
             align-items: center;
             font-family:Shrikhand ;
-            font-size: 25px;
+            font-size: 22px;
             padding: 15px;
             letter-spacing: 1px;
             position: relative;
@@ -121,12 +123,23 @@ body{
     }
     &-list{
         width: 90%;
+        &_text{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: all 400ms ease-in;
+        
+        }
         &_items{
             border-radius: 20px;
             background: white;
             padding: 15px;
-            margin-bottom: 20px;
+           
             position: relative;
+                display: flex;
+            justify-content: space-between;
+            transition: all 400ms ease-in;
+           
             
             .plat{
                 font-size: large;
@@ -135,7 +148,6 @@ body{
                 overflow: hidden;
                 white-space: nowrap;
                
-                margin-right: 30px;
                
             }
             .description{
@@ -146,14 +158,15 @@ body{
                 overflow: hidden;
                 white-space: nowrap;
                
-                margin-right: 30px;
+               
                 
             }
             span {
-                position: absolute;
-                bottom: 15px;
-                right: 20px;
+                
                 font-weight: 400;
+                align-self: flex-end;
+                padding-left: 10px;
+                transition: all 400ms ease-in;
 
             }
         }
@@ -167,6 +180,66 @@ body{
   
   
 }
+.menu-list_btn{
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 76px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background: #fff;;
+    transition: all 400ms ease-in;
+
+}
+.menu-list_btn::before{
+    content: "";
+    width: 0px;
+    height: 100%;
+    background:$couleur3;
+    position: absolute;
+    right: 0;
+    top:0;
+    transition: all 400ms ease-in;
+    z-index: 3;
+   
+
+}
+.menu-list_btn::after{
+    font-family: "Font Awesome 5 Free";
+  content: "\f058";
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 0px;
+  height: 100%;
+  font-weight: 900;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  transition: all 400ms ease-in;
+  overflow: hidden;
+  color: #fff;
+  z-index: 4;
+   
+
+}
+.menu-list_btn:hover::before{
+    width: 70px;
+  
+}
+.menu-list_btn:hover::after{
+    width: 70px;
+    transform: rotate(-360deg);
+  
+}
+.menu-list_items:hover {
+    width: 280px;
+   
+}
+
 .footer_contenaire{
     background: rgb(61, 59, 59);
    
