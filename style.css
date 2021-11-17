@@ -177,7 +177,9 @@ header .header-nav {
   border-radius: 15px;
   position: relative;
   overflow: hidden;
-  z-index: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 400ms ease-in-out;
 }
 .fonction-btn_items strong {
   color: black;
@@ -247,12 +249,17 @@ header .header-nav {
 }
 
 .fonction-btn_style:hover::before {
-  width: 55px;
+  width: 80px;
 }
 
 .fonction-btn_style:hover::after {
-  width: 55px;
+  width: 80px;
   transform: rotate(-360deg);
+}
+
+.fonction-btn_style:hover > .fonction-btn_items {
+  width: 270px;
+  padding-left: 70px;
 }
 
 .restaurants {
@@ -482,6 +489,20 @@ header .header-nav {
   }
   .fonction-btn_style a strong {
     font-size: 14px;
+  }
+
+  .fonction-btn_style:hover::before {
+    width: 50px;
+  }
+
+  .fonction-btn_style:hover::after {
+    width: 50px;
+    transform: rotate(-360deg);
+  }
+
+  .fonction-btn_style:hover > .fonction-btn_items {
+    width: 190px;
+    padding-left: 50px;
   }
 
   .restaurants {

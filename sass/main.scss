@@ -126,6 +126,7 @@ header {
   flex-direction: column;
   align-items: center;
   position: relative;
+ 
   z-index: 0;
   &_items {
     text-align: center;
@@ -134,12 +135,16 @@ header {
     justify-content: center;
     width: 100%;
    
+   
     height: inherit;
     letter-spacing: 1px;
     border-radius: 15px;
     position: relative;
     overflow: hidden;
-    z-index: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 400ms ease-in-out;
+  
   
    
     
@@ -225,15 +230,15 @@ header {
   
 }
 .fonction-btn_style:hover::before{
-  width: 55px;
+  width: 80px;
 }
 .fonction-btn_style:hover::after{
-width: 55px;
+width: 80px;
 transform: rotate(-360deg);
-
-
-
-
+}
+.fonction-btn_style:hover > .fonction-btn_items{
+  width: 270px;
+  padding-left: 70px;
 }
 
 .restaurants {
@@ -492,6 +497,17 @@ transform: rotate(-360deg);
         }
       }
     }
+  }
+  .fonction-btn_style:hover::before{
+    width: 50px;
+  }
+  .fonction-btn_style:hover::after{
+  width: 50px;
+  transform: rotate(-360deg);
+  }
+  .fonction-btn_style:hover > .fonction-btn_items{
+    width: 190px;
+    padding-left: 50px;
   }
 
   .restaurants {
