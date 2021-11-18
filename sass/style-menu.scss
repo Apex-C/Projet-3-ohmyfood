@@ -189,6 +189,7 @@ body{
     cursor: pointer;
     background: #fff;;
     transition: all 400ms ease-in;
+    z-index: 1;
 
 }
 .menu-list_btn::before{
@@ -200,7 +201,8 @@ body{
     right: 0;
     top:0;
     transition: all 400ms ease-in;
-    z-index: 3;
+    z-index: 1;
+
    
 
 }
@@ -222,7 +224,8 @@ body{
   transition: all 400ms ease-in;
   overflow: hidden;
   color: #fff;
-  z-index: 4;
+  z-index: 1;
+ 
    
 
 }
@@ -235,7 +238,7 @@ body{
     transform: rotate(-360deg);
   
 }
-.menu-list_items:hover {
+.menu-list_btn:hover > .menu-list_items{
     width: 280px;
    
 }
@@ -256,3 +259,10 @@ body{
     }
 }
 
+@media screen and (min-width: 765px) {
+    .menu-list_btn:hover > .menu-list_items{
+        width: 550px;
+       
+    }
+}
+  
