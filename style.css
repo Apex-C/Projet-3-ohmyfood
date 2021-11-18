@@ -179,7 +179,7 @@ header .header-nav {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in;
 }
 .fonction-btn_items strong {
   color: black;
@@ -243,7 +243,7 @@ header .header-nav {
   position: absolute;
   right: 0;
   top: 0;
-  transition: all 400ms ease-in;
+  transition: all 400ms ease-out;
   z-index: 1;
   border-radius: 0px 15px 15px 0px;
 }
@@ -262,6 +262,65 @@ header .header-nav {
   padding-left: 70px;
 }
 
+.contenaire {
+  display: flex;
+}
+
+#wrap {
+  height: 25px;
+  width: 25px;
+  overflow: hidden;
+  border: 0px;
+  margin: 20px;
+  transform: scale(1.4);
+}
+
+#wrap:hover > .fill {
+  animation-name: fillAction;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  mix-blend-mode: screen;
+}
+
+#waveShape {
+  animation-name: waveAction;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  width: 25px;
+  height: 25px;
+  fill: red;
+}
+
+#wrap i {
+  position: absolute;
+  font-size: 25px;
+  background: #fff;
+}
+
+.far.fa-heart::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+}
+
+@keyframes fillAction {
+  0% {
+    transform: translate(0, 25px);
+  }
+  100% {
+    transform: translate(0, -20px);
+  }
+}
+@keyframes waveAction {
+  0% {
+    transform: translate(-45px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 .restaurants {
   padding-top: 10px;
   width: 100%;
@@ -302,7 +361,7 @@ header .header-nav {
   display: block;
 }
 .restaurants-items svg g {
-  fill: #fff;
+  fill: transparent;
   stroke-width: 600;
   stroke: black;
   position: relative;
@@ -312,7 +371,7 @@ header .header-nav {
 }
 .restaurants-items svg g:hover {
   top: 0;
-  fill: #ff79da;
+  fill: blue;
 }
 .restaurants-items_titre {
   font-size: 18px;
