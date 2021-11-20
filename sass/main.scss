@@ -7,6 +7,7 @@ $couleur1: #9356dc;
 $couleur2: #ff79da;
 $couleur3: #99e2d0;
 $couleur4: #f2f2f2;
+$couleur5:#6e6e6e;
 
 $ombre1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -264,7 +265,7 @@ header {
   align-items: center;
 
 
-  transition: all 500ms 100ms ease-in-out;
+  transition: all 400ms 50ms ease-in-out;
   overflow: hidden;
   color: #fff;
   z-index: 1;
@@ -463,7 +464,20 @@ background:#fff;
   align-items: center;
   &_items{
     width:22%;
-    height:250px;
+    height:220px;
+    border: 1px solid black;
+    .txt-large{
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .txt-medium{
+      font-size: 16px;
+      font-weight: 400;
+    }
+    img{
+      height: 200px;
+    }
+  
   }
 }
 .menu-section{
@@ -474,13 +488,13 @@ background:#fff;
   svg{
     height: 50px;
     path{
-      fill: $couleur3;
+      fill: $couleur4;
     }
   }
   .menu-section_titre{
     text-align: center;
     color: $couleur1;
-    background: $couleur3;
+    background: $couleur4;
     font-size: 28px;
     font-weight: 600;
     position: relative;
@@ -506,9 +520,26 @@ background:#fff;
     }
   }
 }
+.menu-contenaire{
+  padding: 10px;
+  .titre-menu{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    position: relative;
+    &::before{
+      position: absolute;
+      content: "";
+      border-bottom: 5px solid $couleur3;
+      bottom: -10px;
+      left: 0;
+      width: 150px;
+    }
+  }
+}
 
 .footer_contenaire {
-  background: #6e6e6e;
+  background:$couleur5;
   .footer-list {
     padding: 10px;
     font-size: large;
@@ -884,5 +915,6 @@ background:#fff;
   }
   .menu{
     display: block;
+    margin-top: 25px;
   }
 }

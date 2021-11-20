@@ -290,7 +290,7 @@ header .header-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 500ms 100ms ease-in-out;
+  transition: all 400ms 50ms ease-in-out;
   overflow: hidden;
   color: #fff;
   z-index: 1;
@@ -468,7 +468,19 @@ header .header-nav {
 }
 .menu-list_items {
   width: 22%;
-  height: 250px;
+  height: 220px;
+  border: 1px solid black;
+}
+.menu-list_items .txt-large {
+  font-size: 18px;
+  font-weight: 600;
+}
+.menu-list_items .txt-medium {
+  font-size: 16px;
+  font-weight: 400;
+}
+.menu-list_items img {
+  height: 200px;
 }
 
 .menu-section {
@@ -480,12 +492,12 @@ header .header-nav {
   height: 50px;
 }
 .menu-section svg path {
-  fill: #99e2d0;
+  fill: #f2f2f2;
 }
 .menu-section .menu-section_titre {
   text-align: center;
   color: #9356dc;
-  background: #99e2d0;
+  background: #f2f2f2;
   font-size: 28px;
   font-weight: 600;
   position: relative;
@@ -505,6 +517,24 @@ header .header-nav {
   right: 15px;
   border-bottom: 3px double #9356dc;
   width: 42%;
+}
+
+.menu-contenaire {
+  padding: 10px;
+}
+.menu-contenaire .titre-menu {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  position: relative;
+}
+.menu-contenaire .titre-menu::before {
+  position: absolute;
+  content: "";
+  border-bottom: 5px solid #99e2d0;
+  bottom: -10px;
+  left: 0;
+  width: 150px;
 }
 
 .footer_contenaire {
@@ -855,6 +885,7 @@ header .header-nav {
 
   .menu {
     display: block;
+    margin-top: 25px;
   }
 }
 
