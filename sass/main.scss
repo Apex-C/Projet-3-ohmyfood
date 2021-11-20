@@ -45,8 +45,10 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   border-bottom: 16px solid #ffffff;
   width: 150px;
   height: 150px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: tour 2s linear infinite;
+  -webkit-animation: tour 2s linear infinite; /* Safari */
+  -webkit-animation-iteration-count: 5;
+  animation: tour 2s linear ;
+  animation-iteration-count: 5;
   animation-fill-mode: forwards;
 
 }
@@ -79,12 +81,14 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
 header {
   display: flex;
   justify-content: center;
-  margin: 0px 0px 15px 0px;
+  padding: 20px 0px;
+  
   .logo-image {
     width: 40%;
   }
   .header-nav {
     display: none;
+   
   }
 }
 .banner {
@@ -193,7 +197,7 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    transition: all 700ms cubic-bezier(.86,0,.07,1);
+    transition: all 300ms 50ms cubic-bezier(.77,0,.18,1);
   
   
    
@@ -260,7 +264,7 @@ header {
   align-items: center;
 
 
-  transition: all 500ms ease-in-out;
+  transition: all 500ms 100ms ease-in-out;
   overflow: hidden;
   color: #fff;
   z-index: 1;
@@ -274,7 +278,7 @@ header {
   position: absolute;
   right: 0;
   top:0;
-  transition: all 400ms ease-out;
+  transition: all 500ms ease-in-out;
   z-index: 1;
   border-radius: 0px 15px 15px 0px;
   
@@ -295,15 +299,18 @@ transform: rotate(-360deg);
   display: flex;
 }
 
-#wrap{
+#like-button{
+
 height: 25px;
 width: 25px;
 overflow: hidden;
 border:0px;
 margin: 20px;
 transform: scale(1.4);
+cursor: pointer;
+
 }
-#wrap:hover>.fill{
+#like-button:active >.fill{
 animation-name: fillAction;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(.2, .6, .8, .4);
@@ -327,7 +334,7 @@ animation-name: fillAction;
     fill: $couleur2;
 }
 
-#wrap i{
+#like-button i{
 position: absolute;
 font-size:25px; 
 background:#fff;
@@ -449,9 +456,57 @@ background:#fff;
     letter-spacing: 1px;
   }
 }
-.menu-contenaire{
+.menu-list{
   display: flex;
+ 
+  justify-content: space-evenly;
+  align-items: center;
+  &_items{
+    width:22%;
+    height:250px;
+  }
 }
+.menu-section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  svg{
+    height: 50px;
+    path{
+      fill: $couleur3;
+    }
+  }
+  .menu-section_titre{
+    text-align: center;
+    color: $couleur1;
+    background: $couleur3;
+    font-size: 28px;
+    font-weight: 600;
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      border-bottom: 3px double $couleur1;
+      width: 42%;
+      
+
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      border-bottom: 3px double $couleur1;
+      width: 42%;
+      
+
+    }
+  }
+}
+
 .footer_contenaire {
   background: #6e6e6e;
   .footer-list {
@@ -480,7 +535,7 @@ background:#fff;
     }
   }
 }
-.btn-action,.histoire{
+.btn-action,.histoire,.menu{
   display: none;
 }
 .wave,.infographie-boite,.presse{
@@ -507,10 +562,11 @@ background:#fff;
   }
 
   header {
-    margin: 0px 0px 20px 0px;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 20px 15px 20px;
 
     .logo-image {
       width: 180px;
@@ -520,6 +576,7 @@ background:#fff;
 
       &_list {
         display: flex;
+      
    
         
         
@@ -618,15 +675,15 @@ background:#fff;
     }
   }
   .fonction-btn_style:hover::before{
-    width: 50px;
+    width: 60px;
   }
   .fonction-btn_style:hover::after{
-  width: 50px;
+  width: 60px;
   transform: rotate(-360deg);
   }
   .fonction-btn_style:hover > .fonction-btn_items{
     width: 190px;
-    padding-left: 50px;
+    padding-left: 30px;
   }
 
   .restaurants {
@@ -824,5 +881,8 @@ background:#fff;
     letter-spacing: 1px;
     margin: 25px 0px 0px 20px;
 
+  }
+  .menu{
+    display: block;
   }
 }

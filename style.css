@@ -84,9 +84,11 @@ a {
   border-bottom: 16px solid #ffffff;
   width: 150px;
   height: 150px;
-  -webkit-animation: spin 2s linear infinite;
+  -webkit-animation: tour 2s linear infinite;
   /* Safari */
-  animation: tour 2s linear infinite;
+  -webkit-animation-iteration-count: 5;
+  animation: tour 2s linear;
+  animation-iteration-count: 5;
   animation-fill-mode: forwards;
 }
 
@@ -128,7 +130,7 @@ a {
 header {
   display: flex;
   justify-content: center;
-  margin: 0px 0px 15px 0px;
+  padding: 20px 0px;
 }
 header .logo-image {
   width: 40%;
@@ -238,7 +240,7 @@ header .header-nav {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transition: all 700ms cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 300ms 50ms cubic-bezier(0.77, 0, 0.18, 1);
 }
 .fonction-btn_items strong {
   color: black;
@@ -288,7 +290,7 @@ header .header-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 500ms ease-in-out;
+  transition: all 500ms 100ms ease-in-out;
   overflow: hidden;
   color: #fff;
   z-index: 1;
@@ -302,7 +304,7 @@ header .header-nav {
   position: absolute;
   right: 0;
   top: 0;
-  transition: all 400ms ease-out;
+  transition: all 500ms ease-in-out;
   z-index: 1;
   border-radius: 0px 15px 15px 0px;
 }
@@ -325,16 +327,17 @@ header .header-nav {
   display: flex;
 }
 
-#wrap {
+#like-button {
   height: 25px;
   width: 25px;
   overflow: hidden;
   border: 0px;
   margin: 20px;
   transform: scale(1.4);
+  cursor: pointer;
 }
 
-#wrap:hover > .fill {
+#like-button:active > .fill {
   animation-name: fillAction;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
@@ -353,7 +356,7 @@ header .header-nav {
   fill: #ff79da;
 }
 
-#wrap i {
+#like-button i {
   position: absolute;
   font-size: 25px;
   background: #fff;
@@ -458,8 +461,50 @@ header .header-nav {
   letter-spacing: 1px;
 }
 
-.menu-contenaire {
+.menu-list {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menu-list_items {
+  width: 22%;
+  height: 250px;
+}
+
+.menu-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.menu-section svg {
+  height: 50px;
+}
+.menu-section svg path {
+  fill: #99e2d0;
+}
+.menu-section .menu-section_titre {
+  text-align: center;
+  color: #9356dc;
+  background: #99e2d0;
+  font-size: 28px;
+  font-weight: 600;
+  position: relative;
+}
+.menu-section .menu-section_titre::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  border-bottom: 3px double #9356dc;
+  width: 42%;
+}
+.menu-section .menu-section_titre::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  border-bottom: 3px double #9356dc;
+  width: 42%;
 }
 
 .footer_contenaire {
@@ -489,7 +534,7 @@ header .header-nav {
   line-height: inherit;
 }
 
-.btn-action, .histoire {
+.btn-action, .histoire, .menu {
   display: none;
 }
 
@@ -515,10 +560,10 @@ header .header-nav {
   }
 
   header {
-    margin: 0px 0px 20px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 20px 15px 20px;
   }
   header .logo-image {
     width: 180px;
@@ -614,17 +659,17 @@ header .header-nav {
   }
 
   .fonction-btn_style:hover::before {
-    width: 50px;
+    width: 60px;
   }
 
   .fonction-btn_style:hover::after {
-    width: 50px;
+    width: 60px;
     transform: rotate(-360deg);
   }
 
   .fonction-btn_style:hover > .fonction-btn_items {
     width: 190px;
-    padding-left: 50px;
+    padding-left: 30px;
   }
 
   .restaurants {
@@ -806,6 +851,10 @@ header .header-nav {
     line-height: 30px;
     letter-spacing: 1px;
     margin: 25px 0px 0px 20px;
+  }
+
+  .menu {
+    display: block;
   }
 }
 

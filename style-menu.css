@@ -192,6 +192,16 @@ body {
   text-transform: uppercase;
   margin-bottom: 15px;
   letter-spacing: 1px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.menu-list_titre::after {
+  content: "";
+  border-bottom: 5px solid #99E2D0;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 50px;
 }
 
 .menu-list_btn {
