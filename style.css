@@ -344,7 +344,7 @@ header .header-nav {
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
   animation-duration: 3s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: both;
   mix-blend-mode: screen;
 }
 
@@ -485,14 +485,30 @@ header .header-nav {
   animation: card-anim 800ms ease-in-out both;
 }
 .menu-list .card .txt-large {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
   padding: 15px;
 }
 .menu-list .card .txt-medium {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.menu-list .card .menu-course {
   font-weight: 400;
+  font-size: 18px;
+  position: relative;
+}
+.menu-list .card .menu-course::before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  bottom: -5px;
+  border: 2px solid #99e2d0;
+}
+.menu-list .card p {
+  font-weight: 300;
+  margin: 10px 0px;
 }
 .menu-list .card_front {
   position: absolute;
@@ -515,7 +531,11 @@ header .header-nav {
 .menu-list_items {
   height: inherit;
   width: 100%;
-  border: 1px solid black;
+  padding: 10px;
+  border: 2px solid black;
+  text-overflow: clip clip;
+  white-space: nowrap;
+  overflow: scroll;
 }
 
 @keyframes card-anim {
@@ -526,6 +546,14 @@ header .header-nav {
   to {
     transform: scale(0) rotate(190deg);
     opacity: 0;
+  }
+}
+@keyframes move {
+  from {
+    margin-left: -20%;
+  }
+  to {
+    margin-left: 100%;
   }
 }
 .menu-section {
@@ -546,6 +574,7 @@ header .header-nav {
   font-size: 28px;
   font-weight: 600;
   position: relative;
+  margin: 0px;
 }
 .menu-section .menu-section_titre::before {
   content: "";
@@ -665,7 +694,7 @@ header .header-nav {
   header .header-nav_items a {
     color: #fff;
     font-size: medium;
-    font-weight: 500;
+    font-weight: 400;
   }
   header .header-nav .premier {
     border-radius: 20px 0px 0px 20px;
@@ -738,7 +767,7 @@ header .header-nav {
   }
 
   .fonction-btn_items:hover > strong {
-    width: 170px;
+    width: 120px;
   }
 
   .fonction-btn_style:hover::before {
@@ -763,6 +792,15 @@ header .header-nav {
     align-self: flex-start;
   }
 
+  #like-button:hover > .fill {
+    animation-name: fillAction;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    mix-blend-mode: screen;
+  }
+
   .btn-action {
     display: block;
     background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
@@ -783,11 +821,12 @@ header .header-nav {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    width: 100%;
   }
 
   .restaurants-items {
     margin-bottom: 25px;
-    width: 45%;
+    width: 43%;
   }
   .restaurants-items img {
     height: 200px;
@@ -805,18 +844,18 @@ header .header-nav {
 
   @keyframes icon-anim {
     0% {
-      transform: scale(0.1) rotate(0) translateX(-150px);
+      transform: scale(0.1) rotate(0) translateX(-550px);
       opacity: 0.5;
     }
     30% {
-      transform: scale(0.3) rotate(-20deg);
+      transform: scale(0.2) rotate(-20deg) translateX(-320px);
     }
     50% {
-      transform: scale(0.4) rotate(20deg);
+      transform: scale(0.3) rotate(20deg);
       opacity: 0.7;
     }
     80% {
-      transform: scale(0.5) rotate(-20deg) translateX(55px);
+      transform: scale(0.4) rotate(-20deg) translateX(55px) translateX(120px);
       opacity: 0.8;
     }
     100% {
@@ -843,6 +882,7 @@ header .header-nav {
     animation-duration: 1.5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
   .histoire .star {
     margin: 10px;
@@ -905,6 +945,11 @@ header .header-nav {
     margin: 20px 0px;
   }
 
+  .menu-list .card .txt-large {
+    font-size: 18px;
+    padding: 0px;
+  }
+
   .infographie {
     display: flex;
     flex-direction: column;
@@ -925,14 +970,33 @@ header .header-nav {
     align-items: center;
   }
   .infographie-items img {
-    margin-top: 20px;
+    margin: 20px 0px 15px 0px;
     width: 150px;
   }
   .infographie-items_option {
-    width: 150px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .infographie-items_option p {
     text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .infographie-items_option .info-image {
+    margin: 0px;
+  }
+  .infographie-items_option .titre-info {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  .infographie-items_option a {
+    font-weight: 700;
   }
   .infographie-text {
     margin: 20px;
@@ -965,11 +1029,19 @@ header .header-nav {
   }
 
   .titre {
-    font-size: 25px;
-    font-family: Shrikhand;
+    font-size: 28px;
+    font-weight: 500;
     line-height: 30px;
     letter-spacing: 1px;
-    margin: 25px 0px 0px 20px;
+    margin: 25px 20px 20px 20px;
+    position: relative;
+  }
+  .titre::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 220px;
+    border: 3px solid #99e2d0;
   }
 
   .menu {
@@ -981,6 +1053,23 @@ header .header-nav {
   .main_wrapper {
     width: 1340px;
     margin: auto;
+  }
+
+  .banner .banner-image {
+    height: 550px;
+    width: 100%;
+  }
+
+  .restaurants-items {
+    width: 23%;
+  }
+
+  .infographie-items {
+    height: 400px;
+  }
+
+  .fonction-btn_items:hover > strong {
+    width: 200px;
   }
 }
 
