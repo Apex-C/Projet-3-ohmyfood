@@ -7,7 +7,7 @@ $couleur1: #9356dc;
 $couleur2: #ff79da;
 $couleur3: #99e2d0;
 $couleur4: #f2f2f2;
-$couleur5:#6e6e6e;
+$couleur5: #6e6e6e;
 
 $ombre1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -21,7 +21,7 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   min-width: 280px;
   margin: auto;
 }
-.loader-contenaire{
+.loader-contenaire {
   margin: 0;
   position: fixed;
   z-index: 5;
@@ -29,16 +29,16 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   height: 100vh;
   display: flex;
   justify-content: center;
- 
+
   background: $couleur4;
   transform: scale(1);
   animation: start;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
-  animation-delay: 8s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
 }
-.loader{
+.loader {
   margin-top: 80px;
   border: 16px solid #423f3f;
   border-radius: 50%;
@@ -48,31 +48,41 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   height: 150px;
   -webkit-animation: tour 2s linear infinite; /* Safari */
   -webkit-animation-iteration-count: 5;
-  animation: tour 2s linear ;
+  animation: tour 2s linear;
   animation-iteration-count: 5;
   animation-fill-mode: forwards;
-
 }
 @keyframes start {
-  0%{transform: scale(1);}
-  90%{transform: scale(.05);}
-  100%{transform: scale(0);}
-  
+  0% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(0.05);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 
 /* Safari */
 @-webkit-keyframes tour {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes tour {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-  
-  
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-.coeur::after{
+.coeur::after {
   content: "hello";
   width: 100%;
   height: 100%;
@@ -83,13 +93,12 @@ header {
   display: flex;
   justify-content: center;
   padding: 20px 0px;
-  
+
   .logo-image {
     width: 40%;
   }
   .header-nav {
     display: none;
-   
   }
 }
 .banner {
@@ -114,17 +123,20 @@ header {
     background: rgb(218, 216, 216);
     border-top: 2px rgb(243, 236, 236) inset;
 
-    input {
+    .recherche-input {
       border: none;
       width: 50%;
       text-align: start;
       background: rgb(218, 216, 216);
       font-size: larger;
       color: rgba(#000, $alpha: 0.8);
+      position:relative;
+      
     }
     .fa-map-marker-alt {
       margin-right: 15px;
     }
+ 
   }
   .contenaite-text {
     width: 70%;
@@ -146,7 +158,7 @@ header {
   .btn {
     padding: 10px;
     margin: 20px;
-  
+
     font-size: 15px;
     font-weight: 600;
     border: 1px transparent solid;
@@ -156,15 +168,12 @@ header {
     &_color {
       background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
       color: #fff;
-      &:hover{
+      &:hover {
         background: linear-gradient(75deg, $couleur1 50%, $couleur2 100%);
-        opacity: .9;
+        opacity: 0.9;
         border: 2px solid $couleur1;
-       
-       
       }
     }
-    
   }
 }
 .fonctionement {
@@ -181,7 +190,7 @@ header {
   flex-direction: column;
   align-items: center;
   position: relative;
- 
+
   z-index: 0;
   &_items {
     text-align: center;
@@ -189,8 +198,6 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
-   
-   
     height: inherit;
     letter-spacing: 1px;
     border-radius: 15px;
@@ -198,22 +205,18 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    transition: all 300ms 50ms cubic-bezier(.77,0,.18,1);
-  
-  
-   
-    
+
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+
     strong {
       color: rgb(0, 0, 0);
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
-   
-   
+      transition: 500ms ease-in-out;
     }
   }
- 
-
   &_style {
     width: 90%;
     text-align: center;
@@ -226,8 +229,6 @@ header {
     display: flex;
     border-radius: 15px;
     box-shadow: $ombre1;
-   
-  
 
     .fa-stack {
       position: absolute;
@@ -236,26 +237,23 @@ header {
       font-size: 15px;
       color: $couleur1;
       z-index: 1;
-      strong{
+      strong {
         color: #fff;
       }
-    
     }
     .icon {
-     
-
       color: rgba(59, 57, 57, 0.7);
       margin-right: 10px;
     }
-   
   }
 }
-.fonction-btn_style::after{
+.fonction-btn_style::after {
   font-family: "Font Awesome 5 Free";
   content: "\f058";
   position: absolute;
+  transition: all 550ms 50ms ease-in-out;
   right: 0;
-  top:0;
+  top: 0;
   width: 0px;
   height: 100%;
   font-weight: 900;
@@ -263,105 +261,100 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-  transition: all 400ms 50ms ease-in-out;
   overflow: hidden;
   color: #fff;
   z-index: 1;
-
 }
-.fonction-btn_style::before{
+.fonction-btn_style::before {
   content: "";
   width: 0px;
   height: 100%;
-  background:$couleur3;
+  background: $couleur3;
   position: absolute;
   right: 0;
-  top:0;
-  transition: all 500ms ease-in-out;
+  top: 0;
+  transition: all 600ms ease-in-out;
+  
+
+
   z-index: 1;
   border-radius: 0px 15px 15px 0px;
+}
+.fonction-btn_items:active >strong{
+  width: 170px;
   
 }
-.fonction-btn_style:hover::before{
-  width: 80px;
+
+.fonction-btn_style:active::before {
+  
+  width: 60px;
+
 }
-.fonction-btn_style:hover::after{
-width: 80px;
-transform: rotate(-360deg);
-}
-.fonction-btn_style:hover > .fonction-btn_items{
-  width: 270px;
-  padding-left: 70px;
+.fonction-btn_style:active::after {
+  width: 60px;
+  transform: rotate(-360deg);
+
 }
 
-.contenaire{
+
+
+.contenaire {
   display: flex;
 }
 
-#like-button{
-
-height: 25px;
-width: 25px;
-overflow: hidden;
-border:0px;
-margin: 20px;
-transform: scale(1.4);
-cursor: pointer;
-
+#like-button {
+  height: 25px;
+  width: 25px;
+  overflow: hidden;
+  border: 0px;
+  margin: 20px;
+  transform: scale(1.4);
+  cursor: pointer;
 }
-#like-button:active >.fill{
-animation-name: fillAction;
-    animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(.2, .6, .8, .4);
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    mix-blend-mode:screen;
-
+#like-button:active > .fill {
+  animation-name: fillAction;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  mix-blend-mode: screen;
 }
 
-
-
-
-
-#waveShape{
-    animation-name: waveAction;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-duration: 2s;
-    width: 25px;
-    height: 25px;
-    fill: $couleur2;
+#waveShape {
+  animation-name: waveAction;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  width: 25px;
+  height: 25px;
+  fill: $couleur2;
 }
 
-#like-button i{
-position: absolute;
-font-size:25px; 
-background:#fff;
-
-
+#like-button i {
+  position: absolute;
+  font-size: 25px;
+  background: #fff;
 }
-.far.fa-heart::after{
+.far.fa-heart::after {
   font-family: "Font Awesome 5 Free";
   content: "\f004";
 }
 
 @keyframes fillAction {
-0% {
-  transform: translate(0, 25px);
-}
-100% {
-  transform: translate(0, -20px);
-}
+  0% {
+    transform: translate(0, 25px);
+  }
+  100% {
+    transform: translate(0, -20px);
+  }
 }
 @keyframes waveAction {
-0% {
-  transform: translate(-45px, 0);
-}
-100% {
-  transform: translate(0, 0);
-}
+  0% {
+    transform: translate(-45px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .restaurants {
@@ -369,12 +362,11 @@ background:#fff;
   width: 100%;
   background: #f2f2f2;
   &-titre {
-    margin:10px 15px;
+    margin: 10px 15px;
     font-size: 18px;
     font-weight: 600;
- 
+
     line-height: 25px;
- 
   }
   &-list {
     display: flex;
@@ -387,12 +379,10 @@ background:#fff;
     box-shadow: $ombre2;
     border-radius: 20px;
     box-sizing: border-box;
-    
-    &:hover{
+
+    &:hover {
       box-shadow: $ombre1;
-     
     }
-   
 
     &_description {
       display: flex;
@@ -402,37 +392,31 @@ background:#fff;
       padding: 15px;
       border-radius: 0px 0px 20px 20px;
     }
-    svg{
-      width:  45px;
+    svg {
+      width: 45px;
       height: fit-content;
       display: block;
-      g{
-        fill:transparent;
+      g {
+        fill: transparent;
         stroke-width: 600;
-        stroke:black;
+        stroke: black;
         position: relative;
         overflow: hidden;
-        transition: all .5s;
+        transition: all 0.5s;
         z-index: 0;
-
-        
       }
-     
 
-      g:hover{
-        top:0;
-        fill:$couleur2;
-      }   
-      
-      
-      
+      g:hover {
+        top: 0;
+        fill: $couleur2;
+      }
     }
-     
-    &_titre{
+
+    &_titre {
       font-size: 18px;
       font-weight: 600;
     }
-   
+
     &_text {
       margin-bottom: 15px;
       font-size: 15px;
@@ -448,7 +432,6 @@ background:#fff;
       filter: brightness(1.25) contrast(1.2) saturate(1.2);
       border-radius: 20px 20px 0px 0px;
     }
-  
   }
   .titre {
     margin: 20px 20px;
@@ -457,77 +440,72 @@ background:#fff;
     letter-spacing: 1px;
   }
 }
-.menu-list{
+.menu-list {
   display: flex;
- 
+
   justify-content: space-evenly;
   align-items: center;
-  &_items{
-    width:22%;
-    height:220px;
+  &_items {
+    width: 22%;
+    height: 220px;
     border: 1px solid black;
-    .txt-large{
+    .txt-large {
       font-size: 18px;
       font-weight: 600;
     }
-    .txt-medium{
+    .txt-medium {
       font-size: 16px;
       font-weight: 400;
     }
-    img{
+    img {
       height: 200px;
     }
-  
   }
 }
-.menu-section{
+.menu-section {
   width: 100%;
   display: flex;
   flex-direction: column;
-  
-  svg{
+
+  svg {
     height: 50px;
-    path{
+    path {
       fill: $couleur4;
     }
   }
-  .menu-section_titre{
+  .menu-section_titre {
     text-align: center;
     color: $couleur1;
     background: $couleur4;
     font-size: 28px;
     font-weight: 600;
     position: relative;
-    &::before{
+    &::before {
       content: "";
       position: absolute;
-      bottom: 10px;
+      bottom: 50%;
       left: 15px;
       border-bottom: 3px double $couleur1;
       width: 42%;
-      
-
     }
-    &::after{
+    &::after {
       content: "";
       position: absolute;
-      bottom: 10px;
+      bottom: 50%;
       right: 15px;
       border-bottom: 3px double $couleur1;
       width: 42%;
-      
-
     }
   }
 }
-.menu-contenaire{
+.menu-contenaire {
   padding: 10px;
-  .titre-menu{
+  .titre-menu {
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 25px;
     position: relative;
-    &::before{
+    &::before {
       position: absolute;
       content: "";
       border-bottom: 5px solid $couleur3;
@@ -539,7 +517,7 @@ background:#fff;
 }
 
 .footer_contenaire {
-  background:$couleur5;
+  background: $couleur5;
   .footer-list {
     padding: 10px;
     font-size: large;
@@ -566,34 +544,34 @@ background:#fff;
     }
   }
 }
-.btn-action,.histoire,.menu{
+.btn-action,
+.histoire,
+.menu {
   display: none;
 }
-.wave,.infographie-boite,.presse{
+.wave,
+.infographie-boite,
+.presse {
   display: none;
 }
-@media screen and (max-width:320px) {
+@media screen and (max-width: 320px) {
   .fonction-btn_style .icon {
     padding-right: 5px;
 
     color: rgba(59, 57, 57, 0.7);
   }
-  
 }
 @media screen and (min-width: 765px) {
   .main_wrapper {
     min-width: 765px;
-    max-width: 850px;
+    width: 850px;
     margin: auto;
   }
-  .loader-contenaire{
+  .loader-contenaire {
     padding-top: 80px;
-  
-    
   }
 
   header {
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -607,10 +585,6 @@ background:#fff;
 
       &_list {
         display: flex;
-      
-   
-        
-        
       }
       &_items {
         background: $couleur1;
@@ -621,20 +595,17 @@ background:#fff;
           border: 1px rgb(116, 111, 111) solid;
           background: lighten($couleur1, $amount: 5);
         }
-      
-       
-        
+
         a {
           color: #fff;
           font-size: medium;
           font-weight: 500;
         }
-       
       }
-      .premier{
+      .premier {
         border-radius: 20px 0px 0px 20px;
       }
-      .dernier{
+      .dernier {
         border-radius: 0px 20px 20px 0px;
       }
     }
@@ -645,8 +616,8 @@ background:#fff;
     }
     .banner-contenaire {
       width: 100%;
-    
-      border-top: 10px $couleur3 solid ;
+
+      border-top: 10px $couleur3 solid;
       border-bottom: 10px $couleur3 solid;
 
       position: relative;
@@ -670,7 +641,7 @@ background:#fff;
           color: #fff;
           margin-bottom: 20px;
           width: 100%;
-          background-color: rgba(147, 86, 220,.3);;
+          background-color: rgba(147, 86, 220, 0.3);
           h1 {
             font-size: 35px;
           }
@@ -683,7 +654,7 @@ background:#fff;
   }
   .fonctionement {
     padding: 10px;
-    margin: 0px 0px 30px 0px ;
+    margin: 0px 0px 30px 0px;
     h2 {
       font-size: 25px;
       font-weight: 700;
@@ -698,53 +669,54 @@ background:#fff;
       margin: 0px 10px;
       a {
         font-size: 18px;
-        
-        strong{
+
+        strong {
           font-size: 14px;
         }
       }
     }
   }
-  .fonction-btn_style:hover::before{
+  .fonction-btn_items:hover >strong{
+    width: 170px;
+    
+  }
+  
+  .fonction-btn_style:hover::before {
+    
     width: 60px;
+  
   }
-  .fonction-btn_style:hover::after{
-  width: 60px;
-  transform: rotate(-360deg);
+  .fonction-btn_style:hover::after {
+    width: 60px;
+    transform: rotate(-360deg);
+  
   }
-  .fonction-btn_style:hover > .fonction-btn_items{
-    width: 190px;
-    padding-left: 30px;
-  }
-
   .restaurants {
-    border-radius: 25px ;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    &-titre{
+    &-titre {
       font-size: 22px;
       font-weight: 400;
       margin: 10px 0px 20px 20px;
       align-self: flex-start;
     }
   }
-  .btn-action{
+  .btn-action {
     display: block;
     background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
-      color: #fff;
-      padding: 10px;
-      font-size: large;
-      letter-spacing: .5px;
-      border-radius: 15px;
-     
-      margin-bottom: 20px;
-      &:hover{
-        background: $couleur2 ; 
-        opacity: .9;
-        border: 2px solid $couleur1;
-      }
-
+    color: #fff;
+    padding: 10px;
+    font-size: large;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    &:hover {
+      background: $couleur2;
+      opacity: 0.9;
+      border: 2px solid $couleur1;
+    }
   }
   .restaurants-list {
     flex-direction: row;
@@ -758,19 +730,18 @@ background:#fff;
       height: 200px;
     }
   }
-  .presentation{
+  .presentation {
     margin: 25px 0px 25px 0px;
     display: flex;
     flex-direction: column;
-    img{
-      height:50px;
+    img {
+      height: 50px;
       display: block;
-      
     }
   }
   .histoire {
     display: block;
-   
+
     font-size: medium;
     font-weight: 400;
     text-align: justify;
@@ -778,23 +749,22 @@ background:#fff;
     height: fit-content;
     background: $couleur1;
     color: #fff;
-    .text{
+    .text {
       padding: 10px;
       font-size: large;
     }
-    .star{
+    .star {
       margin: 10px;
       text-transform: capitalize;
       font-weight: 500;
-      
     }
-    h2{
+    h2 {
       margin: 10px 20px;
       font-size: 22px;
       font-weight: 500;
       line-height: 30px;
- 
-      font-family: Shrikhand ;
+
+      font-family: Shrikhand;
     }
   }
   .concepte {
@@ -808,40 +778,35 @@ background:#fff;
       border: 8px $couleur3 solid;
       background: #fff;
       overflow: hidden;
-      img{
+      img {
         width: 100%;
         height: 100%;
         margin-top: 15px;
-      
-        
-       
-        filter: saturate(1.2);
 
+        filter: saturate(1.2);
       }
-   
     }
-    &-boite{
+    &-boite {
       display: flex;
       flex-direction: column;
       align-items: center;
-  
     }
   }
-  .infographie-boite{
+  .infographie-boite {
     display: flex;
 
     flex-direction: column;
-    .text{
+    .text {
       align-self: center;
       font-size: 22px;
       line-height: 35px;
       font-weight: 400;
-      font-family: Shrikhand ;
+      font-family: Shrikhand;
     }
-    .btn\.btn-action{
+    .btn\.btn-action {
       background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
       border-radius: 20px;
-      padding:15px;
+      padding: 15px;
       color: #fff;
       font-size: 18px;
       font-weight: 400;
@@ -849,72 +814,68 @@ background:#fff;
       margin: 20px 0px;
     }
   }
-  .infographie{
-    
+  .infographie {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    &-contenaire{
+    &-contenaire {
       padding: 10px;
       width: 90%;
       display: flex;
       justify-content: space-between;
-     
-   
-
+    }
+    &-items {
+      width: 30%;
+      transform: scale(1);
+      
+    }
+    &-text {
+      margin: 20px;
+      text-align: justify;
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
   }
-  &-items{
-    width: 30%;
-    transform: scale(1);
-    transition: all 600ms ease-in-out;
+  @keyframes infographie {
+    0% {
+      transform: scale(0.9);
+    }
+    80% {
+      transform: scale(0.8);
+    }
+    90% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
-  &-text{
-    margin: 20px;
-    text-align: justify;
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: .5px;
-  }
-}
-@keyframes infographie {
-  0%{
-    transform: scale(.9);
- 
-  }
-  80%{
-    transform: scale(.8);
-   
-  }
-  90%{
-    transform: scale(1.05);
-   
-  }
-  100%{
-    transform: scale(1);
-  }
-  
-}
-.infographie-items:hover{
-  animation-name: infographie;
+  .infographie-items:hover {
+    animation-name: infographie;
     animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(.2, .6, .8, .4);
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
     animation-duration: 1s;
- 
-    mix-blend-mode:screen;
-  
-}
-  
-  .titre{
+
+    mix-blend-mode: screen;
+  }
+
+  .titre {
     font-size: 25px;
     font-family: Shrikhand;
     line-height: 30px;
     letter-spacing: 1px;
     margin: 25px 0px 0px 20px;
-
   }
-  .menu{
+  .menu {
     display: block;
     margin-top: 25px;
+  }
+}
+@media screen and (min-width: 940px){
+  .main_wrapper{
+    width: 1040px;
+    margin: auto;
   }
 }
