@@ -72,7 +72,7 @@ a {
   animation: start;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
-  animation-delay: 2s;
+  animation-delay: 6s;
   animation-fill-mode: forwards;
 }
 
@@ -1051,7 +1051,7 @@ header .header-nav {
 }
 @media screen and (min-width: 940px) {
   .main_wrapper {
-    width: 1340px;
+    width: 1240px;
     margin: auto;
   }
 

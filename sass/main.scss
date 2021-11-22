@@ -35,7 +35,7 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   animation: start;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
-  animation-delay: 2s;
+  animation-delay: 6s;
   animation-fill-mode: forwards;
 }
 .loader {
@@ -1055,7 +1055,7 @@ header {
 }
 @media screen and (min-width: 940px){
   .main_wrapper{
-    width: 1340px;
+    width: 1240px;
     margin: auto;
   }
   .banner .banner-image{
