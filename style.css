@@ -242,7 +242,7 @@ header .header-nav {
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  transition: all 500ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 .fonction-btn_items strong {
   color: black;
@@ -329,7 +329,7 @@ header .header-nav {
   display: flex;
 }
 
-#like-button {
+.like-button {
   height: 25px;
   width: 25px;
   overflow: hidden;
@@ -339,7 +339,7 @@ header .header-nav {
   cursor: pointer;
 }
 
-#like-button:active > .fill {
+.like-button:active > .fill {
   animation-name: fillAction;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
@@ -348,7 +348,7 @@ header .header-nav {
   mix-blend-mode: screen;
 }
 
-#waveShape {
+.waveShape {
   animation-name: waveAction;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -358,7 +358,7 @@ header .header-nav {
   fill: #ff79da;
 }
 
-#like-button i {
+.like-button i {
   position: absolute;
   font-size: 25px;
   background: #fff;
@@ -1069,7 +1069,7 @@ header .header-nav {
   }
 
   .fonction-btn_items:hover > strong {
-    width: 200px;
+    width: 180px;
   }
 }
 

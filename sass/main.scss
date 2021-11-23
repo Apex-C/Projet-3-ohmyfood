@@ -207,14 +207,14 @@ header {
     white-space: nowrap;
 
     cursor: pointer;
-    transition: all 500ms ease-in-out;
+    transition:  500ms ease-in-out;
 
     strong {
       color: rgb(0, 0, 0);
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
-      transition: 500ms ease-in-out;
+      transition:  500ms ease-in-out;
     }
   }
   &_style {
@@ -239,11 +239,13 @@ header {
       z-index: 1;
       strong {
         color: #fff;
+       
       }
     }
     .icon {
       color: rgba(59, 57, 57, 0.7);
       margin-right: 10px;
+     
     }
   }
 }
@@ -302,7 +304,7 @@ header {
   display: flex;
 }
 
-#like-button {
+.like-button {
   height: 25px;
   width: 25px;
   overflow: hidden;
@@ -311,7 +313,7 @@ header {
   transform: scale(1.4);
   cursor: pointer;
 }
-#like-button:active > .fill {
+.like-button:active > .fill {
   animation-name: fillAction;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
@@ -320,7 +322,7 @@ header {
   mix-blend-mode: screen;
 }
 
-#waveShape {
+.waveShape {
   animation-name: waveAction;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -330,7 +332,7 @@ header {
   fill: $couleur2;
 }
 
-#like-button i {
+.like-button i {
   position: absolute;
   font-size: 25px;
   background: #fff;
@@ -1069,6 +1071,6 @@ header {
     height: 400px;
   }
   .fonction-btn_items:hover > strong{
-    width: 200px;
+    width: 180px;
   }
 }
