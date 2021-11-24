@@ -204,10 +204,9 @@ header .header-nav {
 .recherche .btn_color {
   background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
   color: #fff;
+  position: relative;
 }
 .recherche .btn_color:hover {
-  background: linear-gradient(75deg, #9356dc 50%, #ff79da 100%);
-  opacity: 0.9;
   border: 2px solid #9356dc;
 }
 
@@ -474,7 +473,7 @@ header .header-nav {
   display: inline-block;
 }
 .menu-list .card {
-  width: 22%;
+  width: 24%;
   height: 320px;
   background: #f2f2f2;
   opacity: 1;
@@ -485,18 +484,18 @@ header .header-nav {
   animation: card-anim 800ms ease-in-out both;
 }
 .menu-list .card .txt-large {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
   padding: 15px;
 }
 .menu-list .card .txt-medium {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .menu-list .card .menu-course {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 15px;
   position: relative;
 }
 .menu-list .card .menu-course::before {
@@ -522,6 +521,8 @@ header .header-nav {
   justify-content: center;
   align-items: center;
   transform-origin: top left;
+  font-size: 45px;
+  opacity: 1;
   transform: scale(1);
 }
 .menu-list .card_front p {
@@ -536,15 +537,17 @@ header .header-nav {
   text-overflow: clip clip;
   white-space: nowrap;
   overflow: scroll;
+  font-size: 15px;
+  background: #fff;
 }
 
 @keyframes card-anim {
-  from {
+  0% {
     transform: scale(1) rotate(0deg);
     opacity: 1;
   }
-  to {
-    transform: scale(0) rotate(190deg);
+  100% {
+    transform: scale(0.2) rotate(190deg);
     opacity: 0;
   }
 }
@@ -563,7 +566,7 @@ header .header-nav {
   text-align: center;
   color: #9356dc;
   background: #f2f2f2;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 600;
   position: relative;
   margin: 0px;
@@ -708,13 +711,13 @@ header .header-nav {
   }
   @keyframes banner-anim-1 {
     0% {
-      transform: translateX(-100%);
-    }
-    50% {
       transform: translateX(100%);
     }
-    100% {
+    50% {
       transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
     }
   }
   .banner .banner-image {
@@ -826,7 +829,7 @@ header .header-nav {
     align-self: flex-start;
   }
 
-  #like-button:hover > .fill {
+  .like-button:hover > .fill {
     animation-name: fillAction;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
@@ -940,15 +943,23 @@ header .header-nav {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 8px #99e2d0 solid;
     background: #fff;
     overflow: hidden;
+    position: relative;
+  }
+  .concepte-items::before {
+    content: "";
+    position: absolute;
+    border: 5px dashed #ff79da;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    animation: tour 4.8s linear infinite;
   }
   .concepte-items img {
     width: 100%;
     height: 100%;
     margin-top: 15px;
-    transform: scale(1);
     filter: saturate(1.2);
   }
   .concepte-boite {
@@ -1098,8 +1109,80 @@ header .header-nav {
     width: 23%;
   }
 
+  @keyframes info-anim {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  @keyframes info-anim-1 {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-100px);
+    }
+  }
+  @keyframes info-anim-2 {
+    0% {
+      transform: translateX(-25%);
+    }
+    100% {
+      transform: translateX(25%);
+    }
+  }
+  @keyframes info-anim-3 {
+    0% {
+      transform: translateX(25%);
+    }
+    100% {
+      transform: translateX(-25%);
+    }
+  }
   .infographie-items {
     height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+  .infographie-items .bordure:nth-child(1) {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    height: 200%;
+    width: 5px;
+    background: linear-gradient(to left, #9356dc, #99e2d0);
+    animation: info-anim 2s linear infinite;
+  }
+  .infographie-items .bordure:nth-child(2) {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    height: 200%;
+    width: 5px;
+    background: linear-gradient(to left, #9356dc, #ff79da, #99e2d0);
+    animation: info-anim-1 2s linear infinite;
+  }
+  .infographie-items::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    height: 5px;
+    width: 200%;
+    background: linear-gradient(to left, #9356dc, #ff79da, #99e2d0);
+    animation: info-anim-3 2s linear infinite;
+  }
+  .infographie-items::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    width: 200%;
+    background: linear-gradient(to left, #9356dc, #ff79da, #99e2d0);
+    animation: info-anim-2 2s linear infinite;
   }
 
   .fonction-btn_items:hover > strong {
