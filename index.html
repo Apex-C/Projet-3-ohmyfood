@@ -1,435 +1,521 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ohmyfood</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <script
-      src="https://kit.fontawesome.com/9eaec8351d.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="loader-contenaire"><div class="loader"></div></div>
-    <div class="main_wrapper">
-    
-      <header>
-        <img class="logo-image" src="./images/logo/ohmyfood.png" alt="logo" />
-        <nav class="header-nav">
-          <ul class="header-nav_list">
-            <li class="header-nav_items premier"><a href="#">Nos menus</a></li>
 
-            <li class="header-nav_items"><a href="#">Qui sommes nous</a></li>
-            <li class="header-nav_items dernier"><a  href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <section class="banner">
-        <div class="banner-contenaire">
-          <img
-            class="banner-image"
-            src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-            alt="image"
-          />
-          <div class="recherche">
-            <form action="#" method="get">
-              <span class="localisation">
-                <i class="fas fa-map-marker-alt"></i
-              ></span>
-              <input class="recherche-input" type="search" value="Paris, Belleville" />
-            </form>
-            <div class="contenaite-text">
-              <h1>Reservez le menu qui vous convient</h1>
-              <p>Decouvrez des restaurants selectione par nos soins</p>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ohmyfood</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <script src="https://kit.fontawesome.com/9eaec8351d.js" crossorigin="anonymous"></script>
+</head>
 
-            <button class="btn btn--border btn_color" type="submit">
-              Explorez nos restaurents
-            </button>
+<body>
+
+  <div class="loader-contenaire">
+    <div class="loader">
+      <div class="spinner spin-1"></div>
+      <div class="spinner spin-2"></div>
+      <div class="spinner spin-3"></div>
+    </div>
+  </div>
+  <div class="main_wrapper">
+
+    <header>
+      <img class="logo-image" src="./images/logo/ohmyfood.png" alt="logo" />
+      <nav class="header-nav">
+        <ul class="header-nav_list">
+          <li class="header-nav_items premier"><a href="#">Nos menus</a></li>
+          <p></p>
+
+          <li class="header-nav_items"><a href="#">Qui sommes nous</a></li>
+          <li class="header-nav_items dernier"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="banner">
+      <div class="banner-contenaire">
+
+        <span class="banner-star">
+
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+            class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -10 650 550">
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+            </path>
+          </svg>
+        </span>
+        <span class="banner-star">
+
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+            class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -10 650 550">
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+            </path>
+          </svg>
+        </span>
+        <span class="banner-star">
+
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+            class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -10 650 550">
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+            </path>
+          </svg>
+        </span>
+        <span class="banner-star">
+
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+            class="svg-inline--fa fa-star fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -10 650 550">
+            <path
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+            </path>
+          </svg>
+        </span>
+        <img class="banner-image" src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+          alt="image" />
+        <div class="recherche">
+          <form action="#" method="get">
+            <span class="localisation">
+              <i class="fas fa-map-marker-alt"></i></span>
+            <input class="recherche-input" type="search" value="Paris, Belleville" />
+          </form>
+          <div class="contenaite-text">
+            <h1>Reservez le menu qui vous convient</h1>
+            <p>Decouvrez des restaurants selectione par nos soins</p>
+          </div>
+
+          <button class="btn btn--border btn_color" type="submit">
+            Explorez nos restaurents
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="fonctionement">
+      <h2>fonctionement</h2>
+      <div class="fonction-btn">
+        <div class="fonction-btn_style">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <strong class="fa-stack-1x"> 1 </strong>
+          </span>
+          <div class="fonction-btn_items">
+            <span class="icon"><i class="fas fa-mobile-alt"></i></span><strong>Choisisez un restaurant</strong>
           </div>
         </div>
-      </section>
-      <section class="fonctionement">
-        <h2>fonctionement</h2>
-        <div class="fonction-btn">
-          <div class="fonction-btn_style">
-            <span class="fa-stack">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <strong class="fa-stack-1x"> 1 </strong>
-            </span>
-            <div class="fonction-btn_items">
-              <span class="icon"><i class="fas fa-mobile-alt"></i></span
-              ><strong>Choisisez un restaurant</strong></div
-            >
-          </div>
-          <div class="fonction-btn_style">
-            <span class="fa-stack">
-              <span class="fa fa-circle fa-stack-2x"></span>
+        <div class="fonction-btn_style">
+          <span class="fa-stack">
+            <span class="fa fa-circle fa-stack-2x"></span>
 
-              <strong class="fa-stack-1x"> 2 </strong>
-            </span>
-            <div class="fonction-btn_items" 
-              ><span class="icon"><i class="fas fa-list"></i></span
-              ><strong>Composez votre menu</strong></div
-            >
-          </div>
-          <div class="fonction-btn_style">
-            <span class="fa-stack">
-              <span class="fa fa-circle fa-stack-2x"></span>
-
-              <strong class="fa-stack-1x"> 3 </strong>
-            </span>
-            <div class="fonction-btn_items" 
-              ><span class="icon"><i class="fas fa-store"></i></span
-              ><strong>Deguster au restaurant</strong></div
-            >
-          </div>
+            <strong class="fa-stack-1x"> 2 </strong>
+          </span>
+          <div class="fonction-btn_items"><span class="icon"><i class="fas fa-list"></i></span><strong>Composez votre
+              menu</strong></div>
         </div>
-      </section>
-    
-      <div class="restaurants">
-        <p class="restaurants-titre">Restaurants</p>
-        <div class="restaurants-list">
-          <div class="restaurants-items"><a href="menu1.html">
+        <div class="fonction-btn_style">
+          <span class="fa-stack">
+            <span class="fa fa-circle fa-stack-2x"></span>
+
+            <strong class="fa-stack-1x"> 3 </strong>
+          </span>
+          <div class="fonction-btn_items"><span class="icon"><i class="fas fa-store"></i></span><strong>Deguster au
+              restaurant</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="restaurants">
+      <p class="restaurants-titre">Restaurants</p>
+      <div class="restaurants-list">
+        <div class="restaurants-items"><a href="menu1.html">
+
+           <p><img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="image restaurant" /><span>Nouveau</span></p> 
             
-              <img
-                src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                alt="image restaurant"
-              />
-              <div class="restaurants-items_description">
-                <div class="restaurents-items_boite">
+            <div class="restaurants-items_description">
+              <div class="restaurents-items_boite">
                 <p class="restaurants-items_titre">La palette du goût</p>
                 <p class="restaurants-items_text">Ménilmontant</p>
-                </div>
-             
-              
-               <div class="like-button"> 
-                  <i class="fas fa-heart" ></i>
-              <div class="fill">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" viewBox="0 0 50 50" xml:space="preserve">
-                <path class="waveShape" d="M 300 300 V 2.5 c 0 0 0 -0.5 -1 0.5 c 0.1 2.6 
+              </div>
+
+
+              <div class="like-button">
+                <i class="fas fa-heart"></i>
+                <div class="fill">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" width="50px" viewBox="0 0 50 50" xml:space="preserve">
+                    <path class="waveShape" d="M 300 300 V 2.5 c 0 0 0 -0.5 -1 0.5 c 0.1 2.6 
                 -28 6 -40.5 -2.4 c -3.5 -1.6 -40.6 2.4 -40.6 2.4 c -12.3 1.1 -23.9 5 
                 -31.9 6 c -2 -0.1 -27.1 2.4 -32 -1.9 c 0 0 -33.1 -7.7 -40.1 -5.7 c -18.1 
                 10.4 -40.8 2.4 -40.8 2.4 c -7.3 -1 -19.1 -2.8 -32.1 5.2 c -7 4 -20 -1 
-                -32.2 -1.9 c 0 0 -3.1 -0.3 -8.1 -0.7 V 300 H 300 z"/>
-              </svg>
+                -32.2 -1.9 c 0 0 -3.1 -0.3 -8.1 -0.7 V 300 H 300 z" />
+                  </svg>
+                </div>
               </div>
-              </div>
-              </div>
-          
+            </div>
 
-               
-              </a></div>
-         
-         
-          <div class="restaurants-items"> <a href="menu3.html">
-           
-              <img
-                src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
-                alt="image restaurant"
-              />
-              <div class="restaurants-items_description">
-                <div class="restaurents-items_boite">
+
+
+          </a></div>
+
+
+        <div class="restaurants-items"> <a href="menu3.html">
+           <p><img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="image restaurant" /> <span>Nouveau</span></p>
+    
+            <div class="restaurants-items_description">
+              <div class="restaurents-items_boite">
                 <p class="restaurants-items_titre">La note enchantée</p>
                 <p class="restaurants-items_text">Ménilmontant</p>
-                </div>
-              
+              </div>
 
-                <div class="like-button"> 
-                  <i class="fas fa-heart" ></i>
-              <div class="fill">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" viewBox="0 0 50 50" xml:space="preserve">
-                <path class="waveShape" d="M 300 300 V 2.5 c 0 0 0 -0.5 -1 0.5 c 0.1 2.6 
+
+              <div class="like-button">
+                <i class="fas fa-heart"></i>
+                <div class="fill">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" width="50px" viewBox="0 0 50 50" xml:space="preserve">
+                    <path class="waveShape" d="M 300 300 V 2.5 c 0 0 0 -0.5 -1 0.5 c 0.1 2.6 
                 -28 6 -40.5 -2.4 c -3.5 -1.6 -40.6 2.4 -40.6 2.4 c -12.3 1.1 -23.9 5 
                 -31.9 6 c -2 -0.1 -27.1 2.4 -32 -1.9 c 0 0 -33.1 -7.7 -40.1 -5.7 c -18.1 
                 10.4 -40.8 2.4 -40.8 2.4 c -7.3 -1 -19.1 -2.8 -32.1 5.2 c -7 4 -20 -1 
-                -32.2 -1.9 c 0 0 -3.1 -0.3 -8.1 -0.7 V 300 H 300 z"/>
-              </svg>
+                -32.2 -1.9 c 0 0 -3.1 -0.3 -8.1 -0.7 V 300 H 300 z" />
+                  </svg>
+                </div>
               </div>
-              </div>
-              </div>
-          
+            </div>
+
           </a></div>
-          <div class="restaurants-items"><a href="menu4.html">
-            <img
-                src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
-                alt="image restaurant"
-              />
-              <div class="restaurants-items_description">
-                <div class="restaurents-items_boite">
+        <div class="restaurants-items"><a href="menu4.html">
+         <p><img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="image restaurant" /> </p>   
+            <div class="restaurants-items_description">
+              <div class="restaurents-items_boite">
                 <p class="restaurants-items_titre">À la française</p>
                 <p class="restaurants-items_text">Ménilmontant</p>
-                </div>
-              
+              </div>
 
-                <div class="like-button"> 
-                  <i class="fas fa-heart"></i>
-              <div class="fill">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" viewBox="0 0 50 50" xml:space="preserve">
-                <path class="waveShape" d="M 300 300 V 2.5 c 0 0 0 -0.5 -1 0.5 c 0.1 2.6 
+
+              <div class="like-button">
+                <i class="fas fa-heart"></i>
+                <div class="fill">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" width="50px" viewBox="0 0 50 50" xml:space="preserve">
+                    <path class="waveShape" d="M 300 300 V 2.5 c 0 0 0 -0.5 -1 0.5 c 0.1 2.6 
                 -28 6 -40.5 -2.4 c -3.5 -1.6 -40.6 2.4 -40.6 2.4 c -12.3 1.1 -23.9 5 
                 -31.9 6 c -2 -0.1 -27.1 2.4 -32 -1.9 c 0 0 -33.1 -7.7 -40.1 -5.7 c -18.1 
                 10.4 -40.8 2.4 -40.8 2.4 c -7.3 -1 -19.1 -2.8 -32.1 5.2 c -7 4 -20 -1 
-                -32.2 -1.9 c 0 0 -3.1 -0.3 -8.1 -0.7 V 300 H 300 z"/>
-              </svg>
+                -32.2 -1.9 c 0 0 -3.1 -0.3 -8.1 -0.7 V 300 H 300 z" />
+                  </svg>
+                </div>
               </div>
-              </div>
-              </div>
-           
+            </div>
+
           </a></div>
-          <div class="restaurants-items"><a href="menu2.html">
-            <img
-                src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-                alt="image restaurant"
-              />
-              <div class="restaurants-items_description">
-                <div class="restaurents-items_text">
+        <div class="restaurants-items"><a href="menu2.html">
+          <p>  <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="image restaurant" /></p> 
+            <div class="restaurants-items_description">
+              <div class="restaurents-items_text">
                 <p class="restaurants-items_titre">Le délice des sens</p>
                 <p class="restaurants-items_text">Ménilmontant</p>
-                </div>
-              
+              </div>
 
-                <div class="like-button"> 
-                  <i class="fas fa-heart" ></i>
-              <div class="fill">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" viewBox="0 0 50 50" xml:space="preserve">
-                <path class="waveShape" d="M 300 300 V 2.5 c 0 0 0 -0.5 -1 0.5 c 0.1 2.6 
+
+              <div class="like-button">
+                <i class="fas fa-heart"></i>
+                <div class="fill">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" width="50px" viewBox="0 0 50 50" xml:space="preserve">
+                    <path class="waveShape" d="M 300 300 V 2.5 c 0 0 0 -0.5 -1 0.5 c 0.1 2.6 
                 -28 6 -40.5 -2.4 c -3.5 -1.6 -40.6 2.4 -40.6 2.4 c -12.3 1.1 -23.9 5 
                 -31.9 6 c -2 -0.1 -27.1 2.4 -32 -1.9 c 0 0 -33.1 -7.7 -40.1 -5.7 c -18.1 
                 10.4 -40.8 2.4 -40.8 2.4 c -7.3 -1 -19.1 -2.8 -32.1 5.2 c -7 4 -20 -1 
-                -32.2 -1.9 c 0 0 -3.1 -0.3 -8.1 -0.7 V 300 H 300 z"/>
-              </svg>
+                -32.2 -1.9 c 0 0 -3.1 -0.3 -8.1 -0.7 V 300 H 300 z" />
+                  </svg>
+                </div>
               </div>
-              </div>
-              </div>
-         
-         </a> </div>
-        </div>
-        <button class="btn btn-action" type="submit">
-          Affiche plus
-        </button>
-        </div>
-     
-      <div class="presentation">
-        <img class="wave" src="./images/logo/wave_purple_top.png" alt="#"/>
-        <div class="histoire">
-          <h2>Notre histoire</h2>
-      
-          <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus faucibus gravida. Morbi hendrerit accumsan tellus sed condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vitae dolor finibus lectus placerat volutpat vel eget odio. Sed mattis bibendum dui, nec maximus urna iaculis ut. Maecenas ac aliquam odio, quis fringilla sem. Morbi ut consectetur odio, at ullamcorper arcu. Nam diam ipsum, rutrum nec tempus sit amet, elementum id nisl. Nullam maximus sapien eu ante rutrum tempor. Vestibulum et nisl vel massa sollicitudin auctor vel laoreet nibh. Vestibulum ac libero quis elit posuere convallis. Mauris elementum et lacus eget bibendum. Nullam sit amet est eu purus imperdiet maximus. Ut consequat luctus nisl at sollicitudin.
-
-            Nam placerat ac nisl vehicula interdum. Cras venenatis dui in cursus feugiat. Quisque nec ante nec diam iaculis congue at ac arcu. Integer condimentum neque ut ante dignissim, id ullamcorper diam vulputate. Nulla orci enim, dictum at risus eget, fringilla viverra turpis. Etiam a elementum ex. Pellentesque rutrum nulla eu ex pellentesque elementum. Suspendisse varius tempus mattis.
-            Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vitae dolor finibus lectus placerat volutpat vel eget odio. Sed mattis bibendum dui, nec maximus urna iaculis ut. Maecenas ac aliquam odio, quis fringilla sem. Morbi ut consectetur odio, at ullamcorper arcu. Nam diam ipsum, rutrum nec tempus sit amet, elementum id nisl. Nullam maximus sapien eu ante rutrum tempor. Vestibulum et nisl vel massa sollicitudin auctor vel laoreet nibh. Vestibulum ac libero quis elit posuere convallis. Mauris elementum et lacus eget bibendum. Nullam sit amet est eu purus imperdiet maximus. Ut consequat luctus nisl at sollicitudin.
-
-            Nam placerat ac nisl vehicula interdum.
-           </p>
-        
-          <div class="concepte">
-            <div class="concepte-boite">
-              <p class="star">margaret hoe</p>
-              <div class="concepte-items"><img src="./images/logo/pick.png" alt="#"></div>
-            <p class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-
             </div>
-            <div class="concepte-boite">
-              <p class="star">margaret hoe</p>
-              <div class="concepte-items"><img src="./images/logo/cook.png" alt="#"></div>
-            <p class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
 
-            </div>
-            <div class="concepte-boite">
-              <p class="star">margaret hoe</p>
-              <div class="concepte-items"><img src="./images/logo/community.png" alt="#"></div>
-            <p class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
+          </a> </div>
+      </div>
+      <button class="btn btn-action" type="submit">
+        Affiche plus
+      </button>
+    </div>
 
-            </div>
-            
-           
-           </div>
-           
-           <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur, quam nec commodo ultricies, erat sem ullamcorper dolor, at tincidunt ligula sapien sit amet odio. Donec dapibus augue id tellus egestas, eu pretium massa malesuada.  </p>
-     
+    <div class="presentation">
+      <img class="wave" src="./images/logo/wave_purple_top.png" alt="#" />
+      <div class="histoire">
+        <h2>Notre histoire</h2>
+
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus faucibus gravida. Morbi
+          hendrerit accumsan tellus sed condimentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce
+          vitae dolor finibus lectus placerat volutpat vel eget odio. Sed mattis bibendum dui, nec maximus urna iaculis
+          ut. Maecenas ac aliquam odio, quis fringilla sem. Morbi ut consectetur odio, at ullamcorper arcu. Nam diam
+          ipsum, rutrum nec tempus sit amet, elementum id nisl. Nullam maximus sapien eu ante rutrum tempor. Vestibulum
+          et nisl vel massa sollicitudin auctor vel laoreet nibh. Vestibulum ac libero quis elit posuere convallis.
+          Mauris elementum et lacus eget bibendum. Nullam sit amet est eu purus imperdiet maximus. Ut consequat luctus
+          nisl at sollicitudin.
+
+          Nam placerat ac nisl vehicula interdum. Cras venenatis dui in cursus feugiat. Quisque nec ante nec diam
+          iaculis congue at ac arcu. Integer condimentum neque ut ante dignissim, id ullamcorper diam vulputate. Nulla
+          orci enim, dictum at risus eget, fringilla viverra turpis. Etiam a elementum ex. Pellentesque rutrum nulla eu
+          ex pellentesque elementum. Suspendisse varius tempus mattis.
+          Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vitae dolor finibus lectus placerat
+          volutpat vel eget odio. Sed mattis bibendum dui, nec maximus urna iaculis ut. Maecenas ac aliquam odio, quis
+          fringilla sem. Morbi ut consectetur odio, at ullamcorper arcu. Nam diam ipsum, rutrum nec tempus sit amet,
+          elementum id nisl. Nullam maximus sapien eu ante rutrum tempor. Vestibulum et nisl vel massa sollicitudin
+          auctor vel laoreet nibh. Vestibulum ac libero quis elit posuere convallis. Mauris elementum et lacus eget
+          bibendum. Nullam sit amet est eu purus imperdiet maximus. Ut consequat luctus nisl at sollicitudin.
+
+          Nam placerat ac nisl vehicula interdum.
+        </p>
+
+        <div class="concepte">
+          <div class="concepte-boite">
+            <p class="star">margaret hoe</p>
+            <div class="concepte-items"><img src="./images/logo/pick.png" alt="#"></div>
+            <p class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i></p>
+
+          </div>
+          <div class="concepte-boite">
+            <p class="star">margaret hoe</p>
+            <div class="concepte-items"><img src="./images/logo/cook.png" alt="#"></div>
+            <p class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="far fa-star"></i></p>
+
+          </div>
+          <div class="concepte-boite">
+            <p class="star">margaret hoe</p>
+            <div class="concepte-items"><img src="./images/logo/community.png" alt="#"></div>
+            <p class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="far fa-star"></i></p>
+
+          </div>
+
+
         </div>
-        <img class="wave" src="./images/logo/wave_purple_bottom.png" alt="#">
-  
+
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur, quam nec commodo
+          ultricies, erat sem ullamcorper dolor, at tincidunt ligula sapien sit amet odio. Donec dapibus augue id tellus
+          egestas, eu pretium massa malesuada. </p>
 
       </div>
-      
-      <div class="menu">
-        <div class="menu-section">
-          <svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" ><path d="M0 100 L50 2 L100 100 Z" ></path></svg>
-          <p class="menu-section_titre">Menu </p>
-          <svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" ><path d="M0 0 L50 100 L100 0 Z" ></path></svg>
-        </div>
-        <div class="menu-contenaire">
-          <p class="titre-menu">Revervez votre menu</p>
-          <div class="menu-list">
-            <div class="card">
-              <div class="menu-list_items"  ><a href="menu1.html"><p class="txt-large">La palette du goût</p>
-                <p class="txt-medium">La carte</p><p class="menu-course">Entree</p><p>Fricassée d'escargot <br>
+      <img class="wave" src="./images/logo/wave_purple_bottom.png" alt="#">
+
+
+    </div>
+
+    <div class="menu">
+      <div class="menu-section">
+        <svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1">
+          <path d="M0 100 L50 2 L100 100 Z"></path>
+        </svg>
+        <p class="menu-section_titre">Menu </p>
+        <svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1">
+          <path d="M0 0 L50 100 L100 0 Z"></path>
+        </svg>
+      </div>
+      <div class="menu-contenaire">
+        <p class="titre-menu">Revervez votre menu</p>
+        <div class="menu-list">
+          <div class="card">
+            <div class="menu-list_items"><a href="menu1.html">
+                <p class="txt-large">La palette du goût</p>
+                <p class="txt-medium">La carte</p>
+                <p class="menu-course">Entree</p>
+                <p>Fricassée d'escargot <br>
                   Au piment d'Espelette <br> Foie gras de canard mi-cuit <br>
                   Et ses copeaux de truffe noire <br> Oeuf au plat <br>
                   Assaisonné à la truffe sur lit de caviar </p>
-                <p class="menu-course">Plats</p><p>Filet de boeuf aux herbes <br>
+                <p class="menu-course">Plats</p>
+                <p>Filet de boeuf aux herbes <br>
                   Accompagné de sa ribambelle de légumes <br> Parmentier de queue de boeuf <br>
                   À la truffe noire sur sa purée de panais <br> Filet de turbot <br>
-                  Aux agrumes </p><p class="menu-course">Desserts</p><p>Paris-Brest <br>
-                    Revisité <br> Macaron au chocolat d'exception  <br>
-                    Et glace à la vanille de Madagascar <br> Mousse au chocolat <br>
-                    Au piment d'Espelette et à la truffe noire</p></a> </div>
-              <div class="card_front">
-                <p class="txt-large">La palette du goût</p>
-              </div>
-
+                  Aux agrumes </p>
+                <p class="menu-course">Desserts</p>
+                <p>Paris-Brest <br>
+                  Revisité <br> Macaron au chocolat d'exception <br>
+                  Et glace à la vanille de Madagascar <br> Mousse au chocolat <br>
+                  Au piment d'Espelette et à la truffe noire</p>
+              </a> </div>
+            <div class="card_front">
+              <p class="txt-large">La palette du goût</p>
             </div>
-            <div class="card">
-              <div class="menu-list_items"><a href="menu2.html"><p class="txt-large">Le délice des sens</p>
-                <p class="txt-medium">La carte</p><p class="menu-course">Entree</p><p>Tartare de thon <br>
+
+          </div>
+          <div class="card">
+            <div class="menu-list_items"><a href="menu2.html">
+                <p class="txt-large">Le délice des sens</p>
+                <p class="txt-medium">La carte</p>
+                <p class="menu-course">Entree</p>
+                <p>Tartare de thon <br>
                   Assaisonné au yuzu <br> Bouchée de homard croustillant <br>
                   Et sa farandole de petits légumes <br> Velouté de cèpes <br>
-                  Aux truffes  </p><p class="menu-course">Plats</p><p>Poulet rôti aux herbes de Provence <br>
-                    Et sa crème de truffe <br>Langouste rôtie <br> Et ses légumes de saison <br> Côte de boeuf Angus <br>
-                    Et sa purée de panais </p><p class="menu-course">Desserts</p><p>Farandole de desserts <br>
-                      Du chef <br>Crème brulée <br> Revisitée <br> Tiramisu <br>
-                      À la noisette </p></a>
-              </div>
-              <div class="card_front">
-                <p class="txt-large">Le délice des sens</p>
-              </div>
-
+                  Aux truffes </p>
+                <p class="menu-course">Plats</p>
+                <p>Poulet rôti aux herbes de Provence <br>
+                  Et sa crème de truffe <br>Langouste rôtie <br> Et ses légumes de saison <br> Côte de boeuf Angus <br>
+                  Et sa purée de panais </p>
+                <p class="menu-course">Desserts</p>
+                <p>Farandole de desserts <br>
+                  Du chef <br>Crème brulée <br> Revisitée <br> Tiramisu <br>
+                  À la noisette </p>
+              </a>
             </div>
-            <div class="card">
-              <div class="menu-list_items"><a href="menu3.html"><p class="txt-large">La note enchantée</p>
-                <p class="txt-medium">La carte</p><p class="menu-course">Entree</p><p>Ravioles de foie gras <br>
-                  Accompagnés de leur crème à la truffe <br> 
+            <div class="card_front">
+              <p class="txt-large">Le délice des sens</p>
+            </div>
+
+          </div>
+          <div class="card">
+            <div class="menu-list_items"><a href="menu3.html">
+                <p class="txt-large">La note enchantée</p>
+                <p class="txt-medium">La carte</p>
+                <p class="menu-course">Entree</p>
+                <p>Ravioles de foie gras <br>
+                  Accompagnés de leur crème à la truffe <br>
                   Caviar osciètre <br>
-                  Sur blini à la farine de blé noir <br> 
+                  Sur blini à la farine de blé noir <br>
                   Homard et espuma de potiron <br>
                   Mariné aux zestes d'orange <br> Foie gras de canard cuit entier <br>
-                  Confiture de figue et pain toasté </p><p class="menu-course">Plats</p>
-                  <p>Poulet rôti aux herbes de Provence <br>
-                    Et sa crème de truffe
-                  <br>Langouste rôtie  <br> Et ses légumes de saison<br>
-                  Côte de boeuf Angus  <br> Et sa purée de panais</p> <p class="menu-course">Desserts</p> <p>Farandole de desserts <br>
-                    Du chef <br> Crème brulée <br>Revisitée <br> Tiramisu <br>
-                    À la noisette
+                  Confiture de figue et pain toasté </p>
+                <p class="menu-course">Plats</p>
+                <p>Poulet rôti aux herbes de Provence <br>
+                  Et sa crème de truffe
+                  <br>Langouste rôtie <br> Et ses légumes de saison<br>
+                  Côte de boeuf Angus <br> Et sa purée de panais
+                </p>
+                <p class="menu-course">Desserts</p>
+                <p>Farandole de desserts <br>
+                  Du chef <br> Crème brulée <br>Revisitée <br> Tiramisu <br>
+                  À la noisette
 
-                  </p>
+                </p>
               </a></div>
-              <div class="card_front">
-                <p class="txt-large">La note enchantée</p>
-              </div>
-
+            <div class="card_front">
+              <p class="txt-large">La note enchantée</p>
             </div>
-            <div class="card">
-              <div class="menu-list_items"><a href="menu4.html"><p class="txt-large">À la française</p>
-                <p class="txt-medium">La carte</p><p class="menu-course">Entree</p><p>Tartare de poulpe acidulé <br>
+
+          </div>
+          <div class="card">
+            <div class="menu-list_items"><a href="menu4.html">
+                <p class="txt-large">À la française</p>
+                <p class="txt-medium">La carte</p>
+                <p class="menu-course">Entree</p>
+                <p>Tartare de poulpe acidulé <br>
                   Aux zestes d'orange <br> Velouté de légumes d'antan <br>
                   Carotte, panais, topinambour <br> Soupe à l'oignon <br>
-                  Revisitée </p><p class="menu-course">Plats</p><p>Coquilles Saint-Jacques <br>
-                    Accompagnées d'une purée de panais <br> Magret de canard <br> Et parmentier de pommes de terre <br>
-                    Pigeonneau d’Ille-et-Vilaine <br>Sur son lit de gnocchis aux légumes
-                  </p><p class="menu-course">Desserts</p><p>Pétales de violettes glacés <br>
-                    Et purée de noisettes <br>Fondant au chocolat <br> Revisité <br> Millefeuille croustillant <br>
-                    Myrtilles et pâte d’amande</p></a>
-              </div>
-              <div class="card_front">
-                <p class="txt-large"> À la française</p>
-              </div>
-
+                  Revisitée </p>
+                <p class="menu-course">Plats</p>
+                <p>Coquilles Saint-Jacques <br>
+                  Accompagnées d'une purée de panais <br> Magret de canard <br> Et parmentier de pommes de terre <br>
+                  Pigeonneau d’Ille-et-Vilaine <br>Sur son lit de gnocchis aux légumes
+                </p>
+                <p class="menu-course">Desserts</p>
+                <p>Pétales de violettes glacés <br>
+                  Et purée de noisettes <br>Fondant au chocolat <br> Revisité <br> Millefeuille croustillant <br>
+                  Myrtilles et pâte d’amande</p>
+              </a>
             </div>
-            
-  
+            <div class="card_front">
+              <p class="txt-large"> À la française</p>
+            </div>
+
           </div>
-  
+
+
         </div>
-       
 
       </div>
-      <div class="infographie-boite">
-        <p class="titre">Ohmyfood arrive pres de chez vous !</p>
-        <div class="infographie">
-          <div class="infographie-contenaire">
-        
-            <div class="infographie-items">
-              <span class="bordure"></span>
-              <span class="bordure"></span>
-              <div class="infographie-items_option">
-                <img src="./images/logo/ohmyfood.png" alt="">
-                <p class="titre-info">Sur place</p>
-                
-                <p>Ouvert 7 jours sur 7 <br>
-                  Déjeuner à partir de 12h00 <br>
-                  - dernière commande à 14h30 - <br>
-                  Dîner à partir de 19h30 <br>
-                  - Du Dimanche au Jeudi dernière commande à 22h45- <br>
-                  - Le Vendredi et Samedi dernière commande à 23h15 -</p>
-              
-            </div>
-          </div>
-            <div class="infographie-items">
-              <span class="bordure"></span> <span class="bordure"></span>
-              <div class="infographie-items_option">
-                <img src="./images/logo/ohmyfood.png" alt="" >
-                <p class="titre-info">A emporter</p>
-                <img src="./images/logo/pngegg-1.png" alt="" class="info-image">
-                <p>Commandez votre repas <br>
-                  et venez le chercher au restaurant. <br>
-                  
-                  Commandes uniquement par téléphone <br>
-                  au 01 99 99 99 99 <br>
-                  Délais : 45 minutes</p>
 
-              </div>
-            </div>
-            <div class="infographie-items">
-              <span class="bordure"></span> <span class="bordure"></span>
-              <div class="infographie-items_option">
-                <img src="./images/logo/ohmyfood.png" alt="">
-                <p class="titre-info">Livrer chez vous</p>
-                <img src="./images/logo/uber-eats.png" alt="">
-                <p>Faites-vous livrer votre repas <br>
-                  avec Deliveroo. <br>
-                  
-                  Commandez sur leur site <a href="index.html">ici</a> .</p>
 
-              </div>
-            </div>
-        
-          </div>
-
-      </div>
-   
-            
-    <p class="text" >Réserver votre menu </p>
-    <button class="btn.btn-action">  Explorez nos restaurents</button>
-
-      </div>
-     
-     
-  
-
-  
-      
-      <footer>
-        <div class="footer_contenaire">
-          <ul class="footer-list">
-            <li class="footer-list_items">
-              <a href="#"><strong>Ohmyfood</strong></a>
-            </li>
-            <li class="footer-list_items">
-              <a href="#"><span><i class="fas fa-utensils"></i></span>Proposer un restaurant</a>
-            </li>
-            <li class="footer-list_items">
-              <a href="#"><span><i class="fas fa-hands-helping"></i></span>Devenir partenaire</a>
-            </li>
-            <li class="footer-list_items"><a href="#">Mentions legales</a></li>
-            <li class="footer-list_items"><a  href="mailto:c.hammami@live.fr">Contact</a></li>
-          </ul>
-        </div>
-      </footer>
     </div>
-  </body>
+    <div class="infographie-boite">
+      <p class="titre">Ohmyfood arrive pres de chez vous !</p>
+      <div class="infographie">
+        <div class="infographie-contenaire">
+
+          <div class="infographie-items">
+            <span class="bordure"></span>
+            <span class="bordure"></span>
+            <div class="infographie-items_option">
+              <img src="./images/logo/ohmyfood.png" alt="">
+              <p class="titre-info">Sur place</p>
+
+              <p>Ouvert 7 jours sur 7 <br>
+                Déjeuner à partir de 12h00 <br>
+                - dernière commande à 14h30 - <br>
+                Dîner à partir de 19h30 <br>
+                - Du Dimanche au Jeudi dernière commande à 22h45- <br>
+                - Le Vendredi et Samedi dernière commande à 23h15 -</p>
+
+            </div>
+          </div>
+          <div class="infographie-items">
+            <span class="bordure"></span> <span class="bordure"></span>
+            <div class="infographie-items_option">
+              <img src="./images/logo/ohmyfood.png" alt="">
+              <p class="titre-info">A emporter</p>
+              <img src="./images/logo/pngegg-1.png" alt="" class="info-image">
+              <p>Commandez votre repas <br>
+                et venez le chercher au restaurant. <br>
+
+                Commandes uniquement par téléphone <br>
+                au 01 99 99 99 99 <br>
+                Délais : 45 minutes</p>
+
+            </div>
+          </div>
+          <div class="infographie-items">
+            <span class="bordure"></span> <span class="bordure"></span>
+            <div class="infographie-items_option">
+              <img src="./images/logo/ohmyfood.png" alt="">
+              <p class="titre-info">Livrer chez vous</p>
+              <img src="./images/logo/uber-eats.png" alt="">
+              <p>Faites-vous livrer votre repas <br>
+                avec Deliveroo. <br>
+
+                Commandez sur leur site <a href="index.html">ici</a> .</p>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <p class="text">Réserver votre menu </p>
+      <button class="btn.btn-action"> Explorez nos restaurents</button>
+
+    </div>
+
+
+
+
+
+
+    <footer>
+      <div class="footer_contenaire">
+        <ul class="footer-list">
+          <li class="footer-list_items">
+            <a href="#"><strong>Ohmyfood</strong></a>
+          </li>
+          <li class="footer-list_items">
+            <a href="#"><span><i class="fas fa-utensils"></i></span>Proposer un restaurant</a>
+          </li>
+          <li class="footer-list_items">
+            <a href="#"><span><i class="fas fa-hands-helping"></i></span>Devenir partenaire</a>
+          </li>
+          <li class="footer-list_items"><a href="#">Mentions legales</a></li>
+          <li class="footer-list_items"><a href="mailto:c.hammami@live.fr">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
 
 </html>

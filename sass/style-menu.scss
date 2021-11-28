@@ -21,7 +21,110 @@ $back-image4: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-uns
   min-width: 250px;
   margin: auto;
 }
+.loader-contenaire {
+  margin: 0;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: $couleur4;
+  transform: scale(1);
+  animation: start;
+  animation-duration: 100ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+.loader {
+  
+  display:flex;
+	position:relative;
+	align-items:center;
+	justify-content:center;
+  width: 150px;
+  height: 150px;
+  -webkit-animation: tour 2s linear infinite; /* Safari */
+  -webkit-animation-iteration-count: 5;
+  animation: tour 2s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  .spinner{
+    display:flex;
+    border-radius:50%;
+    border-width:20px;
+    border-style:solid;
+    border-color:rgba(0,0,0,0);
+    position:absolute;
+  }
+  .spin-1{
+    border-right-color:$couleur1;
+    border-left-color:$couleur1;
+    width:300px;
+    height:300px;
+    animation:tour 1.3s linear infinite;
+  }
+  .spin-2{
+    border-right-color:$couleur2;
+    border-left-color:$couleur2;
+    width:200px;
+    height:200px;
+    animation:tourAR 1.4s linear infinite;
+  }
+  .spin-3{
+    border-right-color:$couleur3;
+    border-left-color:$couleur3;
+    width:100px;
+    height:100px;
+    animation:tour 1.2s linear infinite;
+  }
+
+
+}
+
+@keyframes start {
+  0% {
+    transform: scale(.1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(0.05);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+/* Safari */
+@-webkit-keyframes tour {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+ 
+  100%{-webkit-transform: rotate(360deg);}
+}
+
+@keyframes tour {
+  0% {
+    transform: rotate(0deg);
+  }
+ 
+  100%{transform: rotate(360deg);}
+}
+@keyframes tourAR {
+  0% {
+    transform: rotate(0deg);
+  }
+ 
+  100%{transform: rotate(-360deg);}
+}
 body {
+
   background: #fff;
   font-family: Roboto, sans-serif;
 }
@@ -51,24 +154,32 @@ body {
     &-1 {
       background-image: $back-image1;
       background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       height: inherit;
       height: 250px;
     }
     &-2 {
       background-image: $back-image4;
       background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       height: inherit;
       height: 250px;
     }
     &-3 {
       background-image: $back-image2;
       background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       height: inherit;
       height: 250px;
     }
     &-4 {
       background-image: $back-image3;
       background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       height: inherit;
       height: 250px;
     }
@@ -161,6 +272,7 @@ body {
         font-weight: 400;
         align-self: flex-end;
         padding-left: 10px;
+        transition: transform 400ms ease-in-out;
       }
     }
     &_titre {
@@ -193,34 +305,34 @@ body {
  
 }
 .premier{
-  animation: menu-items 3s ease both ;
-}
-.deuxieme{
-  animation: menu-items 3s 1s ease both ;
-}
-.troisieme{
   animation: menu-items 3s 2s ease both ;
 }
-.quatrieme{
+.deuxieme{
   animation: menu-items 3s 3s ease both ;
 }
-.cinquieme{
+.troisieme{
   animation: menu-items 3s 4s ease both ;
 }
-.sixieme{
+.quatrieme{
   animation: menu-items 3s 5s ease both ;
 }
-.septieme{
+.cinquieme{
   animation: menu-items 3s 6s ease both ;
 }
-.huitieme{
+.sixieme{
   animation: menu-items 3s 7s ease both ;
 }
-.neuvieme{
+.septieme{
   animation: menu-items 3s 8s ease both ;
 }
-.dix{
+.huitieme{
   animation: menu-items 3s 9s ease both ;
+}
+.neuvieme{
+  animation: menu-items 3s 10s ease both ;
+}
+.dix{
+  animation: menu-items 3s 11s ease both ;
 }
 .menu-list_btn::before {
   content: "";
@@ -259,10 +371,13 @@ body {
   width: 70px;
   transform: rotate(-360deg);
 }
-.menu-list_btn:active > .menu-list_items{
+.menu-list_btn:active > .menu-list_items {
   width: 280px;
 }
-
+.menu-list_btn:active > .menu-list_items > span{
+  transform: translateX(5px);
+  font-weight:500 ;
+}
 .footer_contenaire {
   background: $couleur5;
 
@@ -281,5 +396,10 @@ body {
 @media screen and (min-width: 765px) {
   .menu-list_btn:active > .menu-list_items {
     width: 550px;
+  }
+}
+@media screen and (max-width: 320px) {
+  h1{
+    color: #9356dc;
   }
 }

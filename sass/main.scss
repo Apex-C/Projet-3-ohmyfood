@@ -29,31 +29,67 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   background: $couleur4;
   transform: scale(1);
   animation: start;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
-  animation-delay: 6s;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 .loader {
-  margin-top: 80px;
-  border: 16px solid #423f3f;
-  border-radius: 50%;
-  border-top: 16px solid #ffffff;
-  border-bottom: 16px solid #ffffff;
+  
+  display:flex;
+	position:relative;
+	align-items:center;
+	justify-content:center;
   width: 150px;
   height: 150px;
   -webkit-animation: tour 2s linear infinite; /* Safari */
   -webkit-animation-iteration-count: 5;
   animation: tour 2s linear;
-  animation-iteration-count: 5;
+  animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+  .spinner{
+    display:flex;
+    border-radius:50%;
+    border-width:20px;
+    border-style:solid;
+    border-color:rgba(0,0,0,0);
+    position:absolute;
+  }
+  .spin-1{
+    border-right-color:$couleur1;
+    border-left-color:$couleur1;
+    width:300px;
+    height:300px;
+    animation:tour 1.3s linear infinite;
+  }
+  .spin-2{
+    border-right-color:$couleur2;
+    border-left-color:$couleur2;
+    width:200px;
+    height:200px;
+    animation:tourAR 1.4s linear infinite;
+  }
+  .spin-3{
+    border-right-color:$couleur3;
+    border-left-color:$couleur3;
+    width:100px;
+    height:100px;
+    animation:tour 1.2s linear infinite;
+  }
+
+
 }
+
 @keyframes start {
   0% {
+    transform: scale(.1);
+  }
+  30% {
     transform: scale(1);
   }
   90% {
@@ -80,8 +116,15 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
  
   100%{transform: rotate(360deg);}
 }
+@keyframes tourAR {
+  0% {
+    transform: rotate(0deg);
+  }
+ 
+  100%{transform: rotate(-360deg);}
+}
 .coeur::after {
-  content: "hello";
+  content: "";
   width: 100%;
   height: 100%;
   background: brown;
@@ -380,6 +423,18 @@ header {
     box-shadow: $ombre2;
     border-radius: 20px;
     box-sizing: border-box;
+    a{
+      p{
+        position: relative;
+        span{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          padding: 5px;
+          background: $couleur3;
+        }
+      }
+    }
 
     &:hover {
       box-shadow: $ombre1;
@@ -474,11 +529,11 @@ header {
     }
     .txt-medium {
       font-size: 18px;
-      font-weight: 400;
+      font-weight: 600;
     }
     .menu-course{
       font-weight: 400;
-      font-size: 15px;
+      font-size: 18px;
       position: relative;
      
       &::before{
@@ -535,11 +590,11 @@ header {
     width: 100%;
     padding: 10px;
     border: 2px solid black;
-    text-overflow: clip clip;
+    text-overflow: clip;
     white-space: nowrap;
     overflow: scroll;
-    font-size:15px;
-    background: #fff;
+    font-size:18px;
+    background:linear-gradient( $couleur1 10%,$couleur2,$couleur3);
    
   }
 }
@@ -561,18 +616,19 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 50px 10px;
 
   svg {
     height: 50px;
     path {
-      fill: $couleur4;
+      fill: #d4d3d3;
     }
   }
   .menu-section_titre {
     text-align: center;
     color: $couleur1;
-    background: $couleur4;
-    font-size: 22px;
+    background: #d4d3d3;
+    font-size: 35px;
     font-weight: 600;
     position: relative;
     margin: 0px;
@@ -606,10 +662,11 @@ header {
     &::before {
       position: absolute;
       content: "";
-      border-bottom: 5px solid $couleur3;
+      border-bottom: 5px solid $couleur3 ;
+    
       bottom: -10px;
       left: 0;
-      width: 150px;
+      width: 250px;
     }
   }
 }
@@ -644,7 +701,7 @@ header {
 }
 .btn-action,
 .histoire,
-.menu {
+.menu,.banner-star {
   display: none;
 }
 .wave,
@@ -709,14 +766,19 @@ header {
     }
   }
   @keyframes banner-anim {
-    0%{transform: translateX(-100%);}
-    50%{transform: translateX(100%);}
-    100%{transform: translateX(-100%);}
+    0%{stroke-dashoffset: 0;
+    fill: transparent;}
+    40%{stroke-dashoffset: 550;
+    fill: transparent;}
+    80%{stroke-dashoffset: 1550;
+      fill: transparent;}
+  
+100%{stroke-dashoffset: 1850;}
     
   }
   @keyframes banner-anim-1 {
-    0%{transform: translateX(100%);}
-    50%{transform: translateX(-100%);}
+   
+    0%{transform: translateX(0%);}
     100%{transform: translateX(100%);}
     
   }
@@ -730,36 +792,71 @@ header {
     }
     .banner-contenaire {
       width: 100%;
-
-      
-      
-
       position: relative;
       overflow: hidden;
-      &::after{
-        content: "";
+      
+      .banner-star{
+        display: inline-block;
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 8px;
-        background: linear-gradient(to right, $couleur1,$couleur3,$couleur2);
-        animation: banner-anim 5s linear infinite;
-    
+        width: 50px;
+        .svg-inline--fa{
+     
+          fill: transparent;
+          stroke: $couleur2;
+          stroke-width: 10;
+
+       
+          path{
+            stroke-dasharray: 1850;
+            stroke-dashoffset: 1850;
+          
+           
+          }
+         
+  
+        }
+        &:nth-child(1){
+          right: 50px;
+          top: 250px;
+          path{
+            animation: banner-anim 4.8s linear ;
+          animation-iteration-count: infinite;
+
+          }
+          
+        }
+        &:nth-child(2){
+          left: 120px;
+          bottom: 35px;
+          path{
+            animation: banner-anim 3.5s .5 linear  ;
+          animation-iteration-count: infinite;
+
+          }
+        }
+        &:nth-child(3){
+          top: 120px;
+          left: 580px;
+          path{
+            animation: banner-anim 2s .5 linear ;
+          animation-iteration-count: infinite;
+
+          }
+        }
+        &:nth-child(4){
+          left: 850px;
+          bottom: 50px;
+          path{
+            animation: banner-anim 3s 1.5s linear ;
+          animation-iteration-count: infinite;
+
+          }
+        }
 
       }
-      &::before{
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 8px;
-        background: linear-gradient(to right, $couleur1,$couleur3,$couleur2);
-        animation: banner-anim-1 5s linear infinite;
     
-
-      }
+      
+    
       .recherche {
         height: 250px;
         position: absolute;
@@ -791,6 +888,7 @@ header {
       }
     }
   }
+  
   .fonctionement {
     padding: 10px;
     margin: 0px 0px 30px 0px;
@@ -890,16 +988,12 @@ header {
   }
   @keyframes icon-anim {
     0%{
-      transform: scale(.1) rotate(0) translateX(-550px);
+      transform: scale(.1) translateX(-750px);
       opacity: .5;
       
     }
-    30%{transform: scale(.2) rotate(-20deg) translateX(-320px);}
-    50%{transform: scale(.3) rotate(20deg);
-    opacity: .7;}
-    80%{transform: scale(.4) rotate(-20deg) translateX(55px)translateX(120px);
-    opacity: .8;}
-    100%{transform: scale(1) rotate(0deg) translateX(0px);
+    
+    100%{transform: scale(1) translateX(0px);
     opacity: 1;}
     
   }
@@ -913,16 +1007,11 @@ header {
     height: fit-content;
     background: $couleur1;
     color: #fff;
+    
     .text {
       padding: 15px 20px;
       font-size: large;
-      &:hover + .concepte .concepte-boite .concepte-items{
-        animation:icon-anim;
-        animation-duration: 1.5s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-      }
+      
     }
     .star {
       margin: 10px;
@@ -938,6 +1027,7 @@ header {
       font-family: Shrikhand;
     }
   }
+  
   .concepte {
     display: flex;
     justify-content: space-around;
@@ -946,6 +1036,8 @@ header {
       width: 150px;
       height: 150px;
       border-radius: 50%;
+     
+      
     
       background: #fff;
       overflow: hidden;
@@ -956,9 +1048,15 @@ header {
         border: 5px dashed $couleur2;
         height: 100%;
         width: 100%;
+        display: inline-block;
         border-radius: 50%;
-        animation: tour 4.8s linear infinite;
+
+       
+       
       }
+     
+     
+     
       
       
    
@@ -978,10 +1076,32 @@ header {
       display: flex;
       flex-direction: column;
       align-items: center;
+      &:nth-child(2){
+        transform: translateX(-403px) scale(.1);
+        opacity: 0;
+      }
+      &:nth-child(3){
+        transform: translateX(-805px) scale(.1);
+        opacity: 0;
+      }
   
     }
+    
+   
    
   }
+  .histoire:hover > .concepte .concepte-boite{
+    animation: histoire-icons ;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    
+    animation-direction: alternate;
+  }
+  .histoire:not(:hover) {
+  animation: histoire-icons ;
+  animation-play-state: paused;
+ }
+ 
   
   .infographie-boite {
     display: flex;
@@ -1006,17 +1126,18 @@ header {
     }
   }
   .menu-list .card .txt-large{
-    font-size: 18px;
+    font-size: 25px;
     padding: 0px;
   }
   .infographie {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 
     &-contenaire {
       padding: 10px;
-      width: 90%;
+      width: 100%;
       display: flex;
       justify-content: space-between;
     }
@@ -1069,25 +1190,30 @@ header {
       letter-spacing: 0.5px;
     }
   }
+  @keyframes histoire-icons {
+    from{
+      opacity: .5;
+     
+    }
+    to{
+      transform: translateX(0) scale(1);
+      opacity: 1;
+      
+    }
+  }
   @keyframes infographie {
-    0% {
-      transform: scale(0.9);
-    }
-    80% {
-      transform: scale(0.95);
-    }
-    90% {
-      transform: scale(1.05);
-    }
-    100% {
+    0%{
       transform: scale(1);
     }
+    50%{transform: scale(1.05) translateX(-50px);}
+    100%{transform: scale(1.1);}
+    
   }
   .infographie-items:hover {
     animation-name: infographie;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-    animation-duration: 1s;
+    animation-duration: .3s;
 
     mix-blend-mode: screen;
   }
@@ -1104,7 +1230,7 @@ header {
       content: "";
       position: absolute;
       bottom: -10px;
-      width: 220px;
+      width: 350px;
       border: 3px solid $couleur3;
 
     }
