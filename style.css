@@ -67,6 +67,7 @@ a {
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: #f2f2f2;
   transform: scale(1);
   animation: start;
@@ -77,23 +78,54 @@ a {
 }
 
 .loader {
-  margin-top: 80px;
-  border: 16px solid #423f3f;
-  border-radius: 50%;
-  border-top: 16px solid #ffffff;
-  border-bottom: 16px solid #ffffff;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
   width: 150px;
   height: 150px;
   -webkit-animation: tour 2s linear infinite;
   /* Safari */
   -webkit-animation-iteration-count: 5;
   animation: tour 2s linear;
-  animation-iteration-count: 5;
+  animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+}
+.loader .spinner {
+  display: flex;
+  border-radius: 50%;
+  border-width: 20px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  position: absolute;
+}
+.loader .spin-1 {
+  border-right-color: #9356dc;
+  border-left-color: #9356dc;
+  width: 300px;
+  height: 300px;
+  animation: tour 1.3s linear infinite;
+}
+.loader .spin-2 {
+  border-right-color: #ff79da;
+  border-left-color: #ff79da;
+  width: 200px;
+  height: 200px;
+  animation: tourAR 1.4s linear infinite;
+}
+.loader .spin-3 {
+  border-right-color: #99e2d0;
+  border-left-color: #99e2d0;
+  width: 100px;
+  height: 100px;
+  animation: tour 1.2s linear infinite;
 }
 
 @keyframes start {
   0% {
+    transform: scale(0.1);
+  }
+  30% {
     transform: scale(1);
   }
   90% {
@@ -120,8 +152,16 @@ a {
     transform: rotate(360deg);
   }
 }
+@keyframes tourAR {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 .coeur::after {
-  content: "hello";
+  content: "";
   width: 100%;
   height: 100%;
   background: brown;
@@ -407,6 +447,16 @@ header .header-nav {
   border-radius: 20px;
   box-sizing: border-box;
 }
+.restaurants-items a p {
+  position: relative;
+}
+.restaurants-items a p span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  background: #99e2d0;
+}
 .restaurants-items:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -491,11 +541,11 @@ header .header-nav {
 }
 .menu-list .card .txt-medium {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
 }
 .menu-list .card .menu-course {
   font-weight: 400;
-  font-size: 15px;
+  font-size: 18px;
   position: relative;
 }
 .menu-list .card .menu-course::before {
@@ -534,11 +584,11 @@ header .header-nav {
   width: 100%;
   padding: 10px;
   border: 2px solid black;
-  text-overflow: clip clip;
+  text-overflow: clip;
   white-space: nowrap;
   overflow: scroll;
-  font-size: 15px;
-  background: #fff;
+  font-size: 18px;
+  background: linear-gradient(#9356dc 10%, #ff79da, #99e2d0);
 }
 
 @keyframes card-anim {
@@ -555,18 +605,19 @@ header .header-nav {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 50px 10px;
 }
 .menu-section svg {
   height: 50px;
 }
 .menu-section svg path {
-  fill: #f2f2f2;
+  fill: #d4d3d3;
 }
 .menu-section .menu-section_titre {
   text-align: center;
   color: #9356dc;
-  background: #f2f2f2;
-  font-size: 22px;
+  background: #d4d3d3;
+  font-size: 35px;
   font-weight: 600;
   position: relative;
   margin: 0px;
@@ -603,7 +654,7 @@ header .header-nav {
   border-bottom: 5px solid #99e2d0;
   bottom: -10px;
   left: 0;
-  width: 150px;
+  width: 250px;
 }
 
 .footer_contenaire {
@@ -635,7 +686,7 @@ header .header-nav {
 
 .btn-action,
 .histoire,
-.menu {
+.menu, .banner-star {
   display: none;
 }
 
@@ -700,21 +751,24 @@ header .header-nav {
 
   @keyframes banner-anim {
     0% {
-      transform: translateX(-100%);
+      stroke-dashoffset: 0;
+      fill: transparent;
     }
-    50% {
-      transform: translateX(100%);
+    40% {
+      stroke-dashoffset: 550;
+      fill: transparent;
+    }
+    80% {
+      stroke-dashoffset: 1550;
+      fill: transparent;
     }
     100% {
-      transform: translateX(-100%);
+      stroke-dashoffset: 1850;
     }
   }
   @keyframes banner-anim-1 {
     0% {
-      transform: translateX(100%);
-    }
-    50% {
-      transform: translateX(-100%);
+      transform: translateX(0%);
     }
     100% {
       transform: translateX(100%);
@@ -729,25 +783,51 @@ header .header-nav {
     position: relative;
     overflow: hidden;
   }
-  .banner .banner-contenaire::after {
-    content: "";
+  .banner .banner-contenaire .banner-star {
+    display: inline-block;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    background: linear-gradient(to right, #9356dc, #99e2d0, #ff79da);
-    animation: banner-anim 5s linear infinite;
+    width: 50px;
   }
-  .banner .banner-contenaire::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 8px;
-    background: linear-gradient(to right, #9356dc, #99e2d0, #ff79da);
-    animation: banner-anim-1 5s linear infinite;
+  .banner .banner-contenaire .banner-star .svg-inline--fa {
+    fill: transparent;
+    stroke: #ff79da;
+    stroke-width: 10;
+  }
+  .banner .banner-contenaire .banner-star .svg-inline--fa path {
+    stroke-dasharray: 1850;
+    stroke-dashoffset: 1850;
+  }
+  .banner .banner-contenaire .banner-star:nth-child(1) {
+    right: 50px;
+    top: 250px;
+  }
+  .banner .banner-contenaire .banner-star:nth-child(1) path {
+    animation: banner-anim 4.8s linear;
+    animation-iteration-count: infinite;
+  }
+  .banner .banner-contenaire .banner-star:nth-child(2) {
+    left: 120px;
+    bottom: 35px;
+  }
+  .banner .banner-contenaire .banner-star:nth-child(2) path {
+    animation: banner-anim 3.5s 0.5 linear;
+    animation-iteration-count: infinite;
+  }
+  .banner .banner-contenaire .banner-star:nth-child(3) {
+    top: 120px;
+    left: 580px;
+  }
+  .banner .banner-contenaire .banner-star:nth-child(3) path {
+    animation: banner-anim 2s 0.5 linear;
+    animation-iteration-count: infinite;
+  }
+  .banner .banner-contenaire .banner-star:nth-child(4) {
+    left: 850px;
+    bottom: 50px;
+  }
+  .banner .banner-contenaire .banner-star:nth-child(4) path {
+    animation: banner-anim 3s 1.5s linear;
+    animation-iteration-count: infinite;
   }
   .banner .banner-contenaire .recherche {
     height: 250px;
@@ -881,22 +961,11 @@ header .header-nav {
 
   @keyframes icon-anim {
     0% {
-      transform: scale(0.1) rotate(0) translateX(-550px);
+      transform: scale(0.1) translateX(-750px);
       opacity: 0.5;
     }
-    30% {
-      transform: scale(0.2) rotate(-20deg) translateX(-320px);
-    }
-    50% {
-      transform: scale(0.3) rotate(20deg);
-      opacity: 0.7;
-    }
-    80% {
-      transform: scale(0.4) rotate(-20deg) translateX(55px) translateX(120px);
-      opacity: 0.8;
-    }
     100% {
-      transform: scale(1) rotate(0deg) translateX(0px);
+      transform: scale(1) translateX(0px);
       opacity: 1;
     }
   }
@@ -913,13 +982,6 @@ header .header-nav {
   .histoire .text {
     padding: 15px 20px;
     font-size: large;
-  }
-  .histoire .text:hover + .concepte .concepte-boite .concepte-items {
-    animation: icon-anim;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
   }
   .histoire .star {
     margin: 10px;
@@ -953,8 +1015,8 @@ header .header-nav {
     border: 5px dashed #ff79da;
     height: 100%;
     width: 100%;
+    display: inline-block;
     border-radius: 50%;
-    animation: tour 4.8s linear infinite;
   }
   .concepte-items img {
     width: 100%;
@@ -966,6 +1028,26 @@ header .header-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .concepte-boite:nth-child(2) {
+    transform: translateX(-403px) scale(0.1);
+    opacity: 0;
+  }
+  .concepte-boite:nth-child(3) {
+    transform: translateX(-805px) scale(0.1);
+    opacity: 0;
+  }
+
+  .histoire:hover > .concepte .concepte-boite {
+    animation: histoire-icons;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+  }
+
+  .histoire:not(:hover) {
+    animation: histoire-icons;
+    animation-play-state: paused;
   }
 
   .infographie-boite {
@@ -991,7 +1073,7 @@ header .header-nav {
   }
 
   .menu-list .card .txt-large {
-    font-size: 18px;
+    font-size: 25px;
     padding: 0px;
   }
 
@@ -999,10 +1081,11 @@ header .header-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
   }
   .infographie-contenaire {
     padding: 10px;
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -1051,25 +1134,31 @@ header .header-nav {
     letter-spacing: 0.5px;
   }
 
+  @keyframes histoire-icons {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
   @keyframes infographie {
     0% {
-      transform: scale(0.9);
+      transform: scale(1);
     }
-    80% {
-      transform: scale(0.95);
-    }
-    90% {
+    50% {
       transform: scale(1.05);
     }
     100% {
-      transform: scale(1);
+      transform: scale(1.1);
     }
   }
   .infographie-items:hover {
     animation-name: infographie;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-    animation-duration: 1s;
+    animation-duration: 0.3s;
     mix-blend-mode: screen;
   }
 
@@ -1085,7 +1174,7 @@ header .header-nav {
     content: "";
     position: absolute;
     bottom: -10px;
-    width: 220px;
+    width: 350px;
     border: 3px solid #99e2d0;
   }
 
