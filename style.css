@@ -73,7 +73,7 @@ a {
   animation: start;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
-  animation-delay: 6s;
+  animation-delay: 1.5s;
   animation-fill-mode: forwards;
 }
 
@@ -94,7 +94,7 @@ a {
 .loader .spinner {
   display: flex;
   border-radius: 50%;
-  border-width: 20px;
+  border-width: 15px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0);
   position: absolute;
@@ -102,22 +102,22 @@ a {
 .loader .spin-1 {
   border-right-color: #9356dc;
   border-left-color: #9356dc;
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
   animation: tour 1.3s linear infinite;
 }
 .loader .spin-2 {
   border-right-color: #ff79da;
   border-left-color: #ff79da;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   animation: tourAR 1.4s linear infinite;
 }
 .loader .spin-3 {
   border-right-color: #99e2d0;
   border-left-color: #99e2d0;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   animation: tour 1.2s linear infinite;
 }
 
@@ -220,7 +220,7 @@ header .header-nav {
   text-align: center;
 }
 .recherche .contenaite-text h1 {
-  font-size: x-large;
+  font-size: large;
   font-weight: 600;
   line-height: normal;
   margin: 15px 0px;
@@ -317,6 +317,9 @@ header .header-nav {
 .fonction-btn_style .icon {
   color: rgba(59, 57, 57, 0.7);
   margin-right: 10px;
+}
+.fonction-btn_style .fas.fa-store {
+  color: #c9abee;
 }
 
 .fonction-btn_style::after {
@@ -558,6 +561,7 @@ header .header-nav {
 .menu-list .card p {
   font-weight: 300;
   margin: 10px 0px;
+  font-size: 15px;
 }
 .menu-list .card_front {
   position: absolute;
@@ -709,8 +713,28 @@ header .header-nav {
     margin: auto;
   }
 
-  .loader-contenaire {
-    padding-top: 80px;
+  .spinner.spin-1 {
+    border-right-color: #9356dc;
+    border-left-color: #9356dc;
+    width: 250px;
+    height: 250px;
+    animation: tour 1.3s linear infinite;
+  }
+
+  .spinner.spin-2 {
+    border-right-color: #ff79da;
+    border-left-color: #ff79da;
+    width: 180px;
+    height: 180px;
+    animation: tourAR 1.4s linear infinite;
+  }
+
+  .spinner.spin-3 {
+    border-right-color: #99e2d0;
+    border-left-color: #99e2d0;
+    width: 120px;
+    height: 120px;
+    animation: tour 1.2s linear infinite;
   }
 
   header {
@@ -1012,7 +1036,7 @@ header .header-nav {
   .concepte-items::before {
     content: "";
     position: absolute;
-    border: 5px dashed #ff79da;
+    border: 5px solid #ff79da;
     height: 100%;
     width: 100%;
     display: inline-block;
@@ -1073,8 +1097,7 @@ header .header-nav {
   }
 
   .menu-list .card .txt-large {
-    font-size: 25px;
-    padding: 0px;
+    font-size: 20px;
   }
 
   .infographie {
@@ -1087,7 +1110,7 @@ header .header-nav {
     padding: 10px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .infographie-items {
     width: 30%;
@@ -1096,6 +1119,7 @@ header .header-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 300ms ease-in-out;
   }
   .infographie-items img {
     margin: 20px 0px 15px 0px;
@@ -1147,18 +1171,16 @@ header .header-nav {
     0% {
       transform: scale(1);
     }
-    50% {
-      transform: scale(1.05);
-    }
     100% {
-      transform: scale(1.1);
+      transform: scale(1.05) translateY(-5%);
     }
   }
   .infographie-items:hover {
     animation-name: infographie;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-    animation-duration: 0.3s;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
     mix-blend-mode: screen;
   }
 
@@ -1276,6 +1298,10 @@ header .header-nav {
 
   .fonction-btn_items:hover > strong {
     width: 180px;
+  }
+
+  .menu-list .card .txt-large {
+    font-size: 25px;
   }
 }
 
