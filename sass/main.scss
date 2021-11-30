@@ -9,6 +9,7 @@ $couleur3: #99e2d0;
 $couleur4: #f2f2f2;
 $couleur5: #6e6e6e;
 
+
 $ombre1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -36,7 +37,7 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   animation: start;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
-  animation-delay: 3s;
+  animation-delay: 1.5s;
   animation-fill-mode: forwards;
 }
 .loader {
@@ -55,7 +56,7 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   .spinner{
     display:flex;
     border-radius:50%;
-    border-width:20px;
+    border-width:15px;
     border-style:solid;
     border-color:rgba(0,0,0,0);
     position:absolute;
@@ -63,22 +64,22 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   .spin-1{
     border-right-color:$couleur1;
     border-left-color:$couleur1;
-    width:300px;
-    height:300px;
+    width:150px;
+    height:150px;
     animation:tour 1.3s linear infinite;
   }
   .spin-2{
     border-right-color:$couleur2;
     border-left-color:$couleur2;
-    width:200px;
-    height:200px;
+    width:100px;
+    height:100px;
     animation:tourAR 1.4s linear infinite;
   }
   .spin-3{
     border-right-color:$couleur3;
     border-left-color:$couleur3;
-    width:100px;
-    height:100px;
+    width:50px;
+    height:50px;
     animation:tour 1.2s linear infinite;
   }
 
@@ -184,7 +185,7 @@ header {
     letter-spacing: 0.5px;
     text-align: center;
     h1 {
-      font-size: x-large;
+      font-size: large;
       font-weight: 600;
       line-height: normal;
       margin: 15px 0px;
@@ -288,6 +289,9 @@ header {
       color: rgba(59, 57, 57, 0.7);
       margin-right: 10px;
      
+    }
+    .fas.fa-store  {
+      color: lighten($couleur1, $amount: 20%);
     }
   }
 }
@@ -549,6 +553,7 @@ header {
     p{
       font-weight: 300;
       margin: 10px 0px;
+      font-size: 15px;
     
     }
     
@@ -722,9 +727,36 @@ header {
     width: 850px;
     margin: auto;
   }
-  .loader-contenaire {
-    padding-top: 80px;
-  }
+
+  
+    .spinner.spin-1{
+      border-right-color:$couleur1;
+      border-left-color:$couleur1;
+      width:250px;
+      height:250px;
+      animation:tour 1.3s linear infinite;
+    }
+    .spinner.spin-2{
+      border-right-color:$couleur2;
+      border-left-color:$couleur2;
+      width:180px;
+      height:180px;
+      animation:tourAR 1.4s linear infinite;
+    }
+    .spinner.spin-3{
+      border-right-color:$couleur3;
+      border-left-color:$couleur3;
+      width:120px;
+      height:120px;
+      animation:tour 1.2s linear infinite;
+    }
+  
+  
+  
+
+  
+  
+
 
   header {
     display: flex;
@@ -1045,7 +1077,7 @@ header {
       &::before{
         content: "";
         position: absolute;
-        border: 5px dashed $couleur2;
+        border: 5px solid $couleur2;
         height: 100%;
         width: 100%;
         display: inline-block;
@@ -1126,8 +1158,8 @@ header {
     }
   }
   .menu-list .card .txt-large{
-    font-size: 25px;
-    padding: 0px;
+    font-size: 20px;
+
   }
   .infographie {
     display: flex;
@@ -1139,7 +1171,7 @@ header {
       padding: 10px;
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
     }
     &-items {
       width: 30%;
@@ -1148,6 +1180,7 @@ header {
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: all 300ms ease-in-out;
       
       img{
         margin: 20px 0px 15px 0px;
@@ -1205,15 +1238,16 @@ header {
     0%{
       transform: scale(1);
     }
-    50%{transform: scale(1.05) translateX(-50px);}
-    100%{transform: scale(1.1);}
+   
+    100%{transform: scale(1.05) translateY(-5%);}
     
   }
   .infographie-items:hover {
     animation-name: infographie;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-    animation-duration: .3s;
+    animation-duration: .4s;
+    animation-fill-mode: both;
 
     mix-blend-mode: screen;
   }
@@ -1330,8 +1364,13 @@ header {
       animation: info-anim-2  2s linear infinite;
 
     }
+   
   }
   .fonction-btn_items:hover > strong{
     width: 180px;
+  }
+  .menu-list .card .txt-large{
+    font-size: 25px;
+
   }
 }

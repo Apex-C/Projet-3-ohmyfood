@@ -36,7 +36,7 @@ $back-image4: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-uns
   animation: start;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
-  animation-delay: 2s;
+  animation-delay: 1.5s;
   animation-fill-mode: forwards;
 }
 .loader {
@@ -55,7 +55,7 @@ $back-image4: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-uns
   .spinner{
     display:flex;
     border-radius:50%;
-    border-width:20px;
+    border-width:10px;
     border-style:solid;
     border-color:rgba(0,0,0,0);
     position:absolute;
@@ -63,22 +63,22 @@ $back-image4: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-uns
   .spin-1{
     border-right-color:$couleur1;
     border-left-color:$couleur1;
-    width:300px;
-    height:300px;
+    width:150px;
+    height:150px;
     animation:tour 1.3s linear infinite;
   }
   .spin-2{
     border-right-color:$couleur2;
     border-left-color:$couleur2;
-    width:200px;
-    height:200px;
+    width:100px;
+    height:100px;
     animation:tourAR 1.4s linear infinite;
   }
   .spin-3{
     border-right-color:$couleur3;
     border-left-color:$couleur3;
-    width:100px;
-    height:100px;
+    width:50px;
+    height:50px;
     animation:tour 1.2s linear infinite;
   }
 
@@ -137,7 +137,7 @@ body {
     justify-content: center;
     position: relative;
     img {
-      scale: 45%;
+      transform: scale(45%);
     }
     span {
       font-size: 22px;
@@ -211,7 +211,7 @@ body {
     &_titre {
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       font-family: Shrikhand;
       font-size: 22px;
@@ -400,6 +400,6 @@ body {
 }
 @media screen and (max-width: 320px) {
   h1{
-    color: #9356dc;
+    font-size: 18px;
   }
 }

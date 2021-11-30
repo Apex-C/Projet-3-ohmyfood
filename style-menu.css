@@ -70,7 +70,7 @@ a {
   animation: start;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
-  animation-delay: 2s;
+  animation-delay: 1.5s;
   animation-fill-mode: forwards;
 }
 
@@ -91,7 +91,7 @@ a {
 .loader .spinner {
   display: flex;
   border-radius: 50%;
-  border-width: 20px;
+  border-width: 10px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0);
   position: absolute;
@@ -99,22 +99,22 @@ a {
 .loader .spin-1 {
   border-right-color: #9356dc;
   border-left-color: #9356dc;
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
   animation: tour 1.3s linear infinite;
 }
 .loader .spin-2 {
   border-right-color: #ff79da;
   border-left-color: #ff79da;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   animation: tourAR 1.4s linear infinite;
 }
 .loader .spin-3 {
   border-right-color: #99e2d0;
   border-left-color: #99e2d0;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   animation: tour 1.2s linear infinite;
 }
 
@@ -173,7 +173,7 @@ body {
   position: relative;
 }
 .header-nav img {
-  scale: 45%;
+  transform: scale(45%);
 }
 .header-nav span {
   font-size: 22px;
@@ -244,7 +244,7 @@ body {
 .menu-table_titre {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-family: Shrikhand;
   font-size: 22px;
@@ -443,7 +443,7 @@ body {
 }
 @media screen and (max-width: 320px) {
   h1 {
-    color: #9356dc;
+    font-size: 18px;
   }
 }
 
