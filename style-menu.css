@@ -56,6 +56,107 @@ a {
   margin: auto;
 }
 
+.loader-contenaire {
+  margin: 0;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  transform: scale(1);
+  animation: start;
+  animation-duration: 100ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.loader {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  -webkit-animation: tour 2s linear infinite;
+  /* Safari */
+  -webkit-animation-iteration-count: 5;
+  animation: tour 2s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+.loader .spinner {
+  display: flex;
+  border-radius: 50%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  position: absolute;
+}
+.loader .spin-1 {
+  border-right-color: #9356dc;
+  border-left-color: #9356dc;
+  width: 150px;
+  height: 150px;
+  animation: tour 1.3s linear infinite;
+}
+.loader .spin-2 {
+  border-right-color: #ff79da;
+  border-left-color: #ff79da;
+  width: 100px;
+  height: 100px;
+  animation: tourAR 1.4s linear infinite;
+}
+.loader .spin-3 {
+  border-right-color: #99e2d0;
+  border-left-color: #99e2d0;
+  width: 50px;
+  height: 50px;
+  animation: tour 1.2s linear infinite;
+}
+
+@keyframes start {
+  0% {
+    transform: scale(0.1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(0.05);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+/* Safari */
+@-webkit-keyframes tour {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes tour {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes tourAR {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 body {
   background: #fff;
   font-family: Roboto, sans-serif;
@@ -72,7 +173,7 @@ body {
   position: relative;
 }
 .header-nav img {
-  scale: 45%;
+  transform: scale(45%);
 }
 .header-nav span {
   font-size: 22px;
@@ -89,24 +190,32 @@ body {
 .banner-image-1 {
   background-image: url(./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: inherit;
   height: 250px;
 }
 .banner-image-2 {
   background-image: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: inherit;
   height: 250px;
 }
 .banner-image-3 {
   background-image: url(./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: inherit;
   height: 250px;
 }
 .banner-image-4 {
   background-image: url(./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: inherit;
   height: 250px;
 }
@@ -135,7 +244,7 @@ body {
 .menu-table_titre {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-family: Shrikhand;
   font-size: 22px;
@@ -193,6 +302,7 @@ body {
   font-weight: 400;
   align-self: flex-end;
   padding-left: 10px;
+  transition: transform 400ms ease-in-out;
 }
 .menu-list_titre {
   text-transform: uppercase;
@@ -223,43 +333,43 @@ body {
 }
 
 .premier {
-  animation: menu-items 3s ease both;
-}
-
-.deuxieme {
-  animation: menu-items 3s 1s ease both;
-}
-
-.troisieme {
   animation: menu-items 3s 2s ease both;
 }
 
-.quatrieme {
+.deuxieme {
   animation: menu-items 3s 3s ease both;
 }
 
-.cinquieme {
+.troisieme {
   animation: menu-items 3s 4s ease both;
 }
 
-.sixieme {
+.quatrieme {
   animation: menu-items 3s 5s ease both;
 }
 
-.septieme {
+.cinquieme {
   animation: menu-items 3s 6s ease both;
 }
 
-.huitieme {
+.sixieme {
   animation: menu-items 3s 7s ease both;
 }
 
-.neuvieme {
+.septieme {
   animation: menu-items 3s 8s ease both;
 }
 
-.dix {
+.huitieme {
   animation: menu-items 3s 9s ease both;
+}
+
+.neuvieme {
+  animation: menu-items 3s 10s ease both;
+}
+
+.dix {
+  animation: menu-items 3s 11s ease both;
 }
 
 .menu-list_btn::before {
@@ -306,6 +416,11 @@ body {
   width: 280px;
 }
 
+.menu-list_btn:active > .menu-list_items > span {
+  transform: translateX(5px);
+  font-weight: 500;
+}
+
 .footer_contenaire {
   background: #6e6e6e;
   padding: 20px;
@@ -324,6 +439,11 @@ body {
 @media screen and (min-width: 765px) {
   .menu-list_btn:active > .menu-list_items {
     width: 550px;
+  }
+}
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 18px;
   }
 }
 
