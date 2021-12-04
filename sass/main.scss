@@ -88,7 +88,7 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
 
 @keyframes start {
   0% {
-    transform: scale(.1);
+    transform: scale(1);
   }
   30% {
     transform: scale(1);
@@ -98,6 +98,8 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   }
   100% {
     transform: scale(0);
+    display: none;
+
   }
 }
 
@@ -228,81 +230,93 @@ header {
     text-transform: capitalize;
   }
 }
-.fonction-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
 
-  z-index: 0;
-  &_items {
-    text-align: center;
+  .fonction-btn {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: inherit;
-    letter-spacing: 1px;
-    border-radius: 15px;
     position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-    cursor: pointer;
-    transition:  500ms ease-in-out;
-
-    strong {
-      color: rgb(0, 0, 0);
-      text-overflow: ellipsis;
+  
+    z-index: 0;
+    &_items {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: inherit;
+      letter-spacing: 1px;
+      border-radius: 15px;
+      position: relative;
       overflow: hidden;
+      text-overflow: ellipsis;
       white-space: nowrap;
+  
+      cursor: pointer;
       transition:  500ms ease-in-out;
-    }
-  }
-  &_style {
-    width: 90%;
-    text-align: center;
-    position: relative;
-    line-height: 35px;
-    height: 70px;
-    background: $couleur4;
-    margin-bottom: 25px;
-    align-items: center;
-    display: flex;
-    border-radius: 15px;
-    box-shadow: $ombre1;
-
-    .fa-stack {
-      position: absolute;
-      left: -18px;
-      bottom: 18px;
-      font-size: 15px;
-      color: $couleur1;
-      z-index: 1;
+  
       strong {
-        color: #fff;
-       
+        color: rgb(0, 0, 0);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        transition:  1500ms linear;
       }
     }
-    .icon {
-      color: rgba(59, 57, 57, 0.7);
-      margin-right: 10px;
-     
+    &_style {
+      
+      text-align: center;
+      position: relative;
+      line-height: 35px;
+      height: 70px;
+      background: $couleur4;
+      margin-bottom: 25px;
+      align-items: center;
+      display: flex;
+      border-radius: 15px;
+      box-shadow: $ombre1;
+      overflow: hidden;
+      width: 100%;
+      
+  
+    
+      .icon {
+        color: rgba(59, 57, 57, 0.7);
+        margin-right: 10px;
+       
+      }
+      .fas.fa-store  {
+        color: lighten($couleur1, $amount: 20%);
+      }
     }
-    .fas.fa-store  {
-      color: lighten($couleur1, $amount: 20%);
-    }
+    .fonction-btn_boite{
+      position: relative;
+      width: 90%;
+      .fa-stack {
+        position: absolute;
+        left: -18px;
+        bottom: 50%;
+        font-size: 15px;
+        color: $couleur1;
+        z-index: 5;
+        strong {
+          color: #fff;
+         
+        }
+      }
   }
 }
+
+
+
 .fonction-btn_style::after {
   font-family: "Font Awesome 5 Free";
   content: "\f058";
   position: absolute;
   transition: all 550ms 50ms ease-in-out;
-  right: 0;
+  right: -60px;
   top: 0;
-  width: 0px;
+  width: 60px;
   height: 100%;
   font-weight: 900;
   font-size: 20px;
@@ -315,40 +329,127 @@ header {
 }
 .fonction-btn_style::before {
   content: "";
-  width: 0px;
+  width: 60px;
   height: 100%;
   background: $couleur3;
   position: absolute;
-  right: 0;
+  right: -60px;
   top: 0;
-  transition: all 600ms ease-in-out;
-  
 
-
-  z-index: 1;
+  z-index: 0;
   border-radius: 0px 15px 15px 0px;
 }
+.fonction-btn_items:not(:active) >strong{
+
+  animation: retour 2s linear;
+
+ 
+  
+}
 .fonction-btn_items:active >strong{
-  width: 170px;
+  transition: width .2s step-start;
+ 
   
 }
 
-.fonction-btn_style:active::before {
+.fonction-btn_style:active::before{
+
   
-  width: 60px;
+ 
+ 
+  transition-timing-function: steps(1, start);
+  
+}
+.fonction-btn_style:not(:active )::before
+ {
+
+
+ 
+  transition-timing-function: steps(1, end);
+
+  animation: translateX 2s backwards normal;
+
+  transition: width  3s;
+  
+}
+
+.fonction-btn_style:not(:active)::after {
+  animation: rotate 2s   ;
+  animation-direction:normal ;
+  animation-fill-mode: both;
+  transition: width 1s step-end;
+  
 
 }
-.fonction-btn_style:active::after {
-  width: 60px;
-  transform: rotate(-360deg);
+
+@keyframes translateX {
+  0%{
+    transform: translateX(0px);
+  }
+
+
+  
+    
+   
+  
+  100%{transform: translateX(-60px);}
+
+}
+@keyframes retour {
+  0%{width: 200px;}
+  
+
+100% {
+width:160px;
 
 }
 
-
-
-.contenaire {
-  display: flex;
 }
+@keyframes retour-M {
+  0%{width: 160px;}
+  
+
+100% {
+width:100px;
+
+}
+
+}
+@keyframes retour-L {
+  0%{width: 215px;}
+  
+
+100% {
+width: 200px;
+
+}
+
+}
+
+@keyframes rotate {
+  0%{
+    transform: translateX(0px) rotate(0deg);
+  }
+  50%{
+    transform: translateX(-30px) rotate(-170);
+    
+    
+  }
+  90%{ transform: translateX(-50px) rotate(-360deg);
+   opacity: 1;
+   width: 60px;
+  }
+  100%{ transform: translateX(-60px);
+    width: 0;
+    
+   
+  }
+
+}
+.like-button_contenaire{
+  z-index: 5;
+}
+
 
 .like-button {
   height: 25px;
@@ -359,7 +460,7 @@ header {
   transform: scale(1.4);
   cursor: pointer;
 }
-.like-button:active > .fill {
+.like-button:hover > .fill {
   animation-name: fillAction;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
@@ -503,7 +604,8 @@ header {
 .menu-list {
   display: flex;
 
-  justify-content: space-evenly;
+
+  justify-content: space-between;
   align-items: center;
   a{
     height: 100%;
@@ -511,15 +613,16 @@ header {
     display: inline-block;
   }
   .card {
-    width: 24%;
-    height: 320px;
+    width: 23.5%;
+    height: 420px;
     background: $couleur4;
     opacity: 1;
     position: relative;
     z-index: 0;
+    margin: 30px 0px;
    
     &:hover > .card_front{
-      animation: card-anim 800ms ease-in-out both;
+      animation: card-anim 800ms .2s ease-in-out both;
       
     }
    
@@ -659,8 +762,11 @@ header {
 }
 .menu-contenaire {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .titre-menu {
-    font-size: 28px;
+    font-size: 35px;
     font-weight: 500;
     margin-bottom: 25px;
     position: relative;
@@ -752,11 +858,6 @@ header {
     }
   
   
-  
-
-  
-  
-
 
   header {
     display: flex;
@@ -931,20 +1032,29 @@ header {
       margin-top: 20px;
     }
   }
-
-  .fonction-btn {
-    flex-direction: row;
-    &_style {
-      margin: 0px 10px;
-      a {
-        font-size: 18px;
-
-        strong {
-          font-size: 14px;
+ 
+    .fonction-btn {
+      flex-direction: row;
+      justify-content: center;
+      &_style {
+        margin: 0px 10px;
+        width: 90%;
+      
+      }
+      .fonction-btn_boite{
+        width: 32%;
+        span.fa-stack{
+          bottom: 20px;
         }
       }
+      &_items{
+        font-size: 13px;
+      }
     }
-  }
+
+   
+/*
+
   .fonction-btn_items:hover >strong{
     width: 120px;
     
@@ -960,6 +1070,10 @@ header {
     transform: rotate(-360deg);
   
   }
+  */
+  .fonction-btn_items:not(:active) > strong{
+    animation:  retour-M 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
   .restaurants {
     border-radius: 25px;
     display: flex;
@@ -972,7 +1086,7 @@ header {
       align-self: flex-start;
     }
   }
-  .like-button:hover > .fill {
+  .like-button_contenaire:hover .like-button > .fill {
     animation-name: fillAction;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
@@ -1174,7 +1288,7 @@ header {
       justify-content: space-evenly;
     }
     &-items {
-      width: 30%;
+      width: 25%;
       height: 450px;
       background: rgba(255, 121, 218,.2);
       display: flex;
@@ -1187,7 +1301,7 @@ header {
         width: 150px;
       }
       &_option{
-        width: 80%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1239,7 +1353,7 @@ header {
       transform: scale(1);
     }
    
-    100%{transform: scale(1.05) translateY(-5%);}
+    100%{transform: scale(1.05) translateY(-2%);}
     
   }
   .infographie-items:hover {
@@ -1313,6 +1427,12 @@ header {
     100%{transform: translateX(-25%);}
     
   }
+  .fonction-btn_items{
+    font-size: 18px;
+  }
+  .fonction-btn_items:not(:active) > strong{
+    animation:  retour-L 2s .4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
   .infographie-items{
     height: 400px;
     position: relative;
@@ -1320,36 +1440,33 @@ header {
     .bordure:nth-child(1){
       display: inline-block;
       position: absolute;
-      left: 0;
-     
-      height: 200%;
+      left: 0;   
+      bottom: 0; 
+      height: 0;
       width: 5px;
-      background: linear-gradient(to left,$couleur1,$couleur3);
-      animation: info-anim 2s linear  infinite;
-     
-
+      background: linear-gradient(to top,$couleur1,$couleur3);
+    
     }
     .bordure:nth-child(2){
       display: inline-block;
       position: absolute;
-      right: 0;
-      
-      height: 200%;
+      right: 0; 
+      top: 0;
+      height: 0;
       width: 5px;
-      background: linear-gradient(to left,$couleur1,$couleur2,$couleur3);
-      animation: info-anim-1 2s linear infinite;
-
+      background: linear-gradient(to top,$couleur1,$couleur2,$couleur3);
     }
     &::before{
       content: "";
       display: inline-block;
       position: absolute;
       top: 0;
+      right: 0;
       
       height: 5px;
-      width: 200%;
+      width: 0;
       background: linear-gradient(to left,$couleur1,$couleur2,$couleur3);
-      animation: info-anim-3  2s linear infinite;
+      
 
     }
     &::after{
@@ -1357,18 +1474,31 @@ header {
       display: inline-block;
       position: absolute;
       bottom: 0;
+      left: 0;
       
       height: 5px;
-      width: 200%;
+      width: 0;
       background: linear-gradient(to left,$couleur1,$couleur2,$couleur3);
-      animation: info-anim-2  2s linear infinite;
+  
 
     }
+    &:hover::before,&:hover::after{
+      transition:0.45s all ease 0.2s;
+      width: 100%;
+    }
+    &:hover > .bordure:nth-child(1), &:hover > .bordure:nth-child(2){
+      
+        transition:0.45s all ease 0.2s;
+        height:  100%;
+      }
+     
+    
    
   }
+  /*
   .fonction-btn_items:hover > strong{
     width: 180px;
-  }
+  }*/
   .menu-list .card .txt-large{
     font-size: 25px;
 

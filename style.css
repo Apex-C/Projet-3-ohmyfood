@@ -123,7 +123,7 @@ a {
 
 @keyframes start {
   0% {
-    transform: scale(0.1);
+    transform: scale(1);
   }
   30% {
     transform: scale(1);
@@ -133,6 +133,7 @@ a {
   }
   100% {
     transform: scale(0);
+    display: none;
   }
 }
 /* Safari */
@@ -288,10 +289,9 @@ header .header-nav {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  transition: 500ms ease-in-out;
+  transition: 1500ms linear;
 }
 .fonction-btn_style {
-  width: 90%;
   text-align: center;
   position: relative;
   line-height: 35px;
@@ -302,17 +302,8 @@ header .header-nav {
   display: flex;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-.fonction-btn_style .fa-stack {
-  position: absolute;
-  left: -18px;
-  bottom: 18px;
-  font-size: 15px;
-  color: #9356dc;
-  z-index: 1;
-}
-.fonction-btn_style .fa-stack strong {
-  color: #fff;
+  overflow: hidden;
+  width: 100%;
 }
 .fonction-btn_style .icon {
   color: rgba(59, 57, 57, 0.7);
@@ -321,15 +312,30 @@ header .header-nav {
 .fonction-btn_style .fas.fa-store {
   color: #c9abee;
 }
+.fonction-btn .fonction-btn_boite {
+  position: relative;
+  width: 90%;
+}
+.fonction-btn .fonction-btn_boite .fa-stack {
+  position: absolute;
+  left: -18px;
+  bottom: 50%;
+  font-size: 15px;
+  color: #9356dc;
+  z-index: 5;
+}
+.fonction-btn .fonction-btn_boite .fa-stack strong {
+  color: #fff;
+}
 
 .fonction-btn_style::after {
   font-family: "Font Awesome 5 Free";
   content: "\f058";
   position: absolute;
   transition: all 550ms 50ms ease-in-out;
-  right: 0;
+  right: -60px;
   top: 0;
-  width: 0px;
+  width: 60px;
   height: 100%;
   font-weight: 900;
   font-size: 20px;
@@ -343,32 +349,92 @@ header .header-nav {
 
 .fonction-btn_style::before {
   content: "";
-  width: 0px;
+  width: 60px;
   height: 100%;
   background: #99e2d0;
   position: absolute;
-  right: 0;
+  right: -60px;
   top: 0;
-  transition: all 600ms ease-in-out;
-  z-index: 1;
+  z-index: 0;
   border-radius: 0px 15px 15px 0px;
 }
 
+.fonction-btn_items:not(:active) > strong {
+  animation: retour 2s linear;
+}
+
 .fonction-btn_items:active > strong {
-  width: 170px;
+  transition: width 0.2s step-start;
 }
 
 .fonction-btn_style:active::before {
-  width: 60px;
+  transition-timing-function: steps(1, start);
 }
 
-.fonction-btn_style:active::after {
-  width: 60px;
-  transform: rotate(-360deg);
+.fonction-btn_style:not(:active)::before {
+  transition-timing-function: steps(1, end);
+  animation: translateX 2s backwards normal;
+  transition: width 3s;
 }
 
-.contenaire {
-  display: flex;
+.fonction-btn_style:not(:active)::after {
+  animation: rotate 2s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+  transition: width 1s step-end;
+}
+
+@keyframes translateX {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-60px);
+  }
+}
+@keyframes retour {
+  0% {
+    width: 200px;
+  }
+  100% {
+    width: 160px;
+  }
+}
+@keyframes retour-M {
+  0% {
+    width: 160px;
+  }
+  100% {
+    width: 100px;
+  }
+}
+@keyframes retour-L {
+  0% {
+    width: 215px;
+  }
+  100% {
+    width: 200px;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-30px) rotate(-170);
+  }
+  90% {
+    transform: translateX(-50px) rotate(-360deg);
+    opacity: 1;
+    width: 60px;
+  }
+  100% {
+    transform: translateX(-60px);
+    width: 0;
+  }
+}
+.like-button_contenaire {
+  z-index: 5;
 }
 
 .like-button {
@@ -381,7 +447,7 @@ header .header-nav {
   cursor: pointer;
 }
 
-.like-button:active > .fill {
+.like-button:hover > .fill {
   animation-name: fillAction;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
@@ -517,7 +583,7 @@ header .header-nav {
 
 .menu-list {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 .menu-list a {
@@ -526,15 +592,16 @@ header .header-nav {
   display: inline-block;
 }
 .menu-list .card {
-  width: 24%;
-  height: 320px;
+  width: 23.5%;
+  height: 420px;
   background: #f2f2f2;
   opacity: 1;
   position: relative;
   z-index: 0;
+  margin: 30px 0px;
 }
 .menu-list .card:hover > .card_front {
-  animation: card-anim 800ms ease-in-out both;
+  animation: card-anim 800ms 0.2s ease-in-out both;
 }
 .menu-list .card .txt-large {
   font-size: 18px;
@@ -645,9 +712,12 @@ header .header-nav {
 
 .menu-contenaire {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .menu-contenaire .titre-menu {
-  font-size: 28px;
+  font-size: 35px;
   font-weight: 500;
   margin-bottom: 25px;
   position: relative;
@@ -896,28 +966,42 @@ header .header-nav {
 
   .fonction-btn {
     flex-direction: row;
+    justify-content: center;
   }
   .fonction-btn_style {
     margin: 0px 10px;
+    width: 90%;
   }
-  .fonction-btn_style a {
-    font-size: 18px;
+  .fonction-btn .fonction-btn_boite {
+    width: 32%;
   }
-  .fonction-btn_style a strong {
-    font-size: 14px;
+  .fonction-btn .fonction-btn_boite span.fa-stack {
+    bottom: 20px;
   }
-
-  .fonction-btn_items:hover > strong {
-    width: 120px;
-  }
-
-  .fonction-btn_style:hover::before {
-    width: 60px;
+  .fonction-btn_items {
+    font-size: 13px;
   }
 
-  .fonction-btn_style:hover::after {
-    width: 60px;
-    transform: rotate(-360deg);
+  /*
+
+    .fonction-btn_items:hover >strong{
+      width: 120px;
+
+    }
+
+    .fonction-btn_style:hover::before {
+
+      width: 60px;
+
+    }
+    .fonction-btn_style:hover::after {
+      width: 60px;
+      transform: rotate(-360deg);
+
+    }
+    */
+  .fonction-btn_items:not(:active) > strong {
+    animation: retour-M 2s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
   .restaurants {
@@ -933,7 +1017,7 @@ header .header-nav {
     align-self: flex-start;
   }
 
-  .like-button:hover > .fill {
+  .like-button_contenaire:hover .like-button > .fill {
     animation-name: fillAction;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
@@ -1113,7 +1197,7 @@ header .header-nav {
     justify-content: space-evenly;
   }
   .infographie-items {
-    width: 30%;
+    width: 25%;
     height: 450px;
     background: rgba(255, 121, 218, 0.2);
     display: flex;
@@ -1126,7 +1210,7 @@ header .header-nav {
     width: 150px;
   }
   .infographie-items_option {
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1172,7 +1256,7 @@ header .header-nav {
       transform: scale(1);
     }
     100% {
-      transform: scale(1.05) translateY(-5%);
+      transform: scale(1.05) translateY(-2%);
     }
   }
   .infographie-items:hover {
@@ -1252,6 +1336,14 @@ header .header-nav {
       transform: translateX(-25%);
     }
   }
+  .fonction-btn_items {
+    font-size: 18px;
+  }
+
+  .fonction-btn_items:not(:active) > strong {
+    animation: retour-L 2s 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
   .infographie-items {
     height: 400px;
     position: relative;
@@ -1261,45 +1353,53 @@ header .header-nav {
     display: inline-block;
     position: absolute;
     left: 0;
-    height: 200%;
+    bottom: 0;
+    height: 0;
     width: 5px;
-    background: linear-gradient(to left, #9356dc, #99e2d0);
-    animation: info-anim 2s linear infinite;
+    background: linear-gradient(to top, #9356dc, #99e2d0);
   }
   .infographie-items .bordure:nth-child(2) {
     display: inline-block;
     position: absolute;
     right: 0;
-    height: 200%;
+    top: 0;
+    height: 0;
     width: 5px;
-    background: linear-gradient(to left, #9356dc, #ff79da, #99e2d0);
-    animation: info-anim-1 2s linear infinite;
+    background: linear-gradient(to top, #9356dc, #ff79da, #99e2d0);
   }
   .infographie-items::before {
     content: "";
     display: inline-block;
     position: absolute;
     top: 0;
+    right: 0;
     height: 5px;
-    width: 200%;
+    width: 0;
     background: linear-gradient(to left, #9356dc, #ff79da, #99e2d0);
-    animation: info-anim-3 2s linear infinite;
   }
   .infographie-items::after {
     content: "";
     display: inline-block;
     position: absolute;
     bottom: 0;
+    left: 0;
     height: 5px;
-    width: 200%;
+    width: 0;
     background: linear-gradient(to left, #9356dc, #ff79da, #99e2d0);
-    animation: info-anim-2 2s linear infinite;
+  }
+  .infographie-items:hover::before, .infographie-items:hover::after {
+    transition: 0.45s all ease 0.2s;
+    width: 100%;
+  }
+  .infographie-items:hover > .bordure:nth-child(1), .infographie-items:hover > .bordure:nth-child(2) {
+    transition: 0.45s all ease 0.2s;
+    height: 100%;
   }
 
-  .fonction-btn_items:hover > strong {
+  /*
+  .fonction-btn_items:hover > strong{
     width: 180px;
-  }
-
+  }*/
   .menu-list .card .txt-large {
     font-size: 25px;
   }
