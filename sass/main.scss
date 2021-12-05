@@ -9,10 +9,11 @@ $couleur3: #99e2d0;
 $couleur4: #f2f2f2;
 $couleur5: #6e6e6e;
 
-
 $ombre1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+$ombre3: rgba(0, 0, 0, 0.36) 0px 5px 8px, rgba(0, 0, 0, 0.53) 0px 5px 8px,
+  rgba(0, 0, 0, 0.5) 1.95px 1.95px 2.6px;
 
 * {
   font-family: Roboto, sans-serif;
@@ -41,11 +42,10 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   animation-fill-mode: forwards;
 }
 .loader {
-  
-  display:flex;
-	position:relative;
-	align-items:center;
-	justify-content:center;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
   width: 150px;
   height: 150px;
   -webkit-animation: tour 2s linear infinite; /* Safari */
@@ -53,37 +53,35 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   animation: tour 2s linear;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-  .spinner{
-    display:flex;
-    border-radius:50%;
-    border-width:15px;
-    border-style:solid;
-    border-color:rgba(0,0,0,0);
-    position:absolute;
+  .spinner {
+    display: flex;
+    border-radius: 50%;
+    border-width: 15px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    position: absolute;
   }
-  .spin-1{
-    border-right-color:$couleur1;
-    border-left-color:$couleur1;
-    width:150px;
-    height:150px;
-    animation:tour 1.3s linear infinite;
+  .spin-1 {
+    border-right-color: $couleur1;
+    border-left-color: $couleur1;
+    width: 150px;
+    height: 150px;
+    animation: tour 1.3s linear infinite;
   }
-  .spin-2{
-    border-right-color:$couleur2;
-    border-left-color:$couleur2;
-    width:100px;
-    height:100px;
-    animation:tourAR 1.4s linear infinite;
+  .spin-2 {
+    border-right-color: $couleur2;
+    border-left-color: $couleur2;
+    width: 100px;
+    height: 100px;
+    animation: tourAR 1.4s linear infinite;
   }
-  .spin-3{
-    border-right-color:$couleur3;
-    border-left-color:$couleur3;
-    width:50px;
-    height:50px;
-    animation:tour 1.2s linear infinite;
+  .spin-3 {
+    border-right-color: $couleur3;
+    border-left-color: $couleur3;
+    width: 50px;
+    height: 50px;
+    animation: tour 1.2s linear infinite;
   }
-
-
 }
 
 @keyframes start {
@@ -99,7 +97,6 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   100% {
     transform: scale(0);
     display: none;
-
   }
 }
 
@@ -108,23 +105,29 @@ $ombre2: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
   0% {
     -webkit-transform: rotate(0deg);
   }
- 
-  100%{-webkit-transform: rotate(360deg);}
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes tour {
   0% {
     transform: rotate(0deg);
   }
- 
-  100%{transform: rotate(360deg);}
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes tourAR {
   0% {
     transform: rotate(0deg);
   }
- 
-  100%{transform: rotate(-360deg);}
+
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 .coeur::after {
   content: "";
@@ -174,13 +177,11 @@ header {
       background: rgb(218, 216, 216);
       font-size: larger;
       color: rgba(#000, $alpha: 0.8);
-      position:relative;
-      
+      position: relative;
     }
     .fa-map-marker-alt {
       margin-right: 15px;
     }
- 
   }
   .contenaite-text {
     width: 70%;
@@ -213,9 +214,8 @@ header {
       background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
       color: #fff;
       position: relative;
-     
+
       &:hover {
-        
         border: 2px solid $couleur1;
       }
     }
@@ -231,83 +231,76 @@ header {
   }
 }
 
-  .fonction-btn {
+.fonction-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  z-index: 0;
+  &_items {
+    text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: inherit;
+    letter-spacing: 1px;
+    border-radius: 15px;
     position: relative;
-  
-    z-index: 0;
-    &_items {
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: inherit;
-      letter-spacing: 1px;
-      border-radius: 15px;
-      position: relative;
-      overflow: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+
+    strong {
+      color: rgb(0, 0, 0);
       text-overflow: ellipsis;
-      white-space: nowrap;
-  
-      cursor: pointer;
-      transition:  500ms ease-in-out;
-  
-      strong {
-        color: rgb(0, 0, 0);
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        transition:  1500ms linear;
-      }
-    }
-    &_style {
-      
-      text-align: center;
-      position: relative;
-      line-height: 35px;
-      height: 70px;
-      background: $couleur4;
-      margin-bottom: 25px;
-      align-items: center;
-      display: flex;
-      border-radius: 15px;
-      box-shadow: $ombre1;
       overflow: hidden;
-      width: 100%;
-      
-  
-    
-      .icon {
-        color: rgba(59, 57, 57, 0.7);
-        margin-right: 10px;
-       
-      }
-      .fas.fa-store  {
-        color: lighten($couleur1, $amount: 20%);
+      white-space: nowrap;
+      transition: 1500ms linear;
+    }
+  }
+  &_style {
+    text-align: center;
+    position: relative;
+    line-height: 35px;
+    height: 70px;
+    background: $couleur4;
+    margin-bottom: 25px;
+    align-items: center;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: $ombre1;
+    overflow: hidden;
+    width: 100%;
+
+    .icon {
+      color: rgba(59, 57, 57, 0.7);
+      margin-right: 10px;
+    }
+    .fas.fa-store {
+      color: lighten($couleur1, $amount: 10%);
+    }
+  }
+  .fonction-btn_boite {
+    position: relative;
+    width: 90%;
+    .fa-stack {
+      position: absolute;
+      left: -18px;
+      bottom: 50%;
+      font-size: 15px;
+      color: $couleur1;
+      z-index: 5;
+      strong {
+        color: #fff;
       }
     }
-    .fonction-btn_boite{
-      position: relative;
-      width: 90%;
-      .fa-stack {
-        position: absolute;
-        left: -18px;
-        bottom: 50%;
-        font-size: 15px;
-        color: $couleur1;
-        z-index: 5;
-        strong {
-          color: #fff;
-         
-        }
-      }
   }
 }
-
-
 
 .fonction-btn_style::after {
   font-family: "Font Awesome 5 Free";
@@ -339,117 +332,90 @@ header {
   z-index: 0;
   border-radius: 0px 15px 15px 0px;
 }
-.fonction-btn_items:not(:active) >strong{
-
-  animation: retour 2s linear;
-
- 
-  
+.fonction-btn_items:not(:active) > strong {
+  animation: retour 4s linear;
 }
-.fonction-btn_items:active >strong{
-  transition: width .2s step-start;
- 
-  
+.fonction-btn_items:active > strong {
+  transition: width 4s step-start;
 }
 
-.fonction-btn_style:active::before{
-
-  
- 
- 
+.fonction-btn_style:active::before {
   transition-timing-function: steps(1, start);
-  
 }
-.fonction-btn_style:not(:active )::before
- {
-
-
- 
+.fonction-btn_style:not(:active)::before {
   transition-timing-function: steps(1, end);
 
-  animation: translateX 2s backwards normal;
+  animation: translateX 4s backwards alternate;
 
-  transition: width  3s;
-  
+  transition: width 4s;
 }
 
 .fonction-btn_style:not(:active)::after {
-  animation: rotate 2s   ;
-  animation-direction:normal ;
+  animation: rotate 4s;
+  animation-direction: alternate;
   animation-fill-mode: both;
   transition: width 1s step-end;
-  
-
 }
-
+.fonction-btn_style:hover {
+  background: lighten($couleur4, 5%);
+  box-shadow: $ombre3;
+}
 @keyframes translateX {
-  0%{
+  0% {
     transform: translateX(0px);
   }
 
-
-  
+  50% {
+    transform: translateX(-60px);
     
-   
-  
-  100%{transform: translateX(-60px);}
-
+  }
+  100%{transform: translateX(0px);}
 }
 @keyframes retour {
-  0%{width: 200px;}
-  
+  0% {
+    width: 200px;
+  }
 
-100% {
-width:160px;
-
-}
-
+  100% {
+    width: 160px;
+  }
 }
 @keyframes retour-M {
-  0%{width: 160px;}
-  
+  0% {
+    width: 160px;
+  }
 
-100% {
-width:100px;
-
-}
-
+  100% {
+    width: 100px;
+  }
 }
 @keyframes retour-L {
-  0%{width: 215px;}
-  
+  0% {
+    width: 215px;
+  }
 
-100% {
-width: 200px;
-
-}
-
+  100% {
+    width: 200px;
+  }
 }
 
 @keyframes rotate {
-  0%{
+  0% {
     transform: translateX(0px) rotate(0deg);
   }
-  50%{
-    transform: translateX(-30px) rotate(-170);
-    
-    
+  50% {
+    transform: translateX(-60px) rotate(-360deg);
+
   }
-  90%{ transform: translateX(-50px) rotate(-360deg);
-   opacity: 1;
-   width: 60px;
-  }
-  100%{ transform: translateX(-60px);
-    width: 0;
-    
+ 
+  100% {
+    transform: translateX(0px);
    
   }
-
 }
-.like-button_contenaire{
+.like-button_contenaire {
   z-index: 5;
 }
-
 
 .like-button {
   height: 25px;
@@ -459,6 +425,7 @@ width: 200px;
   margin: 20px;
   transform: scale(1.4);
   cursor: pointer;
+  position: relative;
 }
 .like-button:hover > .fill {
   animation-name: fillAction;
@@ -487,6 +454,15 @@ width: 200px;
 .far.fa-heart::after {
   font-family: "Font Awesome 5 Free";
   content: "\f004";
+  position: absolute;
+}
+.like-button::before {
+  font-family: "Font Awesome 5 Free";
+
+  content: "\f004";
+  position: absolute;
+  font-size: 25px;
+  background: transparent;
 }
 
 @keyframes fillAction {
@@ -528,10 +504,10 @@ width: 200px;
     box-shadow: $ombre2;
     border-radius: 20px;
     box-sizing: border-box;
-    a{
-      p{
+    a {
+      p {
         position: relative;
-        span{
+        span {
           position: absolute;
           top: 10px;
           right: 10px;
@@ -604,10 +580,9 @@ width: 200px;
 .menu-list {
   display: flex;
 
-
   justify-content: space-between;
   align-items: center;
-  a{
+  a {
     height: 100%;
     width: 100%;
     display: inline-block;
@@ -620,80 +595,63 @@ width: 200px;
     position: relative;
     z-index: 0;
     margin: 30px 0px;
-   
-    &:hover > .card_front{
-      animation: card-anim 800ms .2s ease-in-out both;
-      
+
+    &:hover > .card_front {
+      animation: card-anim 800ms 0.2s ease-in-out both;
     }
-   
-   
+
     .txt-large {
       font-size: 18px;
       font-weight: 600;
       text-align: center;
       padding: 15px;
-
     }
     .txt-medium {
       font-size: 18px;
       font-weight: 600;
     }
-    .menu-course{
+    .menu-course {
       font-weight: 400;
       font-size: 18px;
       position: relative;
-     
-      &::before{
+
+      &::before {
         position: absolute;
         content: "";
         width: 40px;
         bottom: -5px;
         border: 2px solid $couleur3;
-       
-
       }
     }
-    p{
+    p {
       font-weight: 300;
       margin: 10px 0px;
       font-size: 15px;
-    
     }
-    
-    
-    &_front{
-      
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background:$couleur3;
-        z-index: 2;
-        top:0px;
-        color:$couleur1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform-origin: top left;
-        font-size: 45px;
-        opacity: 1;
-      
-        
-     
-        
-        transform: scale(1);
-        p{
-          font-size: 22px;
-          font-weight: 600;
-        
-        }
-       
+
+    &_front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $couleur3;
+      z-index: 2;
+      top: 0px;
+      color: $couleur1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-origin: top left;
+      font-size: 45px;
+      opacity: 1;
+
+      transform: scale(1);
+      p {
+        font-size: 22px;
+        font-weight: 600;
+      }
     }
-  
-   
   }
-  &_items{
-   
-    
+  &_items {
     height: inherit;
     width: 100%;
     padding: 10px;
@@ -701,24 +659,21 @@ width: 200px;
     text-overflow: clip;
     white-space: nowrap;
     overflow: scroll;
-    font-size:18px;
-    background:linear-gradient( $couleur1 10%,$couleur2,$couleur3);
-   
+    font-size: 18px;
+    background: linear-gradient($couleur1 10%, $couleur2, $couleur3);
   }
 }
 
 @keyframes card-anim {
-  0%{
-    transform: scale(1) rotate(0deg) ;
-          opacity: 1;
-
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
   }
-  100%{
-    transform: scale(0.2)  rotate(190deg)  ;
-          opacity: 0;
+  100% {
+    transform: scale(0.2) rotate(190deg);
+    opacity: 0;
   }
 }
-  
 
 .menu-section {
   width: 100%;
@@ -740,7 +695,7 @@ width: 200px;
     font-weight: 600;
     position: relative;
     margin: 0px;
-  
+
     &::before {
       content: "";
       position: absolute;
@@ -758,7 +713,6 @@ width: 200px;
       width: 42%;
     }
   }
-
 }
 .menu-contenaire {
   padding: 10px;
@@ -773,8 +727,8 @@ width: 200px;
     &::before {
       position: absolute;
       content: "";
-      border-bottom: 5px solid $couleur3 ;
-    
+      border-bottom: 5px solid $couleur3;
+
       bottom: -10px;
       left: 0;
       width: 250px;
@@ -812,7 +766,8 @@ width: 200px;
 }
 .btn-action,
 .histoire,
-.menu,.banner-star {
+.menu,
+.banner-star {
   display: none;
 }
 .wave,
@@ -834,30 +789,27 @@ width: 200px;
     margin: auto;
   }
 
-  
-    .spinner.spin-1{
-      border-right-color:$couleur1;
-      border-left-color:$couleur1;
-      width:250px;
-      height:250px;
-      animation:tour 1.3s linear infinite;
-    }
-    .spinner.spin-2{
-      border-right-color:$couleur2;
-      border-left-color:$couleur2;
-      width:180px;
-      height:180px;
-      animation:tourAR 1.4s linear infinite;
-    }
-    .spinner.spin-3{
-      border-right-color:$couleur3;
-      border-left-color:$couleur3;
-      width:120px;
-      height:120px;
-      animation:tour 1.2s linear infinite;
-    }
-  
-  
+  .spinner.spin-1 {
+    border-right-color: $couleur1;
+    border-left-color: $couleur1;
+    width: 250px;
+    height: 250px;
+    animation: tour 1.3s linear infinite;
+  }
+  .spinner.spin-2 {
+    border-right-color: $couleur2;
+    border-left-color: $couleur2;
+    width: 180px;
+    height: 180px;
+    animation: tourAR 1.4s linear infinite;
+  }
+  .spinner.spin-3 {
+    border-right-color: $couleur3;
+    border-left-color: $couleur3;
+    width: 120px;
+    height: 120px;
+    animation: tour 1.2s linear infinite;
+  }
 
   header {
     display: flex;
@@ -899,97 +851,90 @@ width: 200px;
     }
   }
   @keyframes banner-anim {
-    0%{stroke-dashoffset: 0;
-    fill: transparent;}
-    40%{stroke-dashoffset: 550;
-    fill: transparent;}
-    80%{stroke-dashoffset: 1550;
-      fill: transparent;}
-  
-100%{stroke-dashoffset: 1850;}
-    
+    0% {
+      stroke-dashoffset: 0;
+      fill: transparent;
+    }
+    40% {
+      stroke-dashoffset: 550;
+      fill: transparent;
+    }
+    80% {
+      stroke-dashoffset: 1550;
+      fill: transparent;
+    }
+
+    100% {
+      stroke-dashoffset: 1850;
+    }
   }
   @keyframes banner-anim-1 {
-   
-    0%{transform: translateX(0%);}
-    100%{transform: translateX(100%);}
-    
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
   }
-  
+
   .banner {
-    
     .banner-image {
       display: block;
       object-fit: cover;
-      
     }
     .banner-contenaire {
       width: 100%;
       position: relative;
       overflow: hidden;
-      
-      .banner-star{
+
+      .banner-star {
         display: inline-block;
         position: absolute;
         width: 50px;
-        .svg-inline--fa{
-     
+        .svg-inline--fa {
           fill: transparent;
           stroke: $couleur2;
           stroke-width: 10;
 
-       
-          path{
+          path {
             stroke-dasharray: 1850;
             stroke-dashoffset: 1850;
-          
-           
           }
-         
-  
         }
-        &:nth-child(1){
+        &:nth-child(1) {
           right: 50px;
           top: 250px;
-          path{
-            animation: banner-anim 4.8s linear ;
-          animation-iteration-count: infinite;
-
+          path {
+            animation: banner-anim 4.8s linear;
+            animation-iteration-count: infinite;
           }
-          
         }
-        &:nth-child(2){
+        &:nth-child(2) {
           left: 120px;
           bottom: 35px;
-          path{
-            animation: banner-anim 3.5s .5 linear  ;
-          animation-iteration-count: infinite;
-
+          path {
+            animation: banner-anim 3.5s 0.5 linear;
+            animation-iteration-count: infinite;
           }
         }
-        &:nth-child(3){
+        &:nth-child(3) {
           top: 120px;
           left: 580px;
-          path{
-            animation: banner-anim 2s .5 linear ;
-          animation-iteration-count: infinite;
-
+          path {
+            animation: banner-anim 2s 0.5 linear;
+            animation-iteration-count: infinite;
           }
         }
-        &:nth-child(4){
+        &:nth-child(4) {
           left: 850px;
           bottom: 50px;
-          path{
-            animation: banner-anim 3s 1.5s linear ;
-          animation-iteration-count: infinite;
-
+          path {
+            animation: banner-anim 3s 1.5s linear;
+            animation-iteration-count: infinite;
           }
         }
-
       }
-    
-      
-    
+
       .recherche {
         height: 250px;
         position: absolute;
@@ -1021,7 +966,7 @@ width: 200px;
       }
     }
   }
-  
+
   .fonctionement {
     padding: 10px;
     margin: 0px 0px 30px 0px;
@@ -1032,28 +977,26 @@ width: 200px;
       margin-top: 20px;
     }
   }
- 
-    .fonction-btn {
-      flex-direction: row;
-      justify-content: center;
-      &_style {
-        margin: 0px 10px;
-        width: 90%;
-      
-      }
-      .fonction-btn_boite{
-        width: 32%;
-        span.fa-stack{
-          bottom: 20px;
-        }
-      }
-      &_items{
-        font-size: 13px;
+
+  .fonction-btn {
+    flex-direction: row;
+    justify-content: center;
+    &_style {
+      margin: 0px 10px;
+      width: 90%;
+    }
+    .fonction-btn_boite {
+      width: 32%;
+      span.fa-stack {
+        bottom: 20px;
       }
     }
+    &_items {
+      font-size: 13px;
+    }
+  }
 
-   
-/*
+  /*
 
   .fonction-btn_items:hover >strong{
     width: 120px;
@@ -1071,8 +1014,8 @@ width: 200px;
   
   }
   */
-  .fonction-btn_items:not(:active) > strong{
-    animation:  retour-M 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  .fonction-btn_items:not(:active) > strong {
+    animation: retour-M 2s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
   .restaurants {
     border-radius: 25px;
@@ -1088,12 +1031,11 @@ width: 200px;
   }
   .like-button_contenaire:hover .like-button > .fill {
     animation-name: fillAction;
-  animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-  animation-duration: 3s;
-  animation-fill-mode: both;
-  mix-blend-mode: screen;
-
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    mix-blend-mode: screen;
   }
   .btn-action {
     display: block;
@@ -1133,15 +1075,15 @@ width: 200px;
     }
   }
   @keyframes icon-anim {
-    0%{
-      transform: scale(.1) translateX(-750px);
-      opacity: .5;
-      
+    0% {
+      transform: scale(0.1) translateX(-750px);
+      opacity: 0.5;
     }
-    
-    100%{transform: scale(1) translateX(0px);
-    opacity: 1;}
-    
+
+    100% {
+      transform: scale(1) translateX(0px);
+      opacity: 1;
+    }
   }
   .histoire {
     display: block;
@@ -1153,11 +1095,10 @@ width: 200px;
     height: fit-content;
     background: $couleur1;
     color: #fff;
-    
+
     .text {
       padding: 15px 20px;
       font-size: large;
-      
     }
     .star {
       margin: 10px;
@@ -1173,7 +1114,7 @@ width: 200px;
       font-family: Shrikhand;
     }
   }
-  
+
   .concepte {
     display: flex;
     justify-content: space-around;
@@ -1182,13 +1123,11 @@ width: 200px;
       width: 150px;
       height: 150px;
       border-radius: 50%;
-     
-      
-    
+
       background: #fff;
       overflow: hidden;
       position: relative;
-      &::before{
+      &::before {
         content: "";
         position: absolute;
         border: 5px solid $couleur2;
@@ -1197,58 +1136,49 @@ width: 200px;
         display: inline-block;
         border-radius: 50%;
 
-       
-       
       }
-     
-     
-     
-      
-      
-   
+      &:hover:nth-child(2){
+        transform: rotate(360deg) scale(.9);
+        transition: all 700ms ease-in-out;
+      }
       
       img {
         width: 100%;
         height: 100%;
         margin-top: 15px;
-       
 
         filter: saturate(1.2);
       }
+      
+
     }
-  
-   
+
     &-boite {
       display: flex;
       flex-direction: column;
       align-items: center;
-      &:nth-child(2){
-        transform: translateX(-403px) scale(.1);
+      &:nth-child(2) {
+        transform: translateX(-403px) scale(0.1);
         opacity: 0;
       }
-      &:nth-child(3){
-        transform: translateX(-805px) scale(.1);
+      &:nth-child(3) {
+        transform: translateX(-805px) scale(0.1);
         opacity: 0;
       }
-  
     }
-    
-   
-   
   }
-  .histoire:hover > .concepte .concepte-boite{
-    animation: histoire-icons ;
+  .histoire:hover > .concepte .concepte-boite {
+    animation: histoire-icons;
     animation-duration: 2.5s;
     animation-fill-mode: both;
-    
+
     animation-direction: alternate;
   }
   .histoire:not(:hover) {
-  animation: histoire-icons ;
-  animation-play-state: paused;
- }
- 
-  
+    animation: histoire-icons;
+    animation-play-state: paused;
+  }
+
   .infographie-boite {
     display: flex;
 
@@ -1271,9 +1201,8 @@ width: 200px;
       margin: 20px 0px;
     }
   }
-  .menu-list .card .txt-large{
+  .menu-list .card .txt-large {
     font-size: 20px;
-
   }
   .infographie {
     display: flex;
@@ -1290,44 +1219,43 @@ width: 200px;
     &-items {
       width: 25%;
       height: 450px;
-      background: rgba(255, 121, 218,.2);
+      background: rgba(255, 121, 218, 0.2);
       display: flex;
       flex-direction: column;
       align-items: center;
       transition: all 300ms ease-in-out;
-      
-      img{
+
+      img {
         margin: 20px 0px 15px 0px;
         width: 150px;
       }
-      &_option{
+      &_option {
         width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-       
-        p{
+
+        p {
           text-align: center;
           font-weight: 300;
           letter-spacing: 1px;
           font-size: 15px;
           line-height: 22px;
         }
-        .info-image{
+        .info-image {
           margin: 0px;
         }
-        .titre-info{
+        .titre-info {
           font-size: 18px;
           font-weight: 500;
           margin-bottom: 15px;
         }
-        a{
+        a {
           font-weight: 700;
+          text-decoration: underline;
         }
       }
-
-      
     }
     &-text {
       margin: 20px;
@@ -1338,29 +1266,28 @@ width: 200px;
     }
   }
   @keyframes histoire-icons {
-    from{
-      opacity: .5;
-     
+    from {
+      opacity: 0.5;
     }
-    to{
+    to {
       transform: translateX(0) scale(1);
       opacity: 1;
-      
     }
   }
   @keyframes infographie {
-    0%{
+    0% {
       transform: scale(1);
     }
-   
-    100%{transform: scale(1.05) translateY(-2%);}
-    
+
+    100% {
+      transform: scale(1.05) translateY(-2%);
+    }
   }
   .infographie-items:hover {
     animation-name: infographie;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-    animation-duration: .4s;
+    animation-duration: 0.4s;
     animation-fill-mode: both;
 
     mix-blend-mode: screen;
@@ -1369,18 +1296,17 @@ width: 200px;
   .titre {
     font-size: 28px;
     font-weight: 500;
-   
+
     line-height: 30px;
     letter-spacing: 1px;
     margin: 25px 20px 20px 20px;
     position: relative;
-    &::before{
+    &::before {
       content: "";
       position: absolute;
       bottom: -10px;
       width: 350px;
       border: 3px solid $couleur3;
-
     }
   }
   .menu {
@@ -1388,119 +1314,121 @@ width: 200px;
     margin-top: 25px;
   }
 }
-@media screen and (min-width: 940px){
-  .main_wrapper{
+@media screen and (min-width: 940px) {
+  .main_wrapper {
     width: 1240px;
     margin: auto;
   }
-  .banner .banner-image{
+  .banner .banner-image {
     height: 550px;
     width: 100%;
   }
-  .restaurants-items{
+  .restaurants-items {
     width: 23%;
   }
   @keyframes info-anim {
-    0%{transform: translateY(-100px);}
+    0% {
+      transform: translateY(-100px);
+    }
 
-   
-    100%{transform: translateY(0px);}
-    
+    100% {
+      transform: translateY(0px);
+    }
   }
   @keyframes info-anim-1 {
-    0%{transform: translateY(0px);}
+    0% {
+      transform: translateY(0px);
+    }
 
-   
-    100%{transform: translateY(-100px);}
-    
+    100% {
+      transform: translateY(-100px);
+    }
   }
-  
+
   @keyframes info-anim-2 {
-    0%{transform: translateX(-25%);}
-  
-    100%{transform: translateX(25%);}
-    
+    0% {
+      transform: translateX(-25%);
+    }
+
+    100% {
+      transform: translateX(25%);
+    }
   }
   @keyframes info-anim-3 {
-    0%{transform: translateX(25%);}
-  
-    100%{transform: translateX(-25%);}
-    
+    0% {
+      transform: translateX(25%);
+    }
+
+    100% {
+      transform: translateX(-25%);
+    }
   }
-  .fonction-btn_items{
+  .fonction-btn_items {
     font-size: 18px;
   }
-  .fonction-btn_items:not(:active) > strong{
-    animation:  retour-L 2s .4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  .fonction-btn_items:not(:active) > strong {
+    animation: retour-L 2s 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
-  .infographie-items{
+  .infographie-items {
     height: 400px;
     position: relative;
     overflow: hidden;
-    .bordure:nth-child(1){
+    .bordure:nth-child(1) {
       display: inline-block;
       position: absolute;
-      left: 0;   
-      bottom: 0; 
+      left: 0;
+      bottom: 0;
       height: 0;
       width: 5px;
-      background: linear-gradient(to top,$couleur1,$couleur3);
-    
+      background: linear-gradient(to top, $couleur1, $couleur3);
     }
-    .bordure:nth-child(2){
+    .bordure:nth-child(2) {
       display: inline-block;
       position: absolute;
-      right: 0; 
+      right: 0;
       top: 0;
       height: 0;
       width: 5px;
-      background: linear-gradient(to top,$couleur1,$couleur2,$couleur3);
+      background: linear-gradient(to top, $couleur1, $couleur2, $couleur3);
     }
-    &::before{
+    &::before {
       content: "";
       display: inline-block;
       position: absolute;
       top: 0;
-      right: 0;
-      
+      left: 0;
+
       height: 5px;
       width: 0;
-      background: linear-gradient(to left,$couleur1,$couleur2,$couleur3);
-      
-
+      background: linear-gradient(to left, $couleur1, $couleur2, $couleur3);
     }
-    &::after{
+    &::after {
       content: "";
       display: inline-block;
       position: absolute;
       bottom: 0;
-      left: 0;
-      
+      right: 0;
+
       height: 5px;
       width: 0;
-      background: linear-gradient(to left,$couleur1,$couleur2,$couleur3);
-  
-
+      background: linear-gradient(to left, $couleur1, $couleur2, $couleur3);
     }
-    &:hover::before,&:hover::after{
-      transition:0.45s all ease 0.2s;
+    &:hover::before,
+    &:hover::after {
+      transition: 0.45s all ease 0.2s;
       width: 100%;
     }
-    &:hover > .bordure:nth-child(1), &:hover > .bordure:nth-child(2){
-      
-        transition:0.45s all ease 0.2s;
-        height:  100%;
-      }
-     
-    
-   
+    &:hover > .bordure:nth-child(1),
+    &:hover > .bordure:nth-child(2) {
+      transition: 0.45s all ease 0.2s;
+      height: 100%;
+    }
   }
   /*
   .fonction-btn_items:hover > strong{
     width: 180px;
   }*/
-  .menu-list .card .txt-large{
+  .menu-list .card .txt-large {
     font-size: 25px;
-
   }
 }

@@ -310,7 +310,7 @@ header .header-nav {
   margin-right: 10px;
 }
 .fonction-btn_style .fas.fa-store {
-  color: #c9abee;
+  color: #ae80e5;
 }
 .fonction-btn .fonction-btn_boite {
   position: relative;
@@ -360,11 +360,11 @@ header .header-nav {
 }
 
 .fonction-btn_items:not(:active) > strong {
-  animation: retour 2s linear;
+  animation: retour 4s linear;
 }
 
 .fonction-btn_items:active > strong {
-  transition: width 0.2s step-start;
+  transition: width 4s step-start;
 }
 
 .fonction-btn_style:active::before {
@@ -373,23 +373,31 @@ header .header-nav {
 
 .fonction-btn_style:not(:active)::before {
   transition-timing-function: steps(1, end);
-  animation: translateX 2s backwards normal;
-  transition: width 3s;
+  animation: translateX 4s backwards alternate;
+  transition: width 4s;
 }
 
 .fonction-btn_style:not(:active)::after {
-  animation: rotate 2s;
-  animation-direction: normal;
+  animation: rotate 4s;
+  animation-direction: alternate;
   animation-fill-mode: both;
   transition: width 1s step-end;
+}
+
+.fonction-btn_style:hover {
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.36) 0px 5px 8px, rgba(0, 0, 0, 0.53) 0px 5px 8px, rgba(0, 0, 0, 0.5) 1.95px 1.95px 2.6px;
 }
 
 @keyframes translateX {
   0% {
     transform: translateX(0px);
   }
-  100% {
+  50% {
     transform: translateX(-60px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
 @keyframes retour {
@@ -421,16 +429,10 @@ header .header-nav {
     transform: translateX(0px) rotate(0deg);
   }
   50% {
-    transform: translateX(-30px) rotate(-170);
-  }
-  90% {
-    transform: translateX(-50px) rotate(-360deg);
-    opacity: 1;
-    width: 60px;
+    transform: translateX(-60px) rotate(-360deg);
   }
   100% {
-    transform: translateX(-60px);
-    width: 0;
+    transform: translateX(0px);
   }
 }
 .like-button_contenaire {
@@ -445,6 +447,7 @@ header .header-nav {
   margin: 20px;
   transform: scale(1.4);
   cursor: pointer;
+  position: relative;
 }
 
 .like-button:hover > .fill {
@@ -475,6 +478,15 @@ header .header-nav {
 .far.fa-heart::after {
   font-family: "Font Awesome 5 Free";
   content: "\f004";
+  position: absolute;
+}
+
+.like-button::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  position: absolute;
+  font-size: 25px;
+  background: transparent;
 }
 
 @keyframes fillAction {
@@ -760,7 +772,8 @@ header .header-nav {
 
 .btn-action,
 .histoire,
-.menu, .banner-star {
+.menu,
+.banner-star {
   display: none;
 }
 
@@ -984,22 +997,22 @@ header .header-nav {
 
   /*
 
-    .fonction-btn_items:hover >strong{
-      width: 120px;
+  .fonction-btn_items:hover >strong{
+    width: 120px;
 
-    }
+  }
 
-    .fonction-btn_style:hover::before {
+  .fonction-btn_style:hover::before {
 
-      width: 60px;
+    width: 60px;
 
-    }
-    .fonction-btn_style:hover::after {
-      width: 60px;
-      transform: rotate(-360deg);
+  }
+  .fonction-btn_style:hover::after {
+    width: 60px;
+    transform: rotate(-360deg);
 
-    }
-    */
+  }
+  */
   .fonction-btn_items:not(:active) > strong {
     animation: retour-M 2s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
@@ -1126,6 +1139,10 @@ header .header-nav {
     display: inline-block;
     border-radius: 50%;
   }
+  .concepte-items:hover:nth-child(2) {
+    transform: rotate(360deg) scale(0.9);
+    transition: all 700ms ease-in-out;
+  }
   .concepte-items img {
     width: 100%;
     height: 100%;
@@ -1233,6 +1250,7 @@ header .header-nav {
   }
   .infographie-items_option a {
     font-weight: 700;
+    text-decoration: underline;
   }
   .infographie-text {
     margin: 20px;
@@ -1372,7 +1390,7 @@ header .header-nav {
     display: inline-block;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     height: 5px;
     width: 0;
     background: linear-gradient(to left, #9356dc, #ff79da, #99e2d0);
@@ -1382,7 +1400,7 @@ header .header-nav {
     display: inline-block;
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
     height: 5px;
     width: 0;
     background: linear-gradient(to left, #9356dc, #ff79da, #99e2d0);
