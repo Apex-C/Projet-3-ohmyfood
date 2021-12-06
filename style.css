@@ -68,7 +68,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f2f2f2;
+  background: #e7e6e6;
   transform: scale(1);
   animation: start;
   animation-duration: 100ms;
@@ -193,7 +193,7 @@ header .header-nav {
   flex-direction: column;
   align-items: center;
   line-height: 2.5em;
-  background: #f2f2f2;
+  background: #e7e6e6;
   height: 280px;
 }
 .recherche form {
@@ -243,12 +243,29 @@ header .header-nav {
   border-radius: 25px;
 }
 .recherche .btn_color {
-  background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
   color: #fff;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 0;
+  padding: 20px 10px;
+  border: 2px solid #6e6e6e;
+}
+.recherche .btn_color::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(87deg, #9356dc 20%, #ff79da 100%);
+  z-index: -1;
+}
+.recherche .btn_color:hover::before {
+  transform: rotate(105deg) translate(-50px, 80px);
 }
 .recherche .btn_color:hover {
-  border: 2px solid #9356dc;
+  border: 2px solid #99e2d0;
 }
 
 .fonctionement {
@@ -296,7 +313,7 @@ header .header-nav {
   position: relative;
   line-height: 35px;
   height: 70px;
-  background: #f2f2f2;
+  background: #e7e6e6;
   margin-bottom: 25px;
   align-items: center;
   display: flex;
@@ -385,7 +402,7 @@ header .header-nav {
 }
 
 .fonction-btn_style:hover {
-  background: white;
+  background: #f3f3f3;
   box-shadow: rgba(0, 0, 0, 0.36) 0px 5px 8px, rgba(0, 0, 0, 0.53) 0px 5px 8px, rgba(0, 0, 0, 0.5) 1.95px 1.95px 2.6px;
 }
 
@@ -508,7 +525,7 @@ header .header-nav {
 .restaurants {
   padding-top: 10px;
   width: 100%;
-  background: #f2f2f2;
+  background: #e7e6e6;
 }
 .restaurants-titre {
   margin: 10px 15px;
@@ -537,9 +554,31 @@ header .header-nav {
   right: 10px;
   padding: 5px;
   background: #99e2d0;
+  font-weight: 400;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+.restaurants-items a p span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  width: 0px;
+  height: 100%;
+  z-index: -1;
+}
+.restaurants-items a p:hover > span::after {
+  width: 100%;
+  transition: all 700ms ease-in-out;
+}
+.restaurants-items a p:hover > span {
+  color: #9356dc;
+  font-weight: bold;
 }
 .restaurants-items:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  object-fit: cover;
 }
 .restaurants-items_description {
   display: flex;
@@ -606,7 +645,7 @@ header .header-nav {
 .menu-list .card {
   width: 23.5%;
   height: 420px;
-  background: #f2f2f2;
+  background: #e7e6e6;
   opacity: 1;
   position: relative;
   z-index: 0;
@@ -733,6 +772,7 @@ header .header-nav {
   font-weight: 500;
   margin-bottom: 25px;
   position: relative;
+  align-self: flex-start;
 }
 .menu-contenaire .titre-menu::before {
   position: absolute;
@@ -773,7 +813,7 @@ header .header-nav {
 .btn-action,
 .histoire,
 .menu,
-.banner-star {
+.banner-star, .menu-text {
   display: none;
 }
 
@@ -1041,18 +1081,33 @@ header .header-nav {
 
   .btn-action {
     display: block;
-    background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
     color: #fff;
-    padding: 10px;
+    padding: 5px 10px;
     font-size: large;
     letter-spacing: 0.5px;
     border-radius: 15px;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  .btn-action::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
+    z-index: -1;
+    left: -200%;
+    top: -200%;
+  }
+  .btn-action:hover::before {
+    transform: rotate(175deg) translateX(-80px);
+    transition: all 400ms ease-in-out;
   }
   .btn-action:hover {
-    background: #ff79da;
-    opacity: 0.9;
-    border: 2px solid #9356dc;
+    border: 2px solid #99e2d0;
   }
 
   .restaurants-list {
@@ -1186,8 +1241,7 @@ header .header-nav {
     font-weight: 400;
     font-family: Shrikhand;
   }
-  .infographie-boite .btn\.btn-action {
-    background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
+  .infographie-boite .btn-btn_action {
     border-radius: 20px;
     padding: 15px;
     color: #fff;
@@ -1195,6 +1249,28 @@ header .header-nav {
     font-weight: 400;
     align-self: center;
     margin: 20px 0px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .infographie-boite .btn-btn_action::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
+    z-index: -1;
+  }
+  .infographie-boite .btn-btn_action:hover::before {
+    transform: rotate(175deg);
+    transition: 450ms ease-in-out;
+  }
+  .infographie-boite .btn-btn_action:hover {
+    border: 2px solid #99e2d0;
+    font-weight: 500;
   }
 
   .menu-list .card .txt-large {
@@ -1305,6 +1381,22 @@ header .header-nav {
   .menu {
     display: block;
     margin-top: 25px;
+  }
+  .menu-text {
+    font-size: large;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+  .menu-text:nth-child(4) {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .menu-text:nth-child(4) p {
+    width: 30%;
+    padding: 15px;
+    border: 2px solid #6e6e6e;
+    text-align: center;
   }
 }
 @media screen and (min-width: 940px) {
