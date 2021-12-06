@@ -6,7 +6,7 @@
 $couleur1: #9356dc;
 $couleur2: #ff79da;
 $couleur3: #99e2d0;
-$couleur4: #f2f2f2;
+$couleur4: #e7e6e6;
 $couleur5: #6e6e6e;
 
 $ombre1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -160,7 +160,7 @@ header {
   flex-direction: column;
   align-items: center;
   line-height: 2.5em;
-  background: #f2f2f2;
+  background: $couleur4;
   height: 280px;
 
   form {
@@ -211,12 +211,34 @@ header {
       border-radius: 25px;
     }
     &_color {
-      background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
+      
       color: #fff;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 0 ;
+      padding: 20px 10px;
+      border: 2px solid $couleur5;
 
-      &:hover {
-        border: 2px solid $couleur1;
+      
+      &::before{
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        background: linear-gradient( 87deg, #9356dc 20%, #ff79da 100%);
+        z-index: -1;
+        
+     
+      }
+      &:hover::before {
+        transform: rotate(105deg) translate(-50px,80px);
+     
+      }
+      &:hover{
+        border: 2px solid $couleur3;
       }
     }
   }
@@ -367,9 +389,10 @@ header {
 
   50% {
     transform: translateX(-60px);
-    
   }
-  100%{transform: translateX(0px);}
+  100% {
+    transform: translateX(0px);
+  }
 }
 @keyframes retour {
   0% {
@@ -405,12 +428,10 @@ header {
   }
   50% {
     transform: translateX(-60px) rotate(-360deg);
-
   }
- 
+
   100% {
     transform: translateX(0px);
-   
   }
 }
 .like-button_contenaire {
@@ -485,7 +506,7 @@ header {
 .restaurants {
   padding-top: 10px;
   width: 100%;
-  background: #f2f2f2;
+  background: $couleur4;
   &-titre {
     margin: 10px 15px;
     font-size: 18px;
@@ -513,12 +534,36 @@ header {
           right: 10px;
           padding: 5px;
           background: $couleur3;
+          font-weight: 400;
+          letter-spacing: 1px;
+
+          z-index: 1;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: #fff;
+            width: 0px;
+            height: 100%;
+            z-index: -1;
+          }
+        }
+        &:hover > span::after {
+          width: 100%;
+          transition: all 700ms ease-in-out;
+        }
+        &:hover > span {
+          color: #9356dc;
+          font-weight: bold;
         }
       }
     }
 
     &:hover {
       box-shadow: $ombre1;
+
+      object-fit: cover;
     }
 
     &_description {
@@ -724,6 +769,7 @@ header {
     font-weight: 500;
     margin-bottom: 25px;
     position: relative;
+    align-self: flex-start;
     &::before {
       position: absolute;
       content: "";
@@ -767,7 +813,7 @@ header {
 .btn-action,
 .histoire,
 .menu,
-.banner-star {
+.banner-star,.menu-text {
   display: none;
 }
 .wave,
@@ -1039,19 +1085,38 @@ header {
   }
   .btn-action {
     display: block;
-    background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
+
     color: #fff;
-    padding: 10px;
+    padding: 5px 10px;
     font-size: large;
     letter-spacing: 0.5px;
     border-radius: 15px;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
+      z-index: -1;
+      left: -200%;
+      top: -200%;
+    }
+    &:hover::before {
+      transform: rotate(175deg) translateX(-80px);
+      transition: all 400ms ease-in-out;
+    }
     &:hover {
-      background: $couleur2;
-      opacity: 0.9;
-      border: 2px solid $couleur1;
+      border: 2px solid $couleur3;
     }
   }
+
   .restaurants-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1135,13 +1200,12 @@ header {
         width: 100%;
         display: inline-block;
         border-radius: 50%;
-
       }
-      &:hover:nth-child(2){
-        transform: rotate(360deg) scale(.9);
+      &:hover:nth-child(2) {
+        transform: rotate(360deg) scale(0.9);
         transition: all 700ms ease-in-out;
       }
-      
+
       img {
         width: 100%;
         height: 100%;
@@ -1149,8 +1213,6 @@ header {
 
         filter: saturate(1.2);
       }
-      
-
     }
 
     &-boite {
@@ -1190,8 +1252,8 @@ header {
       font-weight: 400;
       font-family: Shrikhand;
     }
-    .btn\.btn-action {
-      background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
+    .btn-btn_action {
+   
       border-radius: 20px;
       padding: 15px;
       color: #fff;
@@ -1199,6 +1261,30 @@ header {
       font-weight: 400;
       align-self: center;
       margin: 20px 0px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      overflow: hidden;
+      &::before{
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 300px;
+        background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
+        z-index: -1;
+       
+      }
+      &:hover::before{
+        transform: rotate(175deg);
+        transition: 450ms ease-in-out;
+      }
+      &:hover{
+        border: 2px solid $couleur3;
+        font-weight: 500;
+      }
+     
     }
   }
   .menu-list .card .txt-large {
@@ -1312,6 +1398,22 @@ header {
   .menu {
     display: block;
     margin-top: 25px;
+    &-text{
+      font-size: large;
+      letter-spacing: 1px;
+      font-weight: 400;
+      &:nth-child(4){
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+       p{
+         width: 30%;
+         padding: 15px;
+        border: 2px solid $couleur5;
+        text-align: center;
+       }
+      }
+    }
   }
 }
 @media screen and (min-width: 940px) {
