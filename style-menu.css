@@ -152,8 +152,37 @@ body {
   position: relative;
 }
 .menu-table_titre .far.fa-heart {
+  font-size: 40px;
+  font-weight: 400;
+  width: 45px;
+  position: relative;
+  background-clip: content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: black;
+  z-index: 5;
+  inset: 0;
+}
+.menu-table_titre .far.fa-heart::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f004";
+  font-weight: 900;
   position: absolute;
-  right: 40px;
+  width: fit-content;
+  transform-origin: bottom;
+  height: fit-content;
+  background: linear-gradient(#ff0000 10%, #ff79da);
+  font-size: 40px;
+  transform: scale(0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  inset: 0;
+  transition: 500ms linear;
+  position: absolute;
+  z-index: -10;
+}
+.menu-table_titre .far.fa-heart:hover::after {
+  transform: scale(1);
 }
 .menu button {
   padding: 10px;
@@ -216,6 +245,11 @@ body {
   bottom: -15px;
   left: 0;
   width: 50px;
+}
+
+.icone:hover .icone::after {
+  transform: scale(1);
+  z-index: -10;
 }
 
 .menu-list_btn {

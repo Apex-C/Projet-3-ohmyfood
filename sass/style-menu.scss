@@ -120,8 +120,42 @@ body {
       letter-spacing: 1px;
       position: relative;
       .far.fa-heart {
-        position: absolute;
-        right: 40px;
+    
+    
+        font-size: 45px;
+        font-weight: 400;
+        width: 45px;
+        position: relative;
+        background-clip: content-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: black;
+        z-index: 5;
+      
+        inset: 0;
+        &::after{
+          font-family: "Font Awesome 5 Free";
+          content: "\f004";
+          font-weight: 900;
+          position: absolute;
+        
+          width: fit-content;
+          transform-origin: bottom;
+          height: fit-content;
+          background: linear-gradient(#ff0000 10%,$couleur2);
+          font-size: 45px;
+          transform: scale(0);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          inset: 0;
+          transition: 500ms linear;
+          position: absolute;
+          z-index: -10;
+        }
+        &:hover::after{
+          transform: scale(1);
+        
+        }
       }
     }
   }
@@ -192,6 +226,18 @@ body {
       }
     }
   }
+}
+
+
+
+
+
+
+
+.icone:hover  .icone::after{
+  transform: scale(1);
+  z-index: -10;
+
 }
 .menu-list_btn {
   position: relative;
