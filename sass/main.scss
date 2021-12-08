@@ -375,7 +375,7 @@ header {
 .fonction-btn_style:not(:active)::after {
   animation: rotate 4s;
   animation-direction: alternate;
-  animation-fill-mode: both;
+  animation-fill-mode: backwards;
   transition: width 1s step-end;
 }
 .fonction-btn_style:hover {
@@ -439,69 +439,55 @@ header {
 }
 
 .like-button {
-  height: 25px;
-  width: 25px;
-  overflow: hidden;
-  border: 0px;
-  margin: 20px;
-  transform: scale(1.4);
-  cursor: pointer;
   position: relative;
-}
-.like-button:hover > .fill {
-  animation-name: fillAction;
-  animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-  animation-duration: 3s;
-  animation-fill-mode: both;
-  mix-blend-mode: screen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
 }
 
-.waveShape {
-  animation-name: waveAction;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-duration: 2s;
-  width: 25px;
-  height: 25px;
-  fill: $couleur2;
-}
 
-.like-button i {
+
+i.fas.fa-heart.icone{
+  font-size: 40px;
+  font-weight: 500;
   position: absolute;
-  font-size: 25px;
-  background: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: black;
+  z-index: 5;
+
+  inset: 0;
+ 
+  
 }
-.far.fa-heart::after {
+.icone::after{
   font-family: "Font Awesome 5 Free";
   content: "\f004";
-  position: absolute;
-}
-.like-button::before {
-  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 
-  content: "\f004";
+  width: fit-content;
+  transform-origin: bottom;
+  height: fit-content;
+  background: linear-gradient(#ff0000 10%,$couleur2);
+  font-size: 40px;
+  transform: scale(0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  inset: 0;
+  transition: 500ms linear;
   position: absolute;
-  font-size: 25px;
-  background: transparent;
+  z-index: -10;
 }
 
-@keyframes fillAction {
-  0% {
-    transform: translate(0, 25px);
-  }
-  100% {
-    transform: translate(0, -20px);
-  }
+.like-button:hover  .icone::after{
+  transform: scale(1);
+  z-index: -10;
+
 }
-@keyframes waveAction {
-  0% {
-    transform: translate(-45px, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
+
 
 .restaurants {
   padding-top: 10px;
@@ -549,14 +535,14 @@ header {
             z-index: -1;
           }
         }
-        &:hover > span::after {
-          width: 100%;
-          transition: all 700ms ease-in-out;
-        }
-        &:hover > span {
-          color: #9356dc;
-          font-weight: bold;
-        }
+       // &:hover > span::after {
+        //  width: 100%;
+       //   transition: all 700ms ease-in-out;
+      //  }
+      //  &:hover > span {
+     //     color: #9356dc;
+     //     font-weight: bold;
+     //   }
       }
     }
 
@@ -813,7 +799,7 @@ header {
 .btn-action,
 .histoire,
 .menu,
-.banner-star,.menu-text {
+.banner-star {
   display: none;
 }
 .wave,
