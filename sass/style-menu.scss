@@ -22,10 +22,7 @@ $back-image4: url(./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-uns
   margin: auto;
 }
 
-
-
 body {
-
   background: #fff;
   font-family: Roboto, sans-serif;
 }
@@ -87,14 +84,12 @@ body {
   }
 }
 @keyframes menu-items {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
-
-  
 }
 .menu {
   margin-top: -35px;
@@ -108,7 +103,7 @@ body {
     background: $couleur4;
     border-radius: 25px 25px 0px 0px;
     height: fit-content;
- 
+
     &_titre {
       width: 100%;
       display: flex;
@@ -120,8 +115,6 @@ body {
       letter-spacing: 1px;
       position: relative;
       .far.fa-heart {
-    
-    
         font-size: 45px;
         font-weight: 400;
         width: 45px;
@@ -130,18 +123,18 @@ body {
         -webkit-background-clip: text;
         -webkit-text-fill-color: black;
         z-index: 5;
-      
+
         inset: 0;
-        &::after{
+        &::after {
           font-family: "Font Awesome 5 Free";
           content: "\f004";
           font-weight: 900;
           position: absolute;
-        
+
           width: fit-content;
           transform-origin: bottom;
           height: fit-content;
-          background: linear-gradient(#ff0000 10%,$couleur2);
+          background: linear-gradient(#ff0000 10%, $couleur2);
           font-size: 45px;
           transform: scale(0);
           background-clip: text;
@@ -152,9 +145,8 @@ body {
           position: absolute;
           z-index: -10;
         }
-        &:hover::after{
+        &:focus::after {
           transform: scale(1);
-        
         }
       }
     }
@@ -175,7 +167,7 @@ body {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-   
+      transition: all 1s linear;
     }
     &_items {
       border-radius: 20px;
@@ -185,7 +177,7 @@ body {
       position: relative;
       display: flex;
       justify-content: space-between;
-      transition: all 1s  cubic-bezier(.58,-0.78,1,-0.54);
+      transition: all 1s cubic-bezier(0.58, -0.78, 1, -0.54);
 
       .plat {
         font-size: 1rem;
@@ -201,13 +193,12 @@ body {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-      
       }
       span {
         font-weight: 400;
         align-self: flex-end;
-     
-        transition: transform 1s  ease-in-out;
+
+        transition: transform 1s ease-in-out;
       }
     }
     &_titre {
@@ -228,16 +219,9 @@ body {
   }
 }
 
-
-
-
-
-
-
-.icone:hover  .icone::after{
+.icone:focus .icone::after {
   transform: scale(1);
   z-index: -10;
-
 }
 .menu-list_btn {
   position: relative;
@@ -249,37 +233,36 @@ body {
   background: #fff;
   transition: all 1s ease-in-out;
   z-index: 1;
- 
 }
-.premier{
-  animation: menu-items 2s 0s ease both ;
+.premier {
+  animation: menu-items 2s 0s ease both;
 }
-.deuxieme{
-  animation: menu-items 2s .5s ease both ;
+.deuxieme {
+  animation: menu-items 2s 0.5s ease both;
 }
-.troisieme{
-  animation: menu-items 2s 1s ease both ;
+.troisieme {
+  animation: menu-items 2s 1s ease both;
 }
-.quatrieme{
-  animation: menu-items 2s 1.5s ease both ;
+.quatrieme {
+  animation: menu-items 2s 1.5s ease both;
 }
-.cinquieme{
-  animation: menu-items 2s 2s ease both ;
+.cinquieme {
+  animation: menu-items 2s 2s ease both;
 }
-.sixieme{
-  animation: menu-items 2s 3s ease both ;
+.sixieme {
+  animation: menu-items 2s 3s ease both;
 }
-.septieme{
-  animation: menu-items 3s 4s ease both ;
+.septieme {
+  animation: menu-items 3s 4s ease both;
 }
-.huitieme{
-  animation: menu-items 3s 5s ease both ;
+.huitieme {
+  animation: menu-items 3s 5s ease both;
 }
-.neuvieme{
-  animation: menu-items 3s 5s ease both ;
+.neuvieme {
+  animation: menu-items 3s 5s ease both;
 }
-.dix{
-  animation: menu-items 3s 5s ease both ;
+.dix {
+  animation: menu-items 3s 5s ease both;
 }
 .menu-list_btn::before {
   content: "";
@@ -311,20 +294,20 @@ body {
   color: #fff;
   z-index: 1;
 }
-.menu-list_btn:hover::before {
-  width: 50px;
+.menu-list_btn:focus::before {
+  width: 60px;
 }
-.menu-list_btn:hover::after {
-  width: 50px;
+.menu-list_btn:focus::after {
+  width: 60px;
   transform: rotate(-360deg);
 }
-.menu-list_btn:hover > .menu-list_items {
-  width: 300px;
+.menu-list_btn:focus > .menu-list_items .menu-list_text {
+  width: 180px;
 }
-.menu-list_btn:hover > .menu-list_items > span{
+.menu-list_btn:focus > .menu-list_items > span {
+  font-weight: 500;
+  transform: translate(-15px,0);
 
-  font-weight:500 ;
- 
 }
 .footer_contenaire {
   background: $couleur5;
@@ -342,32 +325,29 @@ body {
 }
 
 @media screen and (min-width: 765px) {
- 
-  .menu-list_btn:hover > .menu-list_items > span{
+  .menu-list_btn:focus > .menu-list_items > span {
     transform: translateX(-70px);
   }
-  .menu-list_btn:hover > .menu-list_items {
+  .menu-list_btn:focus > .menu-list_items {
     width: 100%;
   }
-  .menu-list_btn:hover::before {
+  .menu-list_btn:focus::before {
     width: 70px;
   }
-  .menu-list_btn:hover::after {
+  .menu-list_btn:focus::after {
     width: 70px;
-
   }
 }
 @media screen and (max-width: 360px) {
-  h1{
+  h1 {
     font-size: 18px;
   }
-  .menu-list_btn:hover > .menu-list_items {
+  .menu-list_btn:focus > .menu-list_items {
     width: 275px;
   }
 }
 @media screen and (max-width: 320px) {
- 
-  .menu-list_btn:hover > .menu-list_items {
+  .menu-list_btn:focus > .menu-list_items {
     width: 245px;
   }
 }

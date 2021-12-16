@@ -152,7 +152,7 @@ body {
   position: relative;
 }
 .menu-table_titre .far.fa-heart {
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 400;
   width: 45px;
   position: relative;
@@ -171,7 +171,7 @@ body {
   transform-origin: bottom;
   height: fit-content;
   background: linear-gradient(#ff0000 10%, #ff79da);
-  font-size: 40px;
+  font-size: 45px;
   transform: scale(0);
   background-clip: text;
   -webkit-background-clip: text;
@@ -181,7 +181,7 @@ body {
   position: absolute;
   z-index: -10;
 }
-.menu-table_titre .far.fa-heart:hover::after {
+.menu-table_titre .far.fa-heart:focus::after {
   transform: scale(1);
 }
 .menu button {
@@ -201,6 +201,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  transition: all 1s linear;
 }
 .menu-list_items {
   border-radius: 20px;
@@ -247,7 +248,7 @@ body {
   width: 50px;
 }
 
-.icone:hover .icone::after {
+.icone:focus .icone::after {
   transform: scale(1);
   z-index: -10;
 }
@@ -335,21 +336,22 @@ body {
   z-index: 1;
 }
 
-.menu-list_btn:hover::before {
-  width: 50px;
+.menu-list_btn:focus::before {
+  width: 60px;
 }
 
-.menu-list_btn:hover::after {
-  width: 50px;
+.menu-list_btn:focus::after {
+  width: 60px;
   transform: rotate(-360deg);
 }
 
-.menu-list_btn:hover > .menu-list_items {
-  width: 300px;
+.menu-list_btn:focus > .menu-list_items .menu-list_text {
+  width: 180px;
 }
 
-.menu-list_btn:hover > .menu-list_items > span {
+.menu-list_btn:focus > .menu-list_items > span {
   font-weight: 500;
+  transform: translate(-15px, 0);
 }
 
 .footer_contenaire {
@@ -368,19 +370,19 @@ body {
 }
 
 @media screen and (min-width: 765px) {
-  .menu-list_btn:hover > .menu-list_items > span {
+  .menu-list_btn:focus > .menu-list_items > span {
     transform: translateX(-70px);
   }
 
-  .menu-list_btn:hover > .menu-list_items {
+  .menu-list_btn:focus > .menu-list_items {
     width: 100%;
   }
 
-  .menu-list_btn:hover::before {
+  .menu-list_btn:focus::before {
     width: 70px;
   }
 
-  .menu-list_btn:hover::after {
+  .menu-list_btn:focus::after {
     width: 70px;
   }
 }
@@ -389,12 +391,12 @@ body {
     font-size: 18px;
   }
 
-  .menu-list_btn:hover > .menu-list_items {
+  .menu-list_btn:focus > .menu-list_items {
     width: 275px;
   }
 }
 @media screen and (max-width: 320px) {
-  .menu-list_btn:hover > .menu-list_items {
+  .menu-list_btn:focus > .menu-list_items {
     width: 245px;
   }
 }

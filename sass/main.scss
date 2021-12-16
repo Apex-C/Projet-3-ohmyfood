@@ -211,33 +211,28 @@ header {
       border-radius: 25px;
     }
     &_color {
-      
       color: #fff;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      z-index: 0 ;
+      z-index: 0;
       padding: 20px 10px;
       border: 2px solid $couleur5;
 
-      
-      &::before{
+      &::before {
         content: "";
         position: absolute;
         width: 450px;
         height: 450px;
-        background: linear-gradient( 87deg, #9356dc 20%, #ff79da 100%);
+        background: linear-gradient(87deg, #9356dc 20%, #ff79da 100%);
         z-index: -1;
-        
-     
       }
       &:hover::before {
-        transform: rotate(105deg) translate(-50px,80px);
-     
+        transform: rotate(105deg) translate(-50px, 80px);
       }
-      &:hover{
+      &:hover {
         border: 2px solid $couleur3;
       }
     }
@@ -364,7 +359,7 @@ header {
 .fonction-btn_style:active::before {
   transition-timing-function: steps(1, start);
 }
-.fonction-btn_style:not(:active)::before {
+.fonction-btn_style:focus::before {
   transition-timing-function: steps(1, end);
 
   animation: translateX 4s backwards alternate;
@@ -372,7 +367,7 @@ header {
   transition: width 4s;
 }
 
-.fonction-btn_style:not(:active)::after {
+.fonction-btn_style:focus::after {
   animation: rotate 4s;
   animation-direction: alternate;
   animation-fill-mode: backwards;
@@ -436,20 +431,23 @@ header {
 }
 .like-button_contenaire {
   z-index: 5;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
 }
 
 .like-button {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  
   width: 45px;
   height: 45px;
 }
 
-
-
-i.fas.fa-heart.icone{
+i.fas.fa-heart.icone {
   font-size: 40px;
   font-weight: 500;
   position: absolute;
@@ -459,10 +457,8 @@ i.fas.fa-heart.icone{
   z-index: 5;
 
   inset: 0;
- 
-  
 }
-.icone::after{
+.icone::after {
   font-family: "Font Awesome 5 Free";
   content: "\f004";
   font-weight: 900;
@@ -470,7 +466,7 @@ i.fas.fa-heart.icone{
   width: fit-content;
   transform-origin: bottom;
   height: fit-content;
-  background: linear-gradient(#ff0000 10%,$couleur2);
+  background: linear-gradient(#ff0000 10%, $couleur2);
   font-size: 40px;
   transform: scale(0);
   background-clip: text;
@@ -482,12 +478,10 @@ i.fas.fa-heart.icone{
   z-index: -10;
 }
 
-.like-button:hover  .icone::after{
+.like-button:hover .icone::after {
   transform: scale(1);
   z-index: -10;
-
 }
-
 
 .restaurants {
   padding-top: 10px;
@@ -535,14 +529,14 @@ i.fas.fa-heart.icone{
             z-index: -1;
           }
         }
-       // &:hover > span::after {
+        // &:hover > span::after {
         //  width: 100%;
-       //   transition: all 700ms ease-in-out;
-      //  }
-      //  &:hover > span {
-     //     color: #9356dc;
-     //     font-weight: bold;
-     //   }
+        //   transition: all 700ms ease-in-out;
+        //  }
+        //  &:hover > span {
+        //     color: #9356dc;
+        //     font-weight: bold;
+        //   }
       }
     }
 
@@ -1223,8 +1217,8 @@ i.fas.fa-heart.icone{
     animation-direction: alternate;
   }
   .histoire:not(:hover) {
-    animation: histoire-icons;
-    animation-play-state: paused;
+    animation: 2.5 histoire-icons alternate-reverse;
+    
   }
 
   .infographie-boite {
@@ -1239,7 +1233,6 @@ i.fas.fa-heart.icone{
       font-family: Shrikhand;
     }
     .btn-btn_action {
-   
       border-radius: 20px;
       padding: 15px;
       color: #fff;
@@ -1253,24 +1246,22 @@ i.fas.fa-heart.icone{
       align-items: center;
       z-index: 1;
       overflow: hidden;
-      &::before{
+      &::before {
         content: "";
         position: absolute;
         width: 400px;
         height: 300px;
         background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
         z-index: -1;
-       
       }
-      &:hover::before{
+      &:hover::before {
         transform: rotate(175deg);
         transition: 450ms ease-in-out;
       }
-      &:hover{
+      &:hover {
         border: 2px solid $couleur3;
         font-weight: 500;
       }
-     
     }
   }
   .menu-list .card .txt-large {
@@ -1384,20 +1375,20 @@ i.fas.fa-heart.icone{
   .menu {
     display: block;
     margin-top: 25px;
-    &-text{
+    &-text {
       font-size: large;
       letter-spacing: 1px;
       font-weight: 400;
-      &:nth-child(4){
+      &:nth-child(4) {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-       p{
-         width: 30%;
-         padding: 15px;
-        border: 2px solid $couleur5;
-        text-align: center;
-       }
+        p {
+          width: 30%;
+          padding: 15px;
+          border: 2px solid $couleur5;
+          text-align: center;
+        }
       }
     }
   }
