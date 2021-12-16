@@ -388,13 +388,13 @@ header .header-nav {
   transition-timing-function: steps(1, start);
 }
 
-.fonction-btn_style:not(:active)::before {
+.fonction-btn_style:focus::before {
   transition-timing-function: steps(1, end);
   animation: translateX 4s backwards alternate;
   transition: width 4s;
 }
 
-.fonction-btn_style:not(:active)::after {
+.fonction-btn_style:focus::after {
   animation: rotate 4s;
   animation-direction: alternate;
   animation-fill-mode: backwards;
@@ -454,13 +454,16 @@ header .header-nav {
 }
 .like-button_contenaire {
   z-index: 5;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .like-button {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 45px;
   height: 45px;
 }
@@ -1196,8 +1199,7 @@ i.fas.fa-heart.icone {
   }
 
   .histoire:not(:hover) {
-    animation: histoire-icons;
-    animation-play-state: paused;
+    animation: 2.5 histoire-icons alternate-reverse;
   }
 
   .infographie-boite {
