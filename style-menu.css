@@ -152,7 +152,7 @@ body {
   position: relative;
 }
 .menu-table_titre .far.fa-heart {
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 400;
   width: 45px;
   position: relative;
@@ -218,6 +218,7 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  transition: all 1s linear;
 }
 .menu-list_items .description {
   font-size: 15px;
@@ -226,6 +227,7 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  transition: all 1s linear;
 }
 .menu-list_items span {
   font-weight: 400;
@@ -352,6 +354,7 @@ body {
 .menu-list_btn:focus > .menu-list_items > span {
   font-weight: 500;
   transform: translate(-15px, 0);
+  transition: 1s ease-in-out;
 }
 
 .footer_contenaire {
@@ -369,12 +372,32 @@ body {
   margin-right: 10px;
 }
 
+@media screen and (min-width: 321px) and (max-width: 376px) {
+  .menu-list_btn:focus > .menu-list_items .menu-list_text {
+    width: 242px;
+  }
+
+  .menu-list_btn:focus > .menu-list_items > span {
+    font-weight: 500;
+    transform: translate(-60px, 0);
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 426px) {
+  .menu-list_btn:focus > .menu-list_items .menu-list_text {
+    width: 100%;
+  }
+
+  .menu-list_btn:focus > .menu-list_items > span {
+    font-weight: 500;
+    transform: translate(-60px, 0);
+  }
+}
 @media screen and (min-width: 765px) {
   .menu-list_btn:focus > .menu-list_items > span {
     transform: translateX(-70px);
   }
 
-  .menu-list_btn:focus > .menu-list_items {
+  .menu-list_btn:focus > .menu-list_items .menu-list_text {
     width: 100%;
   }
 
