@@ -171,7 +171,7 @@ body {
   transform-origin: bottom;
   height: fit-content;
   background: linear-gradient(#ff0000 10%, #ff79da);
-  font-size: 45px;
+  font-size: 40px;
   transform: scale(0);
   background-clip: text;
   -webkit-background-clip: text;
@@ -191,8 +191,28 @@ body {
   font-weight: 600;
   border: 1px transparent solid;
   border-radius: 25px;
-  background: linear-gradient(75deg, #9356dc 20%, #ff79da 100%);
   color: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+}
+.menu button::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(75deg, #9356dc 30%, #ff79da 100%);
+  z-index: -5;
+}
+.menu button:hover::after {
+  transform: translate(30px, 55px) rotate(75deg);
+  transition: 450ms linear;
+}
+.menu button:hover {
+  border: 2px solid #99e2d0;
 }
 .menu-list {
   width: 90%;

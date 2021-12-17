@@ -135,7 +135,7 @@ body {
           transform-origin: bottom;
           height: fit-content;
           background: linear-gradient(#ff0000 10%, $couleur2);
-          font-size: 45px;
+          font-size: 40px;
           transform: scale(0);
           background-clip: text;
           -webkit-background-clip: text;
@@ -158,9 +158,31 @@ body {
     font-weight: 600;
     border: 1px transparent solid;
     border-radius: 25px;
-    background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
+
     color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(75deg, $couleur1 30%, $couleur2 100%);
+      z-index: -5;
+    }
+    &:hover::after {
+      transform: translate(30px, 55px) rotate(75deg);
+      transition: 450ms linear;
+    }
+    &:hover {
+      border: 2px solid $couleur3;
+    }
   }
+
   &-list {
     width: 90%;
     &_text {
