@@ -299,14 +299,12 @@ header .header-nav {
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
-  transition: 500ms ease-in-out;
 }
 .fonction-btn_items strong {
   color: black;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  transition: 1500ms linear;
 }
 .fonction-btn_style {
   text-align: center;
@@ -376,29 +374,18 @@ header .header-nav {
   border-radius: 0px 15px 15px 0px;
 }
 
-.fonction-btn_items:not(:active) > strong {
-  animation: retour 4s linear;
-}
-
-.fonction-btn_items:active > strong {
-  transition: width 4s step-start;
-}
-
-.fonction-btn_style:active::before {
-  transition-timing-function: steps(1, start);
+.fonction-btn_style:focus .fonction-btn_items > strong {
+  animation: retour 3s linear;
 }
 
 .fonction-btn_style:focus::before {
-  transition-timing-function: steps(1, end);
-  animation: translateX 4s backwards alternate;
-  transition: width 4s;
+  animation: translateX 3s backwards alternate;
 }
 
 .fonction-btn_style:focus::after {
-  animation: rotate 4s;
+  animation: rotate 3s;
   animation-direction: alternate;
   animation-fill-mode: backwards;
-  transition: width 1s step-end;
 }
 
 .fonction-btn_style:hover {
@@ -419,26 +406,35 @@ header .header-nav {
 }
 @keyframes retour {
   0% {
-    width: 200px;
+    width: fit-content;
+  }
+  30% {
+    width: 150px;
   }
   100% {
-    width: 160px;
+    width: fit-content;
   }
 }
 @keyframes retour-M {
   0% {
-    width: 160px;
+    width: fit-content;
+  }
+  30% {
+    width: 130px;
   }
   100% {
-    width: 100px;
+    width: fit-content;
   }
 }
 @keyframes retour-L {
   0% {
-    width: 215px;
+    width: fit-content;
+  }
+  30% {
+    width: 210px;
   }
   100% {
-    width: 200px;
+    width: fit-content;
   }
 }
 @keyframes rotate {
@@ -454,8 +450,8 @@ header .header-nav {
 }
 .like-button_contenaire {
   z-index: 5;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -464,8 +460,8 @@ header .header-nav {
 
 .like-button {
   position: relative;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
 }
 
 i.fas.fa-heart.icone {
@@ -498,7 +494,7 @@ i.fas.fa-heart.icone {
   z-index: -10;
 }
 
-.like-button:hover .icone::after {
+.like-button_contenaire:focus .icone::after {
   transform: scale(1);
   z-index: -10;
 }
@@ -526,10 +522,10 @@ i.fas.fa-heart.icone {
   border-radius: 20px;
   box-sizing: border-box;
 }
-.restaurants-items a p {
+.restaurants-items p {
   position: relative;
 }
-.restaurants-items a p span {
+.restaurants-items p span {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -539,7 +535,7 @@ i.fas.fa-heart.icone {
   letter-spacing: 1px;
   z-index: 1;
 }
-.restaurants-items a p span::after {
+.restaurants-items p span::after {
   content: "";
   position: absolute;
   left: 0;
@@ -607,6 +603,8 @@ i.fas.fa-heart.icone {
 
 .menu-list {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 }
@@ -616,7 +614,7 @@ i.fas.fa-heart.icone {
   display: inline-block;
 }
 .menu-list .card {
-  width: 23.5%;
+  width: 45%;
   height: 420px;
   background: #e7e6e6;
   opacity: 1;
@@ -1008,26 +1006,8 @@ i.fas.fa-heart.icone {
     font-size: 13px;
   }
 
-  /*
-
-  .fonction-btn_items:hover >strong{
-    width: 120px;
-
-  }
-
-  .fonction-btn_style:hover::before {
-
-    width: 60px;
-
-  }
-  .fonction-btn_style:hover::after {
-    width: 60px;
-    transform: rotate(-360deg);
-
-  }
-  */
-  .fonction-btn_items:not(:active) > strong {
-    animation: retour-M 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  .fonction-btn_style:focus .fonction-btn_items > strong {
+    animation: retour-M 4s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
   .restaurants {
@@ -1041,15 +1021,6 @@ i.fas.fa-heart.icone {
     font-weight: 400;
     margin: 10px 0px 20px 20px;
     align-self: flex-start;
-  }
-
-  .like-button_contenaire:hover .like-button > .fill {
-    animation-name: fillAction;
-    animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    mix-blend-mode: screen;
   }
 
   .btn-action {
@@ -1196,10 +1167,6 @@ i.fas.fa-heart.icone {
     animation-duration: 2.5s;
     animation-fill-mode: both;
     animation-direction: alternate;
-  }
-
-  .histoire:not(:hover) {
-    animation: 2.5 histoire-icons alternate-reverse;
   }
 
   .infographie-boite {
@@ -1422,8 +1389,12 @@ i.fas.fa-heart.icone {
     font-size: 18px;
   }
 
-  .fonction-btn_items:not(:active) > strong {
-    animation: retour-L 2s 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  .fonction-btn_style:focus .fonction-btn_items > strong {
+    animation: retour-L 3s 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .menu-list .card {
+    width: 23.5%;
   }
 
   .infographie-items {
