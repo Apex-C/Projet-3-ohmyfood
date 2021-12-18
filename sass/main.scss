@@ -211,33 +211,28 @@ header {
       border-radius: 25px;
     }
     &_color {
-      
       color: #fff;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      z-index: 0 ;
+      z-index: 0;
       padding: 20px 10px;
       border: 2px solid $couleur5;
 
-      
-      &::before{
+      &::before {
         content: "";
         position: absolute;
         width: 450px;
         height: 450px;
-        background: linear-gradient( 87deg, #9356dc 20%, #ff79da 100%);
+        background: linear-gradient(87deg, #9356dc 20%, #ff79da 100%);
         z-index: -1;
-        
-     
       }
       &:hover::before {
-        transform: rotate(105deg) translate(-50px,80px);
-     
+        transform: rotate(105deg) translate(-50px, 80px);
       }
-      &:hover{
+      &:hover {
         border: 2px solid $couleur3;
       }
     }
@@ -275,14 +270,12 @@ header {
     white-space: nowrap;
 
     cursor: pointer;
-    transition: 500ms ease-in-out;
 
     strong {
       color: rgb(0, 0, 0);
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
-      transition: 1500ms linear;
     }
   }
   &_style {
@@ -354,29 +347,18 @@ header {
   z-index: 0;
   border-radius: 0px 15px 15px 0px;
 }
-.fonction-btn_items:not(:active) > strong {
-  animation: retour 4s linear;
-}
-.fonction-btn_items:active > strong {
-  transition: width 4s step-start;
+.fonction-btn_style:focus .fonction-btn_items > strong {
+  animation: retour 3s linear;
 }
 
-.fonction-btn_style:active::before {
-  transition-timing-function: steps(1, start);
-}
-.fonction-btn_style:not(:active)::before {
-  transition-timing-function: steps(1, end);
-
-  animation: translateX 4s backwards alternate;
-
-  transition: width 4s;
+.fonction-btn_style:focus::before {
+  animation: translateX 3s backwards alternate;
 }
 
-.fonction-btn_style:not(:active)::after {
-  animation: rotate 4s;
+.fonction-btn_style:focus::after {
+  animation: rotate 3s;
   animation-direction: alternate;
-  animation-fill-mode: both;
-  transition: width 1s step-end;
+  animation-fill-mode: backwards;
 }
 .fonction-btn_style:hover {
   background: lighten($couleur4, 5%);
@@ -396,29 +378,35 @@ header {
 }
 @keyframes retour {
   0% {
-    width: 200px;
+    width: fit-content;
   }
-
+  30% {
+    width: 150px;
+  }
   100% {
-    width: 160px;
+    width: fit-content;
   }
 }
 @keyframes retour-M {
   0% {
-    width: 160px;
+    width: fit-content;
   }
-
+  30% {
+    width: 130px;
+  }
   100% {
-    width: 100px;
+    width: fit-content;
   }
 }
 @keyframes retour-L {
   0% {
-    width: 215px;
+    width: fit-content;
   }
-
+  30% {
+    width: 210px;
+  }
   100% {
-    width: 200px;
+    width: fit-content;
   }
 }
 
@@ -436,71 +424,55 @@ header {
 }
 .like-button_contenaire {
   z-index: 5;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .like-button {
-  height: 25px;
-  width: 25px;
-  overflow: hidden;
-  border: 0px;
-  margin: 20px;
-  transform: scale(1.4);
-  cursor: pointer;
   position: relative;
-}
-.like-button:hover > .fill {
-  animation-name: fillAction;
-  animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-  animation-duration: 3s;
-  animation-fill-mode: both;
-  mix-blend-mode: screen;
+
+  width: 40px;
+  height: 40px;
 }
 
-.waveShape {
-  animation-name: waveAction;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-duration: 2s;
-  width: 25px;
-  height: 25px;
-  fill: $couleur2;
-}
-
-.like-button i {
+i.fas.fa-heart.icone {
+  font-size: 40px;
+  font-weight: 500;
   position: absolute;
-  font-size: 25px;
-  background: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: black;
+  z-index: 5;
+
+  inset: 0;
 }
-.far.fa-heart::after {
+.icone::after {
   font-family: "Font Awesome 5 Free";
   content: "\f004";
-  position: absolute;
-}
-.like-button::before {
-  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 
-  content: "\f004";
+  width: fit-content;
+  transform-origin: bottom;
+  height: fit-content;
+  background: linear-gradient(#ff0000 10%, $couleur2);
+  font-size: 40px;
+  transform: scale(0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  inset: 0;
+  transition: 500ms linear;
   position: absolute;
-  font-size: 25px;
-  background: transparent;
+  z-index: -10;
 }
 
-@keyframes fillAction {
-  0% {
-    transform: translate(0, 25px);
-  }
-  100% {
-    transform: translate(0, -20px);
-  }
-}
-@keyframes waveAction {
-  0% {
-    transform: translate(-45px, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+.like-button_contenaire:focus .icone::after {
+  transform: scale(1);
+  z-index: -10;
 }
 
 .restaurants {
@@ -525,37 +497,28 @@ header {
     box-shadow: $ombre2;
     border-radius: 20px;
     box-sizing: border-box;
-    a {
-      p {
-        position: relative;
-        span {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          padding: 5px;
-          background: $couleur3;
-          font-weight: 400;
-          letter-spacing: 1px;
 
-          z-index: 1;
-          &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            background: #fff;
-            width: 0px;
-            height: 100%;
-            z-index: -1;
-          }
-        }
-        &:hover > span::after {
-          width: 100%;
-          transition: all 700ms ease-in-out;
-        }
-        &:hover > span {
-          color: #9356dc;
-          font-weight: bold;
+    p {
+      position: relative;
+      span {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px;
+        background: $couleur3;
+        font-weight: 400;
+        letter-spacing: 1px;
+
+        z-index: 1;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: #fff;
+          width: 0px;
+          height: 100%;
+          z-index: -1;
         }
       }
     }
@@ -624,8 +587,9 @@ header {
 }
 .menu-list {
   display: flex;
-
-  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
   align-items: center;
   a {
     height: 100%;
@@ -633,7 +597,7 @@ header {
     display: inline-block;
   }
   .card {
-    width: 23.5%;
+    width: 45%;
     height: 420px;
     background: $couleur4;
     opacity: 1;
@@ -813,7 +777,7 @@ header {
 .btn-action,
 .histoire,
 .menu,
-.banner-star,.menu-text {
+.banner-star {
   display: none;
 }
 .wave,
@@ -1041,27 +1005,8 @@ header {
       font-size: 13px;
     }
   }
-
-  /*
-
-  .fonction-btn_items:hover >strong{
-    width: 120px;
-    
-  }
-  
-  .fonction-btn_style:hover::before {
-    
-    width: 60px;
-  
-  }
-  .fonction-btn_style:hover::after {
-    width: 60px;
-    transform: rotate(-360deg);
-  
-  }
-  */
-  .fonction-btn_items:not(:active) > strong {
-    animation: retour-M 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  .fonction-btn_style:focus .fonction-btn_items > strong {
+    animation: retour-M 4s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
   .restaurants {
     border-radius: 25px;
@@ -1075,14 +1020,7 @@ header {
       align-self: flex-start;
     }
   }
-  .like-button_contenaire:hover .like-button > .fill {
-    animation-name: fillAction;
-    animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    mix-blend-mode: screen;
-  }
+
   .btn-action {
     display: block;
 
@@ -1236,10 +1174,6 @@ header {
 
     animation-direction: alternate;
   }
-  .histoire:not(:hover) {
-    animation: histoire-icons;
-    animation-play-state: paused;
-  }
 
   .infographie-boite {
     display: flex;
@@ -1253,7 +1187,6 @@ header {
       font-family: Shrikhand;
     }
     .btn-btn_action {
-   
       border-radius: 20px;
       padding: 15px;
       color: #fff;
@@ -1267,24 +1200,22 @@ header {
       align-items: center;
       z-index: 1;
       overflow: hidden;
-      &::before{
+      &::before {
         content: "";
         position: absolute;
         width: 400px;
         height: 300px;
         background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
         z-index: -1;
-       
       }
-      &:hover::before{
+      &:hover::before {
         transform: rotate(175deg);
         transition: 450ms ease-in-out;
       }
-      &:hover{
+      &:hover {
         border: 2px solid $couleur3;
         font-weight: 500;
       }
-     
     }
   }
   .menu-list .card .txt-large {
@@ -1398,20 +1329,20 @@ header {
   .menu {
     display: block;
     margin-top: 25px;
-    &-text{
+    &-text {
       font-size: large;
       letter-spacing: 1px;
       font-weight: 400;
-      &:nth-child(4){
+      &:nth-child(4) {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-       p{
-         width: 30%;
-         padding: 15px;
-        border: 2px solid $couleur5;
-        text-align: center;
-       }
+        p {
+          width: 30%;
+          padding: 15px;
+          border: 2px solid $couleur5;
+          text-align: center;
+        }
       }
     }
   }
@@ -1468,8 +1399,11 @@ header {
   .fonction-btn_items {
     font-size: 18px;
   }
-  .fonction-btn_items:not(:active) > strong {
-    animation: retour-L 2s 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  .fonction-btn_style:focus .fonction-btn_items > strong {
+    animation: retour-L 3s 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .menu-list .card {
+    width: 23.5%;
   }
   .infographie-items {
     height: 400px;
