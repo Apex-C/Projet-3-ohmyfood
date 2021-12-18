@@ -115,39 +115,8 @@ body {
       letter-spacing: 1px;
       position: relative;
       .far.fa-heart {
-        font-size: 40px;
-        font-weight: 400;
-        width: 45px;
-        position: relative;
-        background-clip: content-box;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: black;
-        z-index: 5;
-
-        inset: 0;
-        &::after {
-          font-family: "Font Awesome 5 Free";
-          content: "\f004";
-          font-weight: 900;
-          position: absolute;
-
-          width: fit-content;
-          transform-origin: bottom;
-          height: fit-content;
-          background: linear-gradient(#ff0000 10%, $couleur2);
-          font-size: 40px;
-          transform: scale(0);
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          inset: 0;
-          transition: 500ms linear;
-          position: absolute;
-          z-index: -10;
-        }
-        &:focus::after {
-          transform: scale(1);
-        }
+        position: absolute;
+        right: 40px;
       }
     }
   }
@@ -156,40 +125,17 @@ body {
     margin: 20px 0px;
     font-size: 15px;
     font-weight: 600;
-    border: 1px transparent solid;
+    border: 2px transparent solid;
     border-radius: 25px;
-
+    background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
     color: #fff;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    overflow: hidden;
-    &::after {
-      content: "";
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      background: linear-gradient(75deg, $couleur1 30%, $couleur2 100%);
-      z-index: -5;
-    }
-    &:hover::after {
-      transform: translate(30px, 55px) rotate(75deg);
-      transition: 450ms linear;
-    }
-    &:hover {
-      border: 2px solid $couleur3;
-    }
   }
-
   &-list {
     width: 90%;
     &_text {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      transition: all 1s linear;
     }
     &_items {
       border-radius: 20px;
@@ -207,7 +153,6 @@ body {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-        transition: all 1s linear;
       }
       .description {
         font-size: 15px;
@@ -216,7 +161,6 @@ body {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-        transition: all 1s linear;
       }
       span {
         font-weight: 400;
@@ -241,11 +185,6 @@ body {
       }
     }
   }
-}
-
-.icone:focus .icone::after {
-  transform: scale(1);
-  z-index: -10;
 }
 .menu-list_btn {
   position: relative;
@@ -318,20 +257,18 @@ body {
   color: #fff;
   z-index: 1;
 }
-.menu-list_btn:focus::before {
-  width: 60px;
+.menu-list_btn:hover::before {
+  width: 50px;
 }
-.menu-list_btn:focus::after {
-  width: 60px;
+.menu-list_btn:hover::after {
+  width: 50px;
   transform: rotate(-360deg);
 }
-.menu-list_btn:focus > .menu-list_items .menu-list_text {
-  width: 180px;
+.menu-list_btn:hover > .menu-list_items {
+  width: 300px;
 }
-.menu-list_btn:focus > .menu-list_items > span {
+.menu-list_btn:hover > .menu-list_items > span {
   font-weight: 500;
-  transform: translate(-15px, 0);
-  transition: 1s ease-in-out;
 }
 .footer_contenaire {
   background: $couleur5;
@@ -347,35 +284,18 @@ body {
     margin-right: 10px;
   }
 }
-@media screen and (min-width: 321px) and(   max-width: 376px) {
-  .menu-list_btn:focus > .menu-list_items .menu-list_text {
-    width: 242px;
-  }
-  .menu-list_btn:focus > .menu-list_items > span {
-    font-weight: 500;
-    transform: translate(-60px, 0);
-  }
-}
-@media screen and (min-width: 376px) and(   max-width: 426px) {
-  .menu-list_btn:focus > .menu-list_items .menu-list_text {
-    width: 100%;
-  }
-  .menu-list_btn:focus > .menu-list_items > span {
-    font-weight: 500;
-    transform: translate(-60px, 0);
-  }
-}
+
 @media screen and (min-width: 765px) {
-  .menu-list_btn:focus > .menu-list_items > span {
+  .menu-list_btn:hover > .menu-list_items > span {
     transform: translateX(-70px);
   }
-  .menu-list_btn:focus > .menu-list_items .menu-list_text {
+  .menu-list_btn:hover > .menu-list_items {
     width: 100%;
   }
-  .menu-list_btn:focus::before {
+  .menu-list_btn:hover::before {
     width: 70px;
   }
-  .menu-list_btn:focus::after {
+  .menu-list_btn:hover::after {
     width: 70px;
   }
 }
@@ -383,12 +303,12 @@ body {
   h1 {
     font-size: 18px;
   }
-  .menu-list_btn:focus > .menu-list_items {
+  .menu-list_btn:hover > .menu-list_items {
     width: 275px;
   }
 }
 @media screen and (max-width: 320px) {
-  .menu-list_btn:focus > .menu-list_items {
+  .menu-list_btn:hover > .menu-list_items {
     width: 245px;
   }
 }
