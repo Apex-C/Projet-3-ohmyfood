@@ -13,8 +13,8 @@ En plus des systèmes classiques de réservation, les clients pourront composer 
 Finis, les temps d'attente au restaurant !
 
 Objectifs
-● Phase 1 : Développer un site proposant le menu de 4 grands restaurants parisiens.
-● Phase 2 : Permettre la réservation en ligne et la composition de menus.
+● Phase 1 : Développer un site proposant le menu de 4 grands restaurants parisiens. 
+● Phase 2 : Permettre la réservation en ligne et la composition de menus. 
 Fonctionnement
 Budget
 20 000 €
