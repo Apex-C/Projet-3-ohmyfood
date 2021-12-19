@@ -173,7 +173,7 @@ body {
   position: absolute;
   z-index: -10;
 }
-.menu .far.fa-heart:hover::after {
+.menu .far.fa-heart:focus::after {
   transform: scale(1);
 }
 .menu button {
