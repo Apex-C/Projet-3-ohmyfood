@@ -145,9 +145,29 @@ body {
     font-weight: 600;
     border: 2px transparent solid;
     border-radius: 25px;
-    background: linear-gradient(75deg, $couleur1 20%, $couleur2 100%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      border: 2px solid $couleur3;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(75deg, $couleur1 10%, $couleur2 100%);
+      width: 200px;
+      height: 200px;
+      z-index: -1;
+    }
+    &:hover::after {
+      transform: translate(50px, 15px) rotate(66deg);
+    }
   }
+
   &-list {
     width: 90%;
     &_text {
