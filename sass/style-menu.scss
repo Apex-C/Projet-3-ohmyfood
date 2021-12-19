@@ -112,10 +112,31 @@ body {
       position: relative;
       font-size: medium;
       .far.fa-heart {
-        position: absolute;
         right: 20px;
+        z-index: 5;
+        position: relative;
+        &::after {
+          font-family: "Font Awesome 5 Free";
+          content: "\f004";
+          font-weight: 900;
+          width: fit-content;
+          transform-origin: bottom;
+          height: fit-content;
+          background: linear-gradient(#ff0000 10%, $couleur2);
+          transform: scale(0);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          inset: 0;
+          transition: 500ms linear;
+          position: absolute;
+          z-index: -10;
+        }
       }
     }
+  }
+  .far.fa-heart:hover::after {
+    transform: scale(1);
   }
   button {
     padding: 10px;
