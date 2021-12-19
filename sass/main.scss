@@ -234,6 +234,7 @@ header {
       }
       &:hover {
         border: 2px solid $couleur3;
+        transition: linear 400ms;
       }
     }
   }
@@ -792,7 +793,7 @@ i.fas.fa-heart.icone {
     color: rgba(59, 57, 57, 0.7);
   }
 }
-@media screen and (min-width: 765px) {
+@media screen and (min-width: 565px) {
   .main_wrapper {
     min-width: 765px;
     width: 850px;
@@ -975,6 +976,9 @@ i.fas.fa-heart.icone {
         }
       }
     }
+  }
+  button.btn.btn--border.btn_color {
+    padding: 15px 10px;
   }
 
   .fonctionement {
@@ -1356,6 +1360,10 @@ i.fas.fa-heart.icone {
     height: 550px;
     width: 100%;
   }
+  button.btn.btn--border.btn_color {
+    padding: 20px 10px;
+  }
+
   .restaurants-items {
     width: 23%;
   }

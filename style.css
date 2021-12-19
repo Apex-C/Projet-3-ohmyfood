@@ -266,6 +266,7 @@ header .header-nav {
 }
 .recherche .btn_color:hover {
   border: 2px solid #99e2d0;
+  transition: linear 400ms;
 }
 
 .fonctionement {
@@ -800,7 +801,7 @@ i.fas.fa-heart.icone {
     color: rgba(59, 57, 57, 0.7);
   }
 }
-@media screen and (min-width: 765px) {
+@media screen and (min-width: 565px) {
   .main_wrapper {
     min-width: 765px;
     width: 850px;
@@ -975,6 +976,10 @@ i.fas.fa-heart.icone {
   }
   .banner .banner-contenaire .recherche .contenaite-text p {
     font-size: 22px;
+  }
+
+  button.btn.btn--border.btn_color {
+    padding: 15px 10px;
   }
 
   .fonctionement {
@@ -1347,6 +1352,10 @@ i.fas.fa-heart.icone {
   .banner .banner-image {
     height: 550px;
     width: 100%;
+  }
+
+  button.btn.btn--border.btn_color {
+    padding: 20px 10px;
   }
 
   .restaurants-items {
