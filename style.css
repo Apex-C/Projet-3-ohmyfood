@@ -250,7 +250,7 @@ header .header-nav {
   justify-content: center;
   overflow: hidden;
   z-index: 0;
-  padding: 20px 10px;
+  padding: 13px 10px;
   border: 2px solid #6e6e6e;
 }
 .recherche .btn_color::before {
