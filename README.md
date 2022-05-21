@@ -1,5 +1,6 @@
 
-## Projet 3 Dynamisez une page web avec des animations CSS
+## Projet 3 OhMyfood 
+## Dynamisez une page web avec des animations CSS
 
 
 ## Brief créatif
