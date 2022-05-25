@@ -23,5 +23,5 @@
 
 ### ⛏️ Built With
 
-- [Sass](https://sass-lang.com/)
 - [HTML5](https://www.w3.org/2014/10/html5-rec.html.fr)
+-  [Sass](https://sass-lang.com/)
