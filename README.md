@@ -1,8 +1,11 @@
+
 # Projet-3_ohmyfood
 
 > Dynamisez une page web avec des animations CSS
 
+
 ## 🎯 Objectives
+
 
 - Mettre en œuvre des effets CSS graphiques avancés
 - Utiliser un système de gestion de versions pour le suivi du projet et son hébergement
@@ -12,7 +15,7 @@
 
 ### Effets graphiques et animations
 
-| Plugin         | README                                                                                                                                                                                                                                          |
+| Elements        | Effets attendus                                                                                                                                                                                                                                          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Boutons        | Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. L’ombre portée devra également être plus visible.                                                                                                            |
 | Page d’accueil | un “loading spinner” au chargement de la page                                                                                                                                                                                                   |
